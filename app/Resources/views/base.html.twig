@@ -4,12 +4,16 @@
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}
-            <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.css')}}" />
-        <!--    <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}"  /> -->
+        <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.css')}}" />
+    <!--    <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}"  /> -->
 
-            <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap-theme.css')}}"  />
-        <!--    <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap-theme.min.css')}}"  /> -->
+        <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap-theme.css')}}"  />
+    <!--    <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap-theme.min.css')}}"  /> -->
 
+
+        <!--Style que nous allons utiliser-->
+        <link rel="stylesheet" href="{{asset('bootstrap/css/colorbox.css')}}"  />
+        <link rel="stylesheet" href="{{asset('bootstrap/css/gabarits.css')}}"  />
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 
@@ -17,57 +21,48 @@
 
 
     </head>
-    <body> 
- 
-<!-- ENTETE --> 
-<div id="header"> 
-	<h2>header</h2> 
-</div> 
- 
-<!-- CONTENEUR CENTRAL --> 
-<div id="center"> 
-<div id="center_bis"> 
-	 
-	<!-- CONTENU --> 
-	<div id="content_float"> 
-		<div id="content"> 
-			<h2>content</h2> 
-			<p> Integer turpis ipsum, pharetra eget malesuada vel, condimentum id velit. Sed condimentum, mi eu sollicitudin vehicula, libero mi lacinia sem, sit amet tincidunt sapien dui nec ipsum. Maecenas eget scelerisque turpis. Sed enim mi, suscipit eu gravida eget, viverra sed purus. Pellentesque ipsum lacus, ornare a convallis eu, tincidunt nec dolor. Curabitur eget nisi sed lacus malesuada consectetur nec quis quam. Nam eget tellus ante, in tincidunt felis. Phasellus eget tortor at libero laoreet ornare. Curabitur orci lectus, hendrerit id tincidunt ut, accumsan vehicula sem. Nulla tempus urna quis urna ultricies sodales.</p> 
-		</div> 
-	</div> 
-	 
-	<!-- COLONNE GAUCHE --> 
-	<div id="left"> 
-		<h2>left</h2> 
-	</div> 
-	<!-- COLONNE DROITE --> 
-	<div id="right"> 
-		<h2>right</h2> 
-	</div> 
-	 
-	<hr class="clear" /> 
- 
-</div> 
-</div> 
- 
-<!-- PIED DE PAGE --> 
-<div id="footer"> 
-	<h2>footer</h2> 
-</div> 
- 
-</body> 
-    {% block body %}
-    
-     
-    
-    {% endblock %}
-      
 
-    
+   
+    <body> 
+
+        <!-- ENTETE --> 
+        <div id="header"> 
+            <h2>header</h2> 
+        </div> 
+
+        <!-- CONTENEUR CENTRAL --> 
+      
+                <!-- CONTENU --> 
+               {% block body %}
+
+
+               {% endblock %}
+
+                <!-- COLONNE GAUCHE --> 
+                <div id="left"> 
+                    <h2>left</h2> 
+                </div> 
+                <!-- COLONNE DROITE --> 
+                <div id="right"> 
+                    <h2>right</h2> 
+                </div> 
+
+                <hr class="clear" /> 
+
+       
+
+        <!-- PIED DE PAGE --> 
+        <div id="footer"> 
+            <h2>footer</h2> 
+        </div> 
+
+    </body> 
+
+
     {% block javascripts %}
-        <script src="{{asset('bootstrap/js/bootstrap.js')}}"></script>
-        <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
-        <script src="{{asset('bootstrap/js/npm.js')}}"></script>
+    <script src="{{asset('bootstrap/js/bootstrap.js')}}"></script>
+    <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('bootstrap/js/npm.js')}}"></script>
 
     {% endblock %}
 </body>

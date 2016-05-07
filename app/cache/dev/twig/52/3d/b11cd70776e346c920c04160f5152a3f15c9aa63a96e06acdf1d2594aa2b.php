@@ -31,7 +31,7 @@ class __TwigTemplate_523db11cd70776e346c920c04160f5152a3f15c9aa63a96e06acdf1d259
         ";
         // line 6
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 14
+        // line 18
         echo "        <link rel=\"icon\" type=\"image/x-icon\" href=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("favicon.ico"), "html", null, true);
         echo "\" />
@@ -40,56 +40,48 @@ class __TwigTemplate_523db11cd70776e346c920c04160f5152a3f15c9aa63a96e06acdf1d259
 
 
     </head>
-    <body> 
- 
-<!-- ENTETE --> 
-<div id=\"header\"> 
-\t<h2>header</h2> 
-</div> 
- 
-<!-- CONTENEUR CENTRAL --> 
-<div id=\"center\"> 
-<div id=\"center_bis\"> 
-\t 
-\t<!-- CONTENU --> 
-\t<div id=\"content_float\"> 
-\t\t<div id=\"content\"> 
-\t\t\t<h2>content</h2> 
-\t\t\t<p> Integer turpis ipsum, pharetra eget malesuada vel, condimentum id velit. Sed condimentum, mi eu sollicitudin vehicula, libero mi lacinia sem, sit amet tincidunt sapien dui nec ipsum. Maecenas eget scelerisque turpis. Sed enim mi, suscipit eu gravida eget, viverra sed purus. Pellentesque ipsum lacus, ornare a convallis eu, tincidunt nec dolor. Curabitur eget nisi sed lacus malesuada consectetur nec quis quam. Nam eget tellus ante, in tincidunt felis. Phasellus eget tortor at libero laoreet ornare. Curabitur orci lectus, hendrerit id tincidunt ut, accumsan vehicula sem. Nulla tempus urna quis urna ultricies sodales.</p> 
-\t\t</div> 
-\t</div> 
-\t 
-\t<!-- COLONNE GAUCHE --> 
-\t<div id=\"left\"> 
-\t\t<h2>left</h2> 
-\t</div> 
-\t<!-- COLONNE DROITE --> 
-\t<div id=\"right\"> 
-\t\t<h2>right</h2> 
-\t</div> 
-\t 
-\t<hr class=\"clear\" /> 
- 
-</div> 
-</div> 
- 
-<!-- PIED DE PAGE --> 
-<div id=\"footer\"> 
-\t<h2>footer</h2> 
-</div> 
- 
-</body> 
-    ";
-        // line 59
-        $this->displayBlock('body', $context, $blocks);
-        // line 64
-        echo "      
 
-    
+   
+    <body> 
+
+        <!-- ENTETE --> 
+        <div id=\"header\"> 
+            <h2>header</h2> 
+        </div> 
+
+        <!-- CONTENEUR CENTRAL --> 
+      
+                <!-- CONTENU --> 
+               ";
+        // line 36
+        $this->displayBlock('body', $context, $blocks);
+        // line 40
+        echo "
+                <!-- COLONNE GAUCHE --> 
+                <div id=\"left\"> 
+                    <h2>left</h2> 
+                </div> 
+                <!-- COLONNE DROITE --> 
+                <div id=\"right\"> 
+                    <h2>right</h2> 
+                </div> 
+
+                <hr class=\"clear\" /> 
+
+       
+
+        <!-- PIED DE PAGE --> 
+        <div id=\"footer\"> 
+            <h2>footer</h2> 
+        </div> 
+
+    </body> 
+
+
     ";
-        // line 67
+        // line 62
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 73
+        // line 68
         echo "</body>
 </html>
 ";
@@ -105,49 +97,58 @@ class __TwigTemplate_523db11cd70776e346c920c04160f5152a3f15c9aa63a96e06acdf1d259
     public function block_stylesheets($context, array $blocks = array())
     {
         // line 7
-        echo "            <link rel=\"stylesheet\" href=\"";
+        echo "        <link rel=\"stylesheet\" href=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/css/bootstrap.css"), "html", null, true);
         echo "\" />
-        <!--    <link rel=\"stylesheet\" href=\"";
+    <!--    <link rel=\"stylesheet\" href=\"";
         // line 8
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/css/bootstrap.min.css"), "html", null, true);
         echo "\"  /> -->
 
-            <link rel=\"stylesheet\" href=\"";
+        <link rel=\"stylesheet\" href=\"";
         // line 10
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/css/bootstrap-theme.css"), "html", null, true);
         echo "\"  />
-        <!--    <link rel=\"stylesheet\" href=\"";
+    <!--    <link rel=\"stylesheet\" href=\"";
         // line 11
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/css/bootstrap-theme.min.css"), "html", null, true);
         echo "\"  /> -->
 
+
+        <!--Style que nous allons utiliser-->
+        <link rel=\"stylesheet\" href=\"";
+        // line 15
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/css/colorbox.css"), "html", null, true);
+        echo "\"  />
+        <link rel=\"stylesheet\" href=\"";
+        // line 16
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/css/gabarits.css"), "html", null, true);
+        echo "\"  />
         ";
     }
 
-    // line 59
+    // line 36
     public function block_body($context, array $blocks = array())
     {
-        // line 60
-        echo "    
-     
-    
-    ";
+        // line 37
+        echo "
+
+               ";
     }
 
-    // line 67
+    // line 62
     public function block_javascripts($context, array $blocks = array())
     {
-        // line 68
-        echo "        <script src=\"";
+        // line 63
+        echo "    <script src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/js/bootstrap.js"), "html", null, true);
         echo "\"></script>
-        <script src=\"";
-        // line 69
+    <script src=\"";
+        // line 64
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
-        <script src=\"";
-        // line 70
+    <script src=\"";
+        // line 65
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/js/npm.js"), "html", null, true);
         echo "\"></script>
 
@@ -166,6 +167,6 @@ class __TwigTemplate_523db11cd70776e346c920c04160f5152a3f15c9aa63a96e06acdf1d259
 
     public function getDebugInfo()
     {
-        return array (  151 => 70,  147 => 69,  142 => 68,  139 => 67,  132 => 60,  129 => 59,  122 => 11,  118 => 10,  113 => 8,  108 => 7,  105 => 6,  99 => 5,  93 => 73,  91 => 67,  86 => 64,  84 => 59,  35 => 14,  33 => 6,  29 => 5,  23 => 1,);
+        return array (  152 => 65,  148 => 64,  143 => 63,  140 => 62,  134 => 37,  131 => 36,  125 => 16,  121 => 15,  114 => 11,  110 => 10,  105 => 8,  100 => 7,  97 => 6,  91 => 5,  85 => 68,  83 => 62,  59 => 40,  57 => 36,  35 => 18,  33 => 6,  29 => 5,  23 => 1,);
     }
 }

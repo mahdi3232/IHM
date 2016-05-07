@@ -28,73 +28,67 @@ class __TwigTemplate_8b6dfa58fcf8f4eeddb36bc98f6162d5539c845630512ad61ad10723220
     public function block_body($context, array $blocks = array())
     {
         // line 4
-        echo "<h1>Matche list</h1>
-   
-    <button type=\"button\" class=\"btn btn-primary\">Primary</button>
-    <input type=\"button\" class=\"btn btn-success\" value=\"ok\">
-    <input type=\"button\"  value=\"ok\">
-    <table class=\"records_list\">
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th>Id</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
+        echo "<div id=\"content_float\"> 
+    <div id=\"content\"> 
+        <h1>Liste des matches</h1>
+
+     
+        <table class=\"table table-hover\">
+            <thead>
+                <tr>
+                    <th>Equipe 1</th>
+                    <th>Date</th>
+                     <th>Heure</th>
+                    
+                    <th>Equipe 2</th>
+
+                </tr>
+            </thead>
+            <tbody>
         ";
-        // line 18
+        // line 21
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) ? $context["entities"] : $this->getContext($context, "entities")));
         foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
-            // line 19
-            echo "            <tr>
-                <td><a href=\"";
-            // line 20
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("matche_show", array("id" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id"))), "html", null, true);
-            echo "\">";
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "date"), "Y-m-d H:i:s"), "html", null, true);
-            echo "</a></td>
-                <td>";
-            // line 21
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id"), "html", null, true);
+            // line 22
+            echo "                    <tr class=\"success\">
+                         <td width=\"50%\">";
+            // line 23
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "idEquipe"), "html", null, true);
             echo "</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href=\"";
+                        
+                         <td><a href=\"";
             // line 25
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("matche_show", array("id" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id"))), "html", null, true);
-            echo "\">show</a>
-                    </li>
-                    <li>
-                        <a href=\"";
-            // line 28
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("matche_edit", array("id" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id"))), "html", null, true);
-            echo "\">edit</a>
-                    </li>
-                </ul>
-                </td>
-            </tr>
+            echo "\">";
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "date"), "Y-m-d"), "html", null, true);
+            echo "</a></td>
+                        <td><a href=\"";
+            // line 26
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("matche_show", array("id" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id"))), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "date"), "H:i"), "html", null, true);
+            echo "</a></td>
+
+                       
+                        <td width=\"50%\">";
+            // line 29
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "idEquipe2"), "html", null, true);
+            echo "</td>
+
+                    </tr>
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 34
-        echo "        </tbody>
-    </table>
+        // line 33
+        echo "                </tbody>
+            </table>
 
-        <ul>
-        <li>
-            <a href=\"";
-        // line 39
-        echo $this->env->getExtension('routing')->getPath("matche_new");
-        echo "\">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
+
+        </div>
+    </div>
     ";
     }
 
@@ -110,6 +104,6 @@ class __TwigTemplate_8b6dfa58fcf8f4eeddb36bc98f6162d5539c845630512ad61ad10723220
 
     public function getDebugInfo()
     {
-        return array (  92 => 39,  85 => 34,  73 => 28,  67 => 25,  60 => 21,  54 => 20,  51 => 19,  47 => 18,  31 => 4,  28 => 3,);
+        return array (  86 => 33,  76 => 29,  68 => 26,  62 => 25,  57 => 23,  54 => 22,  50 => 21,  31 => 4,  28 => 3,);
     }
 }
