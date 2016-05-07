@@ -20,7 +20,7 @@
             <tbody>
         {% for entity in entities %}
                     <tr class="success">
-                         <td width="60%">{{ entity.idEquipe }}</td>
+                         <td width="49%">{{ entity.idEquipe }}</td>
                         
                          <td><a href="{{ path('matche_show', { 'id': entity.id }) }}">{{ entity.date|date('Y-m-d') }}</a></td>
                         <td><a href="{{ path('matche_show', { 'id': entity.id }) }}">{{ entity.date|date('H:i') }}</a></td>
