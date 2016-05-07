@@ -60,7 +60,8 @@ html,body {margin:0;padding:0}
 *:first-child+html .clear{margin:-8px 0;} * html .clear{margin:-8px 0;}
 
 #header {
-	background-color:#5a7fa9;
+	background-color:white;
+	background:url(../fonts/rades.jpg);
 }
 #center {
 	background-color:#8CC6D7;

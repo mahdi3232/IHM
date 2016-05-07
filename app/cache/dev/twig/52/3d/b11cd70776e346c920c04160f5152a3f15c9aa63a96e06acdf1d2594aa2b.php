@@ -41,47 +41,93 @@ class __TwigTemplate_523db11cd70776e346c920c04160f5152a3f15c9aa63a96e06acdf1d259
 
     </head>
 
-   
+
     <body> 
 
         <!-- ENTETE --> 
+     
         <div id=\"header\"> 
-            <h2>header</h2> 
-        </div> 
+              <img src=\"";
+        // line 31
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/fonts/LOGO.png"), "html", null, true);
+        echo "\">
+            <!-- Single button -->
 
-        <!-- CONTENEUR CENTRAL --> 
-      
-                <!-- CONTENU --> 
+            <nav class=\"navbar navbar-default\">
+                <div class=\"container-fluid\">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class=\"navbar-header\">
+                        <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\" aria-expanded=\"false\">
+                            <span class=\"sr-only\">Toggle navigation</span>
+                            <span class=\"icon-bar\"></span>
+                            <span class=\"icon-bar\"></span>
+                            <span class=\"icon-bar\"></span>
+                        </button>
+                        <a class=\"navbar-brand\" href=\"#\">Home</a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">
+                        <ul class=\"nav navbar-nav\">
+                            <li class=\"active\"><a href=\"#\">Saison<span class=\"sr-only\">(current)</span></a></li>
+                            <li><a href=\"#\">Match</a></li>
+                            <li class=\"dropdown\">
+                                <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Journées <span class=\"caret\"></span></a>
+                                <ul class=\"dropdown-menu\">
+                                    <li><a href=\"#\">Action</a></li>
+                                    <li><a href=\"#\">Another action</a></li>
+                                    <li><a href=\"#\">Something else here</a></li>
+                                    <li role=\"separator\" class=\"divider\"></li>
+                                    <li><a href=\"#\">Separated link</a></li>
+                                    <li role=\"separator\" class=\"divider\"></li>
+                                    <li><a href=\"#\">One more separated link</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class=\"navbar-form navbar-left\" role=\"search\">
+                            <div class=\"form-group\">
+                                <input type=\"text\" class=\"form-control\" placeholder=\"Search\">
+                            </div>
+                            <button type=\"submit\" class=\"btn btn-default\">Submit</button>
+                        </form>
+                        <ul class=\"nav navbar-nav navbar-right\">
+                           
+                          
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav>
+            <!-- CONTENU --> 
                ";
-        // line 36
+        // line 79
         $this->displayBlock('body', $context, $blocks);
-        // line 40
+        // line 83
         echo "
-                <!-- COLONNE GAUCHE --> 
-                <div id=\"left\"> 
-                    <h2>left</h2> 
-                </div> 
-                <!-- COLONNE DROITE --> 
-                <div id=\"right\"> 
-                    <h2>right</h2> 
-                </div> 
+            <!-- COLONNE GAUCHE --> 
+            <div id=\"left\"> 
+                <h2>left</h2> 
+            </div> 
+            <!-- COLONNE DROITE --> 
+            <div id=\"right\"> 
+                <h2>right</h2> 
+            </div> 
 
-                <hr class=\"clear\" /> 
+            <hr class=\"clear\" /> 
 
-       
 
-        <!-- PIED DE PAGE --> 
-        <div id=\"footer\"> 
-            <h2>footer</h2> 
-        </div> 
+
+            <!-- PIED DE PAGE --> 
+            <div id=\"footer\"> 
+                <h2>footer</h2> 
+            </div> 
 
     </body> 
 
 
     ";
-        // line 62
+        // line 105
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 68
+        // line 111
         echo "</body>
 </html>
 ";
@@ -127,28 +173,28 @@ class __TwigTemplate_523db11cd70776e346c920c04160f5152a3f15c9aa63a96e06acdf1d259
         ";
     }
 
-    // line 36
+    // line 79
     public function block_body($context, array $blocks = array())
     {
-        // line 37
+        // line 80
         echo "
 
                ";
     }
 
-    // line 62
+    // line 105
     public function block_javascripts($context, array $blocks = array())
     {
-        // line 63
+        // line 106
         echo "    <script src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/js/bootstrap.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 64
+        // line 107
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 65
+        // line 108
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/js/npm.js"), "html", null, true);
         echo "\"></script>
 
@@ -167,6 +213,6 @@ class __TwigTemplate_523db11cd70776e346c920c04160f5152a3f15c9aa63a96e06acdf1d259
 
     public function getDebugInfo()
     {
-        return array (  152 => 65,  148 => 64,  143 => 63,  140 => 62,  134 => 37,  131 => 36,  125 => 16,  121 => 15,  114 => 11,  110 => 10,  105 => 8,  100 => 7,  97 => 6,  91 => 5,  85 => 68,  83 => 62,  59 => 40,  57 => 36,  35 => 18,  33 => 6,  29 => 5,  23 => 1,);
+        return array (  198 => 108,  194 => 107,  189 => 106,  186 => 105,  180 => 80,  177 => 79,  171 => 16,  167 => 15,  160 => 11,  156 => 10,  151 => 8,  146 => 7,  143 => 6,  137 => 5,  131 => 111,  129 => 105,  105 => 83,  103 => 79,  52 => 31,  35 => 18,  33 => 6,  29 => 5,  23 => 1,);
     }
 }

@@ -1,39 +1,49 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
+
 <div id="content_float"> 
     <div id="content"> 
-        <h1>Liste des matches</h1>
 
-     
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th>Equipe 1</th>
-                    <th>Date</th>
-                     <th>Heure</th>
-                    
-                    <th>Equipe 2</th>
 
-                </tr>
-            </thead>
-            <tbody>
-        {% for entity in entities %}
-                    <tr class="success">
-                         <td width="49%">{{ entity.idEquipe }}</td>
-                        
-                         <td><a href="{{ path('matche_show', { 'id': entity.id }) }}">{{ entity.date|date('Y-m-d') }}</a></td>
-                        <td><a href="{{ path('matche_show', { 'id': entity.id }) }}">{{ entity.date|date('H:i') }}</a></td>
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                Liste des matches
+            </div>
+            <div class="panel-body">
+                <p class="bg-success">Ligue:<br>
+                    Saison:<br>
+                    Journeé:<br></p>
+            </div>
+            <table class="table table-hover" >
+                <thead>
+                    <tr>
+                        <th>Equipe 1</th>
+                        <th>Date</th>
+                        <th>Heure</th>
 
-                       
-                        <td width="50%">{{ entity.idEquipe2 }}</td>
+                        <th>Equipe 2</th>
 
                     </tr>
+                </thead>
+                <tbody>
+        {% for entity in entities %}
+                        <tr class="success">
+                            <td width="30%">{{ entity.idEquipe }}</td>
+
+                            <td width="20%"><a href="{{ path('matche_show', { 'id': entity.id }) }}">{{ entity.date|date('Y-m-d') }}</a></td>
+                            <td width="20%"><a href="{{ path('matche_show', { 'id': entity.id }) }}">{{ entity.date|date('H:i') }}</a></td>
+
+
+                            <td width="30%">{{ entity.idEquipe2 }}</td>
+
+                        </tr>
         {% endfor %}
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
 
 
+            </div>
         </div>
     </div>
     {% endblock %}
