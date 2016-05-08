@@ -1,49 +1,47 @@
 {% extends '::base.html.twig' %}
 
-{% block body -%}
+{% block titre -%}
+Joueur list
 
-<div id="content_float"> 
-    <div id="content"> 
+{% endblock %}
 
 
-        <div class="panel panel-info">
-            <div class="panel-heading">
-                Liste des matches
-            </div>
-            <div class="panel-body">
-                <p class="bg-success">Ligue:<br>
-                    Saison:<br>
-                    Journeé:<br></p>
-            </div>
-            <table class="table table-hover" >
-                <thead>
-                    <tr>
-                        <th>Equipe 1</th>
-                        <th>Date</th>
-                        <th>Heure</th>
+{% block panelbody -%}
+<div class="panel-body">
+    <p class="bg-success">Ligue:<br>
+        Saison:<br>
+        Journeé:<br></p>
+</div>
+{% endblock %}
 
-                        <th>Equipe 2</th>
 
-                    </tr>
-                </thead>
-                <tbody>
+
+
+{% block tableau -%}
+ <table class="table table-hover" >
+<thead>
+    <tr>
+        <th>Equipe 1</th>
+        <th>Date</th>
+        <th>Heure</th>
+
+        <th>Equipe 2</th>
+
+    </tr>
+</thead>
+<tbody>
         {% for entity in entities %}
-                        <tr class="success">
-                            <td width="30%">{{ entity.idEquipe }}</td>
+        <tr class="info" >
+            <td width="30%">{{ entity.idEquipe }}</td>
 
-                            <td width="20%"><a href="{{ path('matche_show', { 'id': entity.id }) }}">{{ entity.date|date('Y-m-d') }}</a></td>
-                            <td width="20%"><a href="{{ path('matche_show', { 'id': entity.id }) }}">{{ entity.date|date('H:i') }}</a></td>
+            <td width="20%"><a href="{{ path('matche_show', { 'id': entity.id }) }}">{{ entity.date|date('Y-m-d') }}</a></td>
+            <td width="20%"><a href="{{ path('matche_show', { 'id': entity.id }) }}">{{ entity.date|date('H:i') }}</a></td>
 
 
-                            <td width="30%">{{ entity.idEquipe2 }}</td>
+            <td width="30%">{{ entity.idEquipe2 }}</td>
 
-                        </tr>
+        </tr>
         {% endfor %}
-                    </tbody>
-                </table>
-
-
-            </div>
-        </div>
-    </div>
+    </tbody>
+</table>
     {% endblock %}

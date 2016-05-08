@@ -1,35 +1,40 @@
 {% extends '::base.html.twig' %}
 
-{% block body -%}
-    <h1>Equipe list</h1>
 
-    <table class="records_list">
+    
+{% block titre -%}
+Equipe list
+  {% endblock %}
+{% block panelbody -%}
+<div class="panel-body">
+    <p class="bg-success">Ligue:<br>
+        Saison:<br>
+       </p>
+</div>
+{% endblock %}
+
+{% block tableau -%}
+ <table class="table table-hover" >
         <thead>
             <tr>
-                <th>Nomequipe</th>
-                <th>Id</th>
-                <th>Actions</th>
+                <th>Nom équipe</th>
+               
+                <th>Logo</th>
             </tr>
         </thead>
         <tbody>
         {% for entity in entities %}
-            <tr>
+                <tr class="info" style="height:20px;">
                 <td><a href="{{ path('equipe_show', { 'id': entity.id }) }}">{{ entity.nomEquipe }}</a></td>
-                <td>{{ entity.id }}</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('equipe_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('equipe_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
-                </td>
+                
+             
+                <td> <img src={{asset('bootstrap/fonts/logoEquipe/')}}{{ entity.id }}.png> </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
+{% endblock %}
+{% block body -%}
 
         <ul>
         <li>
@@ -38,4 +43,5 @@
             </a>
         </li>
     </ul>
-    {% endblock %}
+{% endblock %}
+  

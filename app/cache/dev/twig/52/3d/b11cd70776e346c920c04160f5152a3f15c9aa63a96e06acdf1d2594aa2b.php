@@ -12,6 +12,9 @@ class __TwigTemplate_523db11cd70776e346c920c04160f5152a3f15c9aa63a96e06acdf1d259
         $this->blocks = array(
             'title' => array($this, 'block_title'),
             'stylesheets' => array($this, 'block_stylesheets'),
+            'titre' => array($this, 'block_titre'),
+            'panelbody' => array($this, 'block_panelbody'),
+            'tableau' => array($this, 'block_tableau'),
             'body' => array($this, 'block_body'),
             'javascripts' => array($this, 'block_javascripts'),
         );
@@ -45,9 +48,9 @@ class __TwigTemplate_523db11cd70776e346c920c04160f5152a3f15c9aa63a96e06acdf1d259
     <body> 
 
         <!-- ENTETE --> 
-     
+
         <div id=\"header\"> 
-              <img src=\"";
+            <img src=\"";
         // line 31
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/fonts/LOGO.png"), "html", null, true);
         echo "\">
@@ -91,44 +94,69 @@ class __TwigTemplate_523db11cd70776e346c920c04160f5152a3f15c9aa63a96e06acdf1d259
                             <button type=\"submit\" class=\"btn btn-default\">Submit</button>
                         </form>
                         <ul class=\"nav navbar-nav navbar-right\">
-                           
-                          
+
+
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div><!-- /.container-fluid -->
             </nav>
             <!-- CONTENU --> 
-               ";
-        // line 79
-        $this->displayBlock('body', $context, $blocks);
-        // line 83
+
+            <div id=\"content_float\"> 
+                <div id=\"content\"> 
+
+                    <div class=\"panel panel-info\">
+                        <div class=\"panel-heading\">
+                            ";
+        // line 85
+        $this->displayBlock('titre', $context, $blocks);
+        // line 87
+        echo "                            </div>
+                        </div>
+
+                ";
+        // line 90
+        $this->displayBlock('panelbody', $context, $blocks);
+        // line 92
         echo "
-            <!-- COLONNE GAUCHE --> 
-            <div id=\"left\"> 
-                <h2>left</h2> 
-            </div> 
-            <!-- COLONNE DROITE --> 
-            <div id=\"right\"> 
-                <h2>right</h2> 
-            </div> 
+                        ";
+        // line 93
+        $this->displayBlock('tableau', $context, $blocks);
+        // line 97
+        echo "
+                     ";
+        // line 98
+        $this->displayBlock('body', $context, $blocks);
+        // line 102
+        echo "                    </div>
+                </div>
 
-            <hr class=\"clear\" /> 
+                <!-- COLONNE GAUCHE --> 
+                <div id=\"left\"> 
+                    <h2>left</h2> 
+                </div> 
+                <!-- COLONNE DROITE --> 
+                <div id=\"right\"> 
+                    <h2>right</h2> 
+                </div> 
+
+                <hr class=\"clear\" /> 
 
 
 
-            <!-- PIED DE PAGE --> 
-            <div id=\"footer\"> 
-                <h2>footer</h2> 
-            </div> 
+                <!-- PIED DE PAGE --> 
+                <div id=\"footer\"> 
+                    <h2>footer</h2> 
+                </div> 
 
-    </body> 
+        </body> 
 
 
     ";
-        // line 105
+        // line 126
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 111
-        echo "</body>
+        // line 132
+        echo "    </body>
 </html>
 ";
     }
@@ -173,28 +201,49 @@ class __TwigTemplate_523db11cd70776e346c920c04160f5152a3f15c9aa63a96e06acdf1d259
         ";
     }
 
-    // line 79
+    // line 85
+    public function block_titre($context, array $blocks = array())
+    {
+        // line 86
+        echo "                                ";
+    }
+
+    // line 90
+    public function block_panelbody($context, array $blocks = array())
+    {
+    }
+
+    // line 93
+    public function block_tableau($context, array $blocks = array())
+    {
+        // line 94
+        echo "
+
+                        ";
+    }
+
+    // line 98
     public function block_body($context, array $blocks = array())
     {
-        // line 80
+        // line 99
         echo "
 
                ";
     }
 
-    // line 105
+    // line 126
     public function block_javascripts($context, array $blocks = array())
     {
-        // line 106
-        echo "    <script src=\"";
+        // line 127
+        echo "        <script src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/js/bootstrap.js"), "html", null, true);
         echo "\"></script>
-    <script src=\"";
-        // line 107
+        <script src=\"";
+        // line 128
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
-    <script src=\"";
-        // line 108
+        <script src=\"";
+        // line 129
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/js/npm.js"), "html", null, true);
         echo "\"></script>
 
@@ -213,6 +262,6 @@ class __TwigTemplate_523db11cd70776e346c920c04160f5152a3f15c9aa63a96e06acdf1d259
 
     public function getDebugInfo()
     {
-        return array (  198 => 108,  194 => 107,  189 => 106,  186 => 105,  180 => 80,  177 => 79,  171 => 16,  167 => 15,  160 => 11,  156 => 10,  151 => 8,  146 => 7,  143 => 6,  137 => 5,  131 => 111,  129 => 105,  105 => 83,  103 => 79,  52 => 31,  35 => 18,  33 => 6,  29 => 5,  23 => 1,);
+        return array (  247 => 129,  243 => 128,  238 => 127,  235 => 126,  229 => 99,  226 => 98,  220 => 94,  217 => 93,  212 => 90,  208 => 86,  205 => 85,  199 => 16,  195 => 15,  188 => 11,  184 => 10,  179 => 8,  174 => 7,  171 => 6,  165 => 5,  159 => 132,  157 => 126,  131 => 102,  129 => 98,  126 => 97,  124 => 93,  121 => 92,  119 => 90,  114 => 87,  112 => 85,  55 => 31,  38 => 18,  36 => 6,  32 => 5,  26 => 1,);
     }
 }
