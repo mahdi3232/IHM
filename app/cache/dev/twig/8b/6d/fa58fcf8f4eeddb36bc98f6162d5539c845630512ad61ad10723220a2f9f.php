@@ -40,8 +40,11 @@ class __TwigTemplate_8b6dfa58fcf8f4eeddb36bc98f6162d5539c845630512ad61ad10723220
     {
         // line 10
         echo "<div class=\"panel-body\">
-    <p class=\"bg-success\">Ligue:<br>
-        Saison:<br>
+    <p class=\"bg-success\">Ligue: ";
+        // line 11
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entityLigue"]) ? $context["entityLigue"] : $this->getContext($context, "entityLigue")), "nomLigue"), "html", null, true);
+        echo "<br>
+        Saison: <br>
         Journeé:<br></p>
 </div>
 ";
@@ -118,6 +121,6 @@ class __TwigTemplate_8b6dfa58fcf8f4eeddb36bc98f6162d5539c845630512ad61ad10723220
 
     public function getDebugInfo()
     {
-        return array (  104 => 45,  94 => 41,  86 => 38,  80 => 37,  75 => 35,  72 => 34,  68 => 33,  54 => 21,  51 => 20,  42 => 10,  39 => 9,  33 => 4,  30 => 3,);
+        return array (  107 => 45,  97 => 41,  89 => 38,  83 => 37,  78 => 35,  75 => 34,  71 => 33,  57 => 21,  54 => 20,  45 => 11,  42 => 10,  39 => 9,  33 => 4,  30 => 3,);
     }
 }
