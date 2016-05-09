@@ -31,7 +31,7 @@ class __TwigTemplate_b26fabf5eb6629d581bd3b762eec832568731c2783f42f9bfd2995d836b
     public function block_titre($context, array $blocks = array())
     {
         // line 6
-        echo "Equipe list
+        echo "<h4>Liste des équipes </h4>
   ";
     }
 
@@ -40,8 +40,11 @@ class __TwigTemplate_b26fabf5eb6629d581bd3b762eec832568731c2783f42f9bfd2995d836b
     {
         // line 9
         echo "<div class=\"panel-body\">
-    <p class=\"bg-success\">Ligue:<br>
-        Saison:<br>
+   <h5> <p class=\"bg-info\">Ligue :  ";
+        // line 10
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity2"]) ? $context["entity2"] : $this->getContext($context, "entity2")), "nomLigue"), "html", null, true);
+        echo "<br></h5>
+       
        </p>
 </div>
 ";
@@ -54,52 +57,54 @@ class __TwigTemplate_b26fabf5eb6629d581bd3b762eec832568731c2783f42f9bfd2995d836b
         echo "<table class=\"table table-hover\" >
         <thead>
             <tr>
+                 <th>Logo</th>
                 <th>Nom équipe</th>
                
-                <th>Logo</th>
+               
             </tr>
         </thead>
         <tbody>
         ";
-        // line 26
+        // line 27
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) ? $context["entities"] : $this->getContext($context, "entities")));
         foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
-            // line 27
-            echo "                <tr class=\"info\" style=\"height:20px;\">
-                <td><a href=\"";
             // line 28
+            echo "                <tr style=\"height: 20px;\" >
+               
+                
+             
+                <td style=\"width:45%;\"> <img src=";
+            // line 32
+            echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/fonts/logoEquipe/"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id"), "html", null, true);
+            echo ".png> </td>
+                 <td style=\"width:55%;\" ><a href=\"";
+            // line 33
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("equipe_show", array("id" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id"))), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "nomEquipe"), "html", null, true);
             echo "</a></td>
-                
-             
-                <td> <img src=";
-            // line 31
-            echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/fonts/logoEquipe/"), "html", null, true);
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id"), "html", null, true);
-            echo ".png> </td>
             </tr>
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 34
+        // line 36
         echo "        </tbody>
     </table>
 ";
     }
 
-    // line 37
+    // line 39
     public function block_body($context, array $blocks = array())
     {
-        // line 39
+        // line 41
         echo "<ul>
         <li>
             <a href=\"";
-        // line 41
+        // line 43
         echo $this->env->getExtension('routing')->getPath("equipe_new");
         echo "\">
                 Create a new entry
@@ -121,6 +126,6 @@ class __TwigTemplate_b26fabf5eb6629d581bd3b762eec832568731c2783f42f9bfd2995d836b
 
     public function getDebugInfo()
     {
-        return array (  103 => 41,  99 => 39,  96 => 37,  90 => 34,  80 => 31,  72 => 28,  69 => 27,  65 => 26,  54 => 17,  51 => 16,  42 => 9,  39 => 8,  34 => 6,  31 => 5,);
+        return array (  108 => 43,  104 => 41,  101 => 39,  95 => 36,  84 => 33,  79 => 32,  73 => 28,  69 => 27,  57 => 17,  54 => 16,  45 => 10,  42 => 9,  39 => 8,  34 => 6,  31 => 5,);
     }
 }

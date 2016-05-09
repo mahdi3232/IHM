@@ -32,13 +32,13 @@ Joueur list
 <tbody>
         {% for entity in entities %}
         <tr class="info" >
-            <td width="30%">{{ entity.idEquipe }}</td>
+            <td width="40%">{{ entity.idEquipe }}</td>
 
-            <td width="20%"><a href="{{ path('matche_show', { 'id': entity.id }) }}">{{ entity.date|date('Y-m-d') }}</a></td>
-            <td width="20%"><a href="{{ path('matche_show', { 'id': entity.id }) }}">{{ entity.date|date('H:i') }}</a></td>
+            <td width="10%"><a href="{{ path('matche_show', { 'id': entity.id }) }}">{{ entity.date|date('Y-m-d') }}</a></td>
+            <td width="10%"><a href="{{ path('matche_show', { 'id': entity.id }) }}">{{ entity.date|date('H:i') }}</a></td>
 
 
-            <td width="30%">{{ entity.idEquipe2 }}</td>
+            <td width="40%">{{ entity.idEquipe2 }}</td>
 
         </tr>
         {% endfor %}

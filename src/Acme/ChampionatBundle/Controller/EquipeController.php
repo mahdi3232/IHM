@@ -31,8 +31,11 @@ class EquipeController extends Controller
 
         $entities = $em->getRepository('AcmeChampionatBundle:Equipe')->findAll();
 
+         $entity2 = $em->getRepository('AcmeChampionatBundle:Ligue')->find(1);
+           
         return array(
             'entities' => $entities,
+            'entity2'     => $entity2,
         );
     }
     /**
@@ -112,6 +115,7 @@ class EquipeController extends Controller
 
         $entity = $em->getRepository('AcmeChampionatBundle:Equipe')->find($id);
 
+       
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Equipe entity.');
         }
@@ -137,6 +141,7 @@ class EquipeController extends Controller
 
         $entity = $em->getRepository('AcmeChampionatBundle:Equipe')->find($id);
 
+        
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Equipe entity.');
         }

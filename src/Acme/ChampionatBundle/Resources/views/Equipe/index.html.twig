@@ -3,12 +3,12 @@
 
     
 {% block titre -%}
-Equipe list
+<h4>Liste des équipes </h4>
   {% endblock %}
 {% block panelbody -%}
 <div class="panel-body">
-    <p class="bg-success">Ligue:<br>
-        Saison:<br>
+   <h5> <p class="bg-info">Ligue :  {{ entity2.nomLigue }}<br></h5>
+       
        </p>
 </div>
 {% endblock %}
@@ -17,18 +17,20 @@ Equipe list
  <table class="table table-hover" >
         <thead>
             <tr>
+                 <th>Logo</th>
                 <th>Nom équipe</th>
                
-                <th>Logo</th>
+               
             </tr>
         </thead>
         <tbody>
         {% for entity in entities %}
-                <tr class="info" style="height:20px;">
-                <td><a href="{{ path('equipe_show', { 'id': entity.id }) }}">{{ entity.nomEquipe }}</a></td>
+                <tr style="height: 20px;" >
+               
                 
              
-                <td> <img src={{asset('bootstrap/fonts/logoEquipe/')}}{{ entity.id }}.png> </td>
+                <td style="width:45%;"> <img src={{asset('bootstrap/fonts/logoEquipe/')}}{{ entity.id }}.png> </td>
+                 <td style="width:55%;" ><a href="{{ path('equipe_show', { 'id': entity.id }) }}">{{ entity.nomEquipe }}</a></td>
             </tr>
         {% endfor %}
         </tbody>
