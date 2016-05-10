@@ -32,10 +32,12 @@ class EquipeController extends Controller
         $entities = $em->getRepository('AcmeChampionatBundle:Equipe')->findAll();
 
          $entity2 = $em->getRepository('AcmeChampionatBundle:Ligue')->find(1);
+         $entity3 = $em->getRepository('AcmeChampionatBundle:Saison')->find(1);
            
         return array(
             'entities' => $entities,
             'entity2'     => $entity2,
+            'entity3'     => $entity3,
         );
     }
     /**

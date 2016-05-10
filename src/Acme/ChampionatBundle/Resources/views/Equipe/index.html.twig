@@ -7,7 +7,8 @@
   {% endblock %}
 {% block panelbody -%}
 <div class="panel-body">
-   <h5> <p class="bg-info">Ligue :  {{ entity2.nomLigue }}<br></h5>
+   <h5> <p class="bg-info">Ligue :  {{ entity2.nomLigue }}<br>
+   Saison :  {{ entity3.Libelle }}<br></h5>
        
        </p>
 </div>
@@ -23,14 +24,15 @@
                
             </tr>
         </thead>
-        <tbody>
+        <tbody
+            
         {% for entity in entities %}
                 <tr style="height: 20px;" >
                
                 
              
-                <td style="width:45%;"> <img src={{asset('bootstrap/fonts/logoEquipe/')}}{{ entity.id }}.png> </td>
-                 <td style="width:55%;" ><a href="{{ path('equipe_show', { 'id': entity.id }) }}">{{ entity.nomEquipe }}</a></td>
+                <td style="height: 20px; "> <img src={{asset('bootstrap/fonts/logoEquipe/')}}{{ entity.id }}.png> </td>
+                 <td style="width:85%;" ><br><a href="{{ path('equipe_show', { 'id': entity.id }) }}">{{ entity.nomEquipe }}</a></td>
             </tr>
         {% endfor %}
         </tbody>
