@@ -1,35 +1,34 @@
 {% extends '::base.html.twig' %}
+{% block titre -%}
+<h4>Ligue list </h4>
+  {% endblock %}
+  
+  
 
-{% block body -%}
-    <h1>Ligue list</h1>
-
-    <table class="records_list">
+    
+    {% block tableau -%}
+   <table class="table table-hover" >
         <thead>
             <tr>
                 <th>Nomligue</th>
-                <th>Id</th>
-                <th>Actions</th>
+               
+                
+                
             </tr>
         </thead>
         <tbody>
         {% for entity in entities %}
-            <tr>
-                <td><a href="{{ path('ligue_show', { 'id': entity.id }) }}">{{ entity.nomLigue }}</a></td>
-                <td>{{ entity.id }}</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('ligue_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('ligue_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
-                </td>
+            <tr style="height: 20px;" >
+                <td style="width:100%;">{{ entity.nomLigue }}</a></td>
+                
+               
             </tr>
         {% endfor %}
         </tbody>
     </table>
+
+ {% endblock %}      
+{% block body -%}
 
         <ul>
         <li>
@@ -38,4 +37,4 @@
             </a>
         </li>
     </ul>
-    {% endblock %}
+{% endblock %}

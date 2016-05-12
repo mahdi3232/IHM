@@ -30,9 +30,11 @@ class SaisonController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('AcmeChampionatBundle:Saison')->findAll();
+         $entities2 = $em->getRepository('AcmeChampionatBundle:Ligue')->find(1);
 
         return array(
             'entities' => $entities,
+            'entities2' => $entities2,
         );
     }
     /**
