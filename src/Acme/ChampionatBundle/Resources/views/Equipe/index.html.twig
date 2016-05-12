@@ -1,0 +1,51 @@
+{% extends '::base.html.twig' %}
+
+
+    
+{% block titre -%}
+<h4>Liste des équipes </h4>
+  {% endblock %}
+{% block panelbody -%}
+<div class="panel-body">
+   <h5> <p class="bg-info">Ligue :  {{ entity2.nomLigue }}<br>
+   Saison :  {{ entity3.Libelle }}<br></h5>
+       
+       </p>
+</div>
+{% endblock %}
+
+{% block tableau -%}
+ <table class="table table-hover" >
+        <thead>
+            <tr>
+                 <th>Logo</th>
+                <th>Nom équipe</th>
+               
+               
+            </tr>
+        </thead>
+        <tbody
+            
+        {% for entity in entities %}
+                <tr style="height: 20px;" >
+               
+                
+             
+                <td style="height: 20px; "> <img src={{asset('bootstrap/fonts/logoEquipe/')}}{{ entity.id }}.png> </td>
+                 <td style="width:85%;" ><br><a href="{{ path('equipe_show', { 'id': entity.id }) }}">{{ entity.nomEquipe }}</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+{% block body -%}
+
+        <ul>
+        <li>
+            <a href="{{ path('equipe_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+{% endblock %}
+  
