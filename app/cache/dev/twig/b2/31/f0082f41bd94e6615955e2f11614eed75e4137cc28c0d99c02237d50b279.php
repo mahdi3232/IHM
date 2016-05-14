@@ -10,6 +10,9 @@ class __TwigTemplate_b231f0082f41bd94e6615955e2f11614eed75e4137cc28c0d99c02237d5
         $this->parent = $this->env->loadTemplate("::base.html.twig");
 
         $this->blocks = array(
+            'titre' => array($this, 'block_titre'),
+            'panelbody' => array($this, 'block_panelbody'),
+            'tableau' => array($this, 'block_tableau'),
             'body' => array($this, 'block_body'),
         );
     }
@@ -24,87 +27,97 @@ class __TwigTemplate_b231f0082f41bd94e6615955e2f11614eed75e4137cc28c0d99c02237d5
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 3
-    public function block_body($context, array $blocks = array())
+    // line 4
+    public function block_titre($context, array $blocks = array())
     {
-        // line 4
-        echo "<h1>Saison list</h1>
+        // line 5
+        echo "<h4>Saison list </h4>
+  ";
+    }
 
-    <table class=\"records_list\">
+    // line 9
+    public function block_panelbody($context, array $blocks = array())
+    {
+        // line 10
+        echo "<div class=\"panel-body\">
+    <h5> <p class=\"bg-info\">Ligue :  ";
+        // line 11
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entities2"]) ? $context["entities2"] : $this->getContext($context, "entities2")), "nomLigue"), "html", null, true);
+        echo "</h5>
+       
+       </p>
+</div>
+";
+    }
+
+    // line 22
+    public function block_tableau($context, array $blocks = array())
+    {
+        // line 23
+        echo "<table class=\"table table-hover\" >
         <thead>
             <tr>
+                <th>Libelle</th>
                 <th>Datedebut</th>
                 <th>Datefin</th>
-                <th>Libelle</th>
-                <th>Id</th>
-                <th>Actions</th>
+                
+                
             </tr>
         </thead>
         <tbody>
         ";
-        // line 17
+        // line 34
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) ? $context["entities"] : $this->getContext($context, "entities")));
         foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
-            // line 18
-            echo "            <tr>
-                <td><a href=\"";
-            // line 19
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("saison_show", array("id" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id"))), "html", null, true);
-            echo "\">";
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "dateDebut"), "Y-m-d H:i:s"), "html", null, true);
+            // line 35
+            echo "            <tr style=\"height: 20px;\" >
+                <td style=\"width:25%;\">";
+            // line 36
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "libelle"), "html", null, true);
             echo "</a></td>
-                <td>";
-            // line 20
-            if ($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "dateFin")) {
-                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "dateFin"), "Y-m-d H:i:s"), "html", null, true);
+                <td style=\"width:35%;\" >";
+            // line 37
+            if ($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "dateDebut")) {
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "dateDebut"), "Y-m-d"), "html", null, true);
             }
             echo "</td>
-                <td>";
-            // line 21
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "libelle"), "html", null, true);
+                <td style=\"width:35%;\" >";
+            // line 38
+            if ($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "dateFin")) {
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "dateFin"), "Y-m-d"), "html", null, true);
+            }
             echo "</td>
-                <td>";
-            // line 22
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id"), "html", null, true);
-            echo "</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href=\"";
-            // line 26
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("saison_show", array("id" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id"))), "html", null, true);
-            echo "\">show</a>
-                    </li>
-                    <li>
-                        <a href=\"";
-            // line 29
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("saison_edit", array("id" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id"))), "html", null, true);
-            echo "\">edit</a>
-                    </li>
-                </ul>
-                </td>
+                
+               
             </tr>
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 35
+        // line 43
         echo "        </tbody>
     </table>
 
-        <ul>
+ ";
+    }
+
+    // line 52
+    public function block_body($context, array $blocks = array())
+    {
+        // line 54
+        echo "<ul>
         <li>
             <a href=\"";
-        // line 40
+        // line 56
         echo $this->env->getExtension('routing')->getPath("saison_new");
         echo "\">
                 Create a new entry
             </a>
         </li>
     </ul>
-    ";
+";
     }
 
     public function getTemplateName()
@@ -119,6 +132,6 @@ class __TwigTemplate_b231f0082f41bd94e6615955e2f11614eed75e4137cc28c0d99c02237d5
 
     public function getDebugInfo()
     {
-        return array (  101 => 40,  94 => 35,  82 => 29,  76 => 26,  69 => 22,  65 => 21,  59 => 20,  53 => 19,  50 => 18,  46 => 17,  31 => 4,  28 => 3,);
+        return array (  114 => 56,  110 => 54,  107 => 52,  100 => 43,  87 => 38,  81 => 37,  77 => 36,  74 => 35,  70 => 34,  57 => 23,  54 => 22,  45 => 11,  42 => 10,  39 => 9,  34 => 5,  31 => 4,);
     }
 }

@@ -46,19 +46,17 @@ class __TwigTemplate_b92fe8e7af22be0c3a50b7b161442dc9f3dd1fd141e4a6eddd3291a84b7
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id"), "html", null, true);
         echo "</td>
             </tr>
-            
-            <tr>
-                <th>Nom du Joueur</th>
+             <tr>
+                <th>Joueur</th>
                 <td>";
-        // line 19
+        // line 18
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "idJoueur"), "html", null, true);
         echo "</td>
             </tr>
-            
-             <tr>
+            <tr>
                 <th>Match</th>
                 <td>";
-        // line 24
+        // line 22
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "idMatch"), "html", null, true);
         echo "</td>
             </tr>
@@ -68,7 +66,7 @@ class __TwigTemplate_b92fe8e7af22be0c3a50b7b161442dc9f3dd1fd141e4a6eddd3291a84b7
         <ul class=\"record_actions\">
     <li>
         <a href=\"";
-        // line 31
+        // line 29
         echo $this->env->getExtension('routing')->getPath("butmarque");
         echo "\">
             Back to the list
@@ -76,14 +74,14 @@ class __TwigTemplate_b92fe8e7af22be0c3a50b7b161442dc9f3dd1fd141e4a6eddd3291a84b7
     </li>
     <li>
         <a href=\"";
-        // line 36
+        // line 34
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("butmarque_edit", array("id" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id"))), "html", null, true);
         echo "\">
             Edit
         </a>
     </li>
     <li>";
-        // line 40
+        // line 38
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form');
         echo "</li>
 </ul>
@@ -102,6 +100,6 @@ class __TwigTemplate_b92fe8e7af22be0c3a50b7b161442dc9f3dd1fd141e4a6eddd3291a84b7
 
     public function getDebugInfo()
     {
-        return array (  87 => 40,  80 => 36,  72 => 31,  62 => 24,  54 => 19,  46 => 14,  39 => 10,  31 => 4,  28 => 3,);
+        return array (  85 => 38,  78 => 34,  70 => 29,  60 => 22,  53 => 18,  46 => 14,  39 => 10,  31 => 4,  28 => 3,);
     }
 }

@@ -31,8 +31,15 @@ class MatcheController extends Controller
 
         $entities = $em->getRepository('AcmeChampionatBundle:Matche')->findAll();
 
+          $entityLigue = $em->getRepository('AcmeChampionatBundle:Ligue')->find(1);
+          $entitySaison = $em->getRepository('AcmeChampionatBundle:Saison')->find(1);
+          $entity4 = $em->getRepository('AcmeChampionatBundle:Equipe')->findAll();
+            
         return array(
             'entities' => $entities,
+            'entityLigue'  => $entityLigue,
+            'entitySaison ' => $entitySaison ,
+            'entity4' => $entity4,
         );
     }
     /**
