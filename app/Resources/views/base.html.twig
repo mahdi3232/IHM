@@ -101,11 +101,14 @@
 
                 <!-- COLONNE GAUCHE --> 
                 <div id="left"> 
-                    <h2>left</h2> 
+                   
+                    {% block left %}
+                     {% endblock %}
                 </div> 
                 <!-- COLONNE DROITE --> 
                 <div id="right"> 
-                    <h2>right</h2> 
+                  {% block right %}
+                     {% endblock %}
                 </div> 
 
                 <hr class="clear" /> 

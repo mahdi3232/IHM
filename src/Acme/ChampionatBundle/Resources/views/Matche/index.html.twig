@@ -1,99 +1,79 @@
 {% extends '::base.html.twig' %}
 
 {% block titre -%}
-Matche list
-
+<h4>Matche list
+</h4>
 {% endblock %}
 
 
 {% block panelbody -%}
-<div class="panel-body">
-    <p class="bg-info">Ligue: {{ entityLigue.nomLigue }}<br><br>
-        Saison: <br><br>
-        Journeé:
 
-    <form method="GET" action="{{ path('matche') }}">
-        <select class="form-control" style="width: 150px;" name="journee">
+
+<form method="GET" action="{{ path('matche') }}">
+    <div class="panel-body">
+        <p class="bg-info">Ligue: {{ entityLigue.nomLigue }}<br><br>
+            Saison: {{entity3.libelle}}<br><br>
+            Journeé:
+            <select class="form-control" style="width: 150px;" name="journee">
             {% for entity in libellejournne %}
-                <option id={{entity.id}} value={{entity.id}} >{{entity.libelle}}</option>     
+                    <option id={{entity.id}} value={{entity.id}} >{{entity.libelle}}</option>     
            {% endfor%}
                 </select>
                 <input class="btn btn-default" type="submit" value="Changer">
+            </p>
     </form>
-</p>
-            
-       
-      
-        
-Id journee selectionee:     {{urlidjournee}}
-    </div>
+
+
+</div>
 {% endblock %}
 
 
 
 {% block tableau -%}
- 
-    <table class="table table-hover" >
-        <thead>
-            <tr>
 
-                <th>ID matche dans deuxieme Journee </th>
+<table class="table table-hover" >
+    <thead>
+        <tr>
+            <th>Equipe 1</th>
+            <th>Date et Heure</th>
+            
+
+            <th>Equipe 2</th>
+
+        </tr>
+    </thead>
+    <tbody>
+    
+        {% for entity in entities %}
+
+
+        {% for listeMj in listeMatcheJournee %}
+                  {% if listeMj.id is sameas(entity.id) %}
+            <tr  >
+                <td width="40%">         
+                    <img src="{{asset('bootstrap/fonts/logoEquipeMinMatche/')}}{{ entity.idEquipe }}.png">{{ entity.idEquipe }}
+                </td>
+
+                <td width="20%"><a href="{{ path('matche_show', { 'id': entity.id }) }}">{{ entity.date|date('Y-m-d') }}</a>            
+                <a href="{{ path('matche_show', { 'id': entity.id }) }}">{{ entity.date|date('H:i') }}</a>
+                </td>
+                
+
+
+                <td width="40%"><img src="{{asset('bootstrap/fonts/logoEquipeMinMatche/')}}{{ entity.idEquipe2 }}.png">{{entity.idEquipe2}}</td>
 
             </tr>
-        </thead>
-        <tbody>
-            <tr  >
-                <td width="55%">  
-{% for entity in listeMatcheJournee %}
-{{entity.id}}
-{% endfor%}
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-hover" >
-            <thead>
-                <tr>
-                    <th>Equipe 1</th>
-                    <th>Date</th>
-                    <th>Heure</th>
-
-                    <th>Equipe 2</th>
-
-                </tr>
-            </thead>
-            <tbody>
-    {% set i = 0 %}
-        {% set j = 0 %}
-        {% for entity in entities %}
-          {% set i = i+1 %}
-                    <tr  >
-                        <td width="55%">           
- {% for entityeq in entity4 %}
-                  {% if entityeq.id is sameas(i) %}
-                                <img src={{asset('bootstrap/fonts/logoEquipeMin/')}}{{ entityeq.id }}.png>
-
                   {% endif %}
                 {% endfor%}
- {{ entity.idEquipe }}</td>
-
-                            <td width="10%"><a href="{{ path('matche_show', { 'id': entity.id }) }}">{{ entity.date|date('Y-m-d') }}</a></td>
-                            <td width="10%"><a href="{{ path('matche_show', { 'id': entity.id }) }}">{{ entity.date|date('H:i') }}</a></td>
 
 
-                            <td width="60%">
 
- {% set j = i+1 %}
- {% for entityeq in entity4 %}
- {% if entityeq.id is sameas(j) %}
-                                <img src={{asset('bootstrap/fonts/logoEquipeMin/')}}{{ entityeq.id }}.png>
-
-                  {% endif %}
-                {% endfor%}
-{{ entity.idEquipe2 }}</td>
-
-                        </tr>
         {% endfor %}
-                    </tbody>
-                </table>
+        </tbody>
+    </table>
+        
+       
     {% endblock %}
+ {% block left %}
+        <img src="{{asset('bootstrap/fonts/logoEquipeMin/')}}{{ 53 }}.jpg">
+                     {% endblock %}
