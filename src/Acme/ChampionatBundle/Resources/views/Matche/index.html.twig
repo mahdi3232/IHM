@@ -15,28 +15,24 @@ Matche list
     <form method="GET" action="{{ path('matche') }}">
         <select class="form-control" style="width: 150px;" name="journee">
             {% for entity in libellejournne %}
-                <option id={{entity.id}}  >{{entity.libelle}}</option>
-                
+                <option id={{entity.id}} value={{entity.id}} >{{entity.libelle}}</option>     
            {% endfor%}
-                <input class="btn btn-default" type="submit" value="sub">
-</form>
-
-            </select>
+                </select>
+                <input class="btn btn-default" type="submit" value="Changer">
+    </form>
+</p>
+            
        
       
-        {% set iUrl = 2 %} 
-        <a href="{{ path('matche', { 'idjournee':iUrl }) }}"> <input class="btn btn-default" type="button" value="Changer"></a>
-        </p>
-{{urlidjournee}}
+        
+Id journee selectionee:     {{urlidjournee}}
     </div>
 {% endblock %}
 
 
 
 {% block tableau -%}
- {% for entity in entities %}
-        {{ entity.listeJournee }}
-        {% endfor%}
+ 
     <table class="table table-hover" >
         <thead>
             <tr>

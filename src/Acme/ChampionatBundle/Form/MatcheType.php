@@ -30,13 +30,7 @@ class MatcheType extends AbstractType {
                                     ))
                 
         ;
-         $builder->add('listeJournne', 'choice', array(
-            // Shows "Male" to the user, returns "m" when selected
-            'choices' => array('testEval' => 'Test', 'Examen' => 'Examen','ds'=>'DS'),
-            'multiple' => false,
-            // before 2.7, this option didn't actually exist, but the
-            // behavior was equivalent to setting this to false in 2.7.
-                ));
+       
     }
 
     /**

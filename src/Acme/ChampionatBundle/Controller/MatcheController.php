@@ -31,11 +31,11 @@ class MatcheController extends Controller {
         $entitiesjournee = $em->getRepository('AcmeChampionatBundle:Journee')->findAll();
         $entityLigue = $em->getRepository('AcmeChampionatBundle:Ligue')->find(1);
         $entitySaison = $em->getRepository('AcmeChampionatBundle:Saison')->find(1);
-        $entity4 = $em->getRepository('AcmeChampionatBundle:Equipe')->findAll();
+        $entityAllEquipe = $em->getRepository('AcmeChampionatBundle:Equipe')->findAll();
         $request = Request::createFromGlobals();
         $idJourneeUrl=$request->query->get('journee');
 
-        //$entityjournee=$em->getRepository('AcmeChampionatBundle:Journee')->findAll();
+      
 
 
         /* exmple pour le test */
@@ -52,7 +52,7 @@ class MatcheController extends Controller {
             'entities' => $entities,
             'entityLigue' => $entityLigue,
             'entitySaison ' => $entitySaison,
-            'entity4' => $entity4,
+            'entity4' => $entityAllEquipe,
             'listeMatcheJournee' => $dqlj,
             'libellejournne' => $entitiesjournee,
             'urlidjournee'=>$idJourneeUrl,
