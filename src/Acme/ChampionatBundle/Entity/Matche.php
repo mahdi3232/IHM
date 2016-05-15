@@ -58,6 +58,20 @@ class Matche {
      */
     private $idEquipe2;
 
+     /**
+     * @var string
+     */
+    private $listeJournee;
+    public function getListeJournee() {
+        return $this->listeJournee;
+    }
+
+    public function setListeJournee($listeJournee) {
+        $this->listeJournee = $listeJournee;
+    }
+
+    
+  
     /**
      * Set date
      *

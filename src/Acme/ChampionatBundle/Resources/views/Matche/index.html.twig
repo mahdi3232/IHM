@@ -1,66 +1,103 @@
 {% extends '::base.html.twig' %}
 
 {% block titre -%}
-Joueur list
+Matche list
 
 {% endblock %}
 
 
 {% block panelbody -%}
 <div class="panel-body">
-    <p class="bg-success">Ligue: {{ entityLigue.nomLigue }}<br>
-        Saison: <br>
-        Journeé:<br></p>
-</div>
+    <p class="bg-info">Ligue: {{ entityLigue.nomLigue }}<br><br>
+        Saison: <br><br>
+        Journeé:
+
+    <form method="GET" action="{{ path('matche') }}">
+        <select class="form-control" style="width: 150px;" name="journee">
+            {% for entity in libellejournne %}
+                <option id={{entity.id}}  >{{entity.libelle}}</option>
+                
+           {% endfor%}
+                <input class="btn btn-default" type="submit" value="sub">
+</form>
+
+            </select>
+       
+      
+        {% set iUrl = 2 %} 
+        <a href="{{ path('matche', { 'idjournee':iUrl }) }}"> <input class="btn btn-default" type="button" value="Changer"></a>
+        </p>
+{{urlidjournee}}
+    </div>
 {% endblock %}
 
 
 
-
 {% block tableau -%}
-<table class="table table-hover" >
-    <thead>
-        <tr>
-            <th>Equipe 1</th>
-            <th>Date</th>
-            <th>Heure</th>
+ {% for entity in entities %}
+        {{ entity.listeJournee }}
+        {% endfor%}
+    <table class="table table-hover" >
+        <thead>
+            <tr>
 
-            <th>Equipe 2</th>
+                <th>ID matche dans deuxieme Journee </th>
 
-        </tr>
-    </thead>
-    <tbody>
+            </tr>
+        </thead>
+        <tbody>
+            <tr  >
+                <td width="55%">  
+{% for entity in listeMatcheJournee %}
+{{entity.id}}
+{% endfor%}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-hover" >
+            <thead>
+                <tr>
+                    <th>Equipe 1</th>
+                    <th>Date</th>
+                    <th>Heure</th>
+
+                    <th>Equipe 2</th>
+
+                </tr>
+            </thead>
+            <tbody>
     {% set i = 0 %}
         {% set j = 0 %}
         {% for entity in entities %}
           {% set i = i+1 %}
-            <tr class="info" >
-                <td width="40%">           
+                    <tr  >
+                        <td width="55%">           
  {% for entityeq in entity4 %}
                   {% if entityeq.id is sameas(i) %}
-                        <img src={{asset('bootstrap/fonts/logoEquipeMin/')}}{{ entityeq.id }}.png>
+                                <img src={{asset('bootstrap/fonts/logoEquipeMin/')}}{{ entityeq.id }}.png>
 
                   {% endif %}
                 {% endfor%}
  {{ entity.idEquipe }}</td>
 
-                    <td width="10%"><a href="{{ path('matche_show', { 'id': entity.id }) }}">{{ entity.date|date('Y-m-d') }}</a></td>
-                    <td width="10%"><a href="{{ path('matche_show', { 'id': entity.id }) }}">{{ entity.date|date('H:i') }}</a></td>
+                            <td width="10%"><a href="{{ path('matche_show', { 'id': entity.id }) }}">{{ entity.date|date('Y-m-d') }}</a></td>
+                            <td width="10%"><a href="{{ path('matche_show', { 'id': entity.id }) }}">{{ entity.date|date('H:i') }}</a></td>
 
 
-                    <td width="40%">
+                            <td width="60%">
 
  {% set j = i+1 %}
  {% for entityeq in entity4 %}
  {% if entityeq.id is sameas(j) %}
-                        <img src={{asset('bootstrap/fonts/logoEquipeMin/')}}{{ entityeq.id }}.png>
+                                <img src={{asset('bootstrap/fonts/logoEquipeMin/')}}{{ entityeq.id }}.png>
 
                   {% endif %}
                 {% endfor%}
 {{ entity.idEquipe2 }}</td>
 
-                </tr>
+                        </tr>
         {% endfor %}
-            </tbody>
-        </table>
+                    </tbody>
+                </table>
     {% endblock %}
