@@ -25,15 +25,25 @@ class MatcheController extends Controller {
      * @Template()
      */
     public function indexAction() {
+
         $request = Request::createFromGlobals();
+
         $em = $this->getDoctrine()->getManager();
         $idSaison = $request->query->get('saison');
         $entities = $em->getRepository('AcmeChampionatBundle:Matche')->findAll();
+
+        $entitiesjournee = $em->getRepository('AcmeChampionatBundle:Journee')->findAll();
+        $entityLigue = $em->getRepository('AcmeChampionatBundle:Ligue')->find(1);
+        $entity3 = $em->getRepository('AcmeChampionatBundle:Saison')->find(1);
+        $entityAllEquipe = $em->getRepository('AcmeChampionatBundle:Equipe')->findAll();
+        $request = Request::createFromGlobals();
+
         $entitiesjournee = $em->getRepository('AcmeChampionatBundle:Journee')->findAll($idSaison);
         $entityLigue = $em->getRepository('AcmeChampionatBundle:Ligue')->find(1);
         $entity3 = $em->getRepository('AcmeChampionatBundle:Saison')->find(1);
         $entityAllEquipe = $em->getRepository('AcmeChampionatBundle:Equipe')->findAll();
-        
+
+
         $idJourneeUrl = $request->query->get('journee');
 
 
@@ -68,6 +78,7 @@ class MatcheController extends Controller {
                 ->andWhere('journee1.id=match1.idJournee')
                 ->getQuery()
                 ->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY);
+
         return array(
             'entities' => $entities,
             'entityLigue' => $entityLigue,

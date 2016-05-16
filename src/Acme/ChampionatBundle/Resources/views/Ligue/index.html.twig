@@ -19,7 +19,11 @@
         <tbody>
         {% for entity in entities %}
             <tr style="height: 20px;" >
+<<<<<<< HEAD
+                <td style="width:100%;"><a href="{{ path('saison', { 'ligue': entity.id }) }}">{{ entity.nomLigue }}</a></td>
+=======
                 <td style="width:100%;">{{ entity.nomLigue }}</a></td>
+>>>>>>> 6b27b8aa53ac30b91722819b2a3b59a209fb9eb6
                 
                
             </tr>
@@ -30,6 +34,9 @@
  {% endblock %}      
 {% block body -%}
 
+<<<<<<< HEAD
+    
+=======
         <ul>
         <li>
             <a href="{{ path('ligue_new') }}">
@@ -37,4 +44,5 @@
             </a>
         </li>
     </ul>
+>>>>>>> 6b27b8aa53ac30b91722819b2a3b59a209fb9eb6
 {% endblock %}

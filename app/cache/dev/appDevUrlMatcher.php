@@ -390,9 +390,13 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // acme_championat_default_index
-        if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'acme_championat_default_index')), array (  '_controller' => 'Acme\\ChampionatBundle\\Controller\\DefaultController::indexAction',));
+        // home
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'home');
+            }
+
+            return array (  '_controller' => 'Acme\\ChampionatBundle\\Controller\\DefaultController::indexAction',  '_route' => 'home',);
         }
 
         if (0 === strpos($pathinfo, '/equipe')) {

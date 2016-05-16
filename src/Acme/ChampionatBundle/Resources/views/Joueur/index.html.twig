@@ -11,16 +11,20 @@ Joueur list
             <th>Nomprenom</th>
             <th>Datenaissance</th>
             <th>Nationalite</th>
+
             <th>Id</th>
             <th>Actions</th>
+
         </tr>
     </thead>
     <tbody>
         {% for entity in entities %}
+             {% if (entity.idEquipe == id ) %}
             <tr>
                 <td><a href="{{ path('joueur_show', { 'id': entity.id }) }}">{{ entity.nomPrenom }}</a></td>
-                <td>{% if entity.datenaissance %}{{ entity.datenaissance|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.datenaissance %}{{ entity.datenaissance|date('Y-m-d ') }}{% endif %}</td>
                 <td>{{ entity.nationalite }}</td>
+
                 <td>{{ entity.id }}</td>
                 <td>
                     <ul>
@@ -32,13 +36,14 @@ Joueur list
                         </li>
                     </ul>
                 </td>
+
             </tr>
+            {% endif %}
         {% endfor %}
         </tbody>
         </table>
 {% endblock %}
 {% block body -%}
-
 
 
 
@@ -51,4 +56,5 @@ Joueur list
             </a>
         </li>
     </ul>
+
     {% endblock %}

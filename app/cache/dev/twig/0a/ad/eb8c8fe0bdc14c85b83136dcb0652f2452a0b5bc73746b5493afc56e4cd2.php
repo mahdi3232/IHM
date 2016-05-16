@@ -16,6 +16,8 @@ class __TwigTemplate_0aadeb8c8fe0bdc14c85b83136dcb0652f2452a0b5bc73746b5493afc56
             'panelbody' => array($this, 'block_panelbody'),
             'tableau' => array($this, 'block_tableau'),
             'body' => array($this, 'block_body'),
+            'left' => array($this, 'block_left'),
+            'right' => array($this, 'block_right'),
             'javascripts' => array($this, 'block_javascripts'),
         );
     }
@@ -66,26 +68,41 @@ class __TwigTemplate_0aadeb8c8fe0bdc14c85b83136dcb0652f2452a0b5bc73746b5493afc56
                             <span class=\"icon-bar\"></span>
                             <span class=\"icon-bar\"></span>
                         </button>
-                        <a class=\"navbar-brand\" href=\"#\">Home</a>
+                        <a class=\"navbar-brand\" href=\"";
+        // line 44
+        echo $this->env->getExtension('routing')->getPath("home");
+        echo "\">Home</a>
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">
                        <ul class=\"nav navbar-nav\">
-                            <li class=\"active\"><a href=\"../saison\">Saison<span class=\"sr-only\">(current)</span></a></li>
-                            <li><a href=\"../matche\">Match</a></li>
+                            <li class=\"active\"><a href=\"";
+        // line 50
+        echo $this->env->getExtension('routing')->getPath("saison");
+        echo "\">Saison<span class=\"sr-only\">(current)</span></a></li>
+                            <li><a href=\"";
+        // line 51
+        echo $this->env->getExtension('routing')->getPath("matche");
+        echo "\">Match</a></li>
                             <li class=\"dropdown\">
-                                <a href=\"../journee\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Journées <span class=\"caret\"></span></a>
+                                <a href=\"";
+        // line 53
+        echo $this->env->getExtension('routing')->getPath("journee");
+        echo "\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Journées <span class=\"caret\"></span></a>
                                 <ul class=\"dropdown-menu\">
-                                    <li><a href=\"#\">Action</a></li>
-                                    <li><a href=\"#\">Another action</a></li>
-                                    <li><a href=\"#\">Something else here</a></li>
-                                    <li role=\"separator\" class=\"divider\"></li>
-                                    <li><a href=\"#\">Separated link</a></li>
-                                    <li role=\"separator\" class=\"divider\"></li>
-                                    <li><a href=\"#\">One more separated link</a></li>
+                                    <li><a href=\"";
+        // line 55
+        echo $this->env->getExtension('routing')->getPath("journee");
+        echo "\">Lister</a></li>
+                                   
+                                  
                                 </ul>
                             </li>
+                             <li><a href=\"";
+        // line 60
+        echo $this->env->getExtension('routing')->getPath("equipe");
+        echo "\">Equipe</a></li>
                         </ul>
                         <form class=\"navbar-form navbar-left\" role=\"search\">
                             <div class=\"form-group\">
@@ -104,41 +121,48 @@ class __TwigTemplate_0aadeb8c8fe0bdc14c85b83136dcb0652f2452a0b5bc73746b5493afc56
 
             <div id=\"content_float\"> 
                 <div id=\"content\"> 
-
+                        
                     <div class=\"panel panel-info\">
                         <div class=\"panel-heading\">
                             ";
-        // line 85
+        // line 82
         $this->displayBlock('titre', $context, $blocks);
-        // line 87
+        // line 85
         echo "                            </div>
                         </div>
 
                 ";
-        // line 90
+        // line 88
         $this->displayBlock('panelbody', $context, $blocks);
-        // line 92
+        // line 90
         echo "
                         ";
-        // line 93
+        // line 91
         $this->displayBlock('tableau', $context, $blocks);
-        // line 97
+        // line 95
         echo "
                      ";
-        // line 98
+        // line 96
         $this->displayBlock('body', $context, $blocks);
-        // line 102
+        // line 100
         echo "                    </div>
                 </div>
 
                 <!-- COLONNE GAUCHE --> 
                 <div id=\"left\"> 
-                    <h2>left</h2> 
-                </div> 
+                   
+                    ";
+        // line 106
+        $this->displayBlock('left', $context, $blocks);
+        // line 109
+        echo "                </div> 
                 <!-- COLONNE DROITE --> 
                 <div id=\"right\"> 
-                    <h2>right</h2> 
-                </div> 
+                  ";
+        // line 112
+        $this->displayBlock('right', $context, $blocks);
+        // line 115
+        echo "                </div> 
 
                 <hr class=\"clear\" /> 
 
@@ -153,9 +177,9 @@ class __TwigTemplate_0aadeb8c8fe0bdc14c85b83136dcb0652f2452a0b5bc73746b5493afc56
 
 
     ";
-        // line 126
+        // line 129
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 132
+        // line 137
         echo "    </body>
 </html>
 ";
@@ -164,7 +188,7 @@ class __TwigTemplate_0aadeb8c8fe0bdc14c85b83136dcb0652f2452a0b5bc73746b5493afc56
     // line 5
     public function block_title($context, array $blocks = array())
     {
-        echo "Welcome!";
+        echo "ftf!";
     }
 
     // line 6
@@ -201,52 +225,81 @@ class __TwigTemplate_0aadeb8c8fe0bdc14c85b83136dcb0652f2452a0b5bc73746b5493afc56
         ";
     }
 
-    // line 85
+    // line 82
     public function block_titre($context, array $blocks = array())
     {
-        // line 86
-        echo "                                ";
+        // line 83
+        echo "                                federation tunisienne de football
+                                ";
     }
 
-    // line 90
+    // line 88
     public function block_panelbody($context, array $blocks = array())
     {
     }
 
-    // line 93
+    // line 91
     public function block_tableau($context, array $blocks = array())
     {
-        // line 94
+        // line 92
         echo "
 
                         ";
     }
 
-    // line 98
+    // line 96
     public function block_body($context, array $blocks = array())
     {
-        // line 99
+        // line 97
         echo "
 
                ";
     }
 
-    // line 126
+    // line 106
+    public function block_left($context, array $blocks = array())
+    {
+        // line 107
+        echo "                    <img src=\"";
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/fonts/logoEquipeMin/left.jpg"), "html", null, true);
+        echo "\">
+                     ";
+    }
+
+    // line 112
+    public function block_right($context, array $blocks = array())
+    {
+        // line 113
+        echo "                     <img src=\"";
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/fonts/logoEquipeMin/right.jpg"), "html", null, true);
+        echo "\">   
+                     ";
+    }
+
+    // line 129
     public function block_javascripts($context, array $blocks = array())
     {
-        // line 127
+        // line 130
         echo "        <script src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/js/bootstrap.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 128
+        // line 131
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 129
+        // line 132
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/js/npm.js"), "html", null, true);
         echo "\"></script>
-
+<script src=\"";
+        // line 133
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"), "html", null, true);
+        echo "\"></script>
+ <!-- Latest compiled and minified JavaScript -->
+ <script src=\"";
+        // line 135
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"), "html", null, true);
+        echo "\"></script>
     ";
     }
 
@@ -262,6 +315,6 @@ class __TwigTemplate_0aadeb8c8fe0bdc14c85b83136dcb0652f2452a0b5bc73746b5493afc56
 
     public function getDebugInfo()
     {
-        return array (  247 => 129,  243 => 128,  238 => 127,  235 => 126,  229 => 99,  226 => 98,  220 => 94,  217 => 93,  212 => 90,  208 => 86,  205 => 85,  199 => 16,  195 => 15,  188 => 11,  184 => 10,  179 => 8,  174 => 7,  171 => 6,  165 => 5,  159 => 132,  157 => 126,  131 => 102,  129 => 98,  126 => 97,  124 => 93,  121 => 92,  119 => 90,  114 => 87,  112 => 85,  55 => 31,  38 => 18,  36 => 6,  32 => 5,  26 => 1,);
+        return array (  301 => 135,  296 => 133,  292 => 132,  288 => 131,  283 => 130,  280 => 129,  273 => 113,  270 => 112,  263 => 107,  260 => 106,  254 => 97,  251 => 96,  245 => 92,  242 => 91,  237 => 88,  232 => 83,  229 => 82,  223 => 16,  219 => 15,  212 => 11,  208 => 10,  203 => 8,  198 => 7,  195 => 6,  189 => 5,  183 => 137,  181 => 129,  165 => 115,  163 => 112,  158 => 109,  156 => 106,  148 => 100,  146 => 96,  143 => 95,  141 => 91,  138 => 90,  136 => 88,  131 => 85,  129 => 82,  104 => 60,  96 => 55,  91 => 53,  86 => 51,  82 => 50,  73 => 44,  57 => 31,  40 => 18,  38 => 6,  34 => 5,  28 => 1,);
     }
 }
