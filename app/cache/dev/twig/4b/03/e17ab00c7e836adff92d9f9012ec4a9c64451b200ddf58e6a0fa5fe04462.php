@@ -71,6 +71,7 @@ class __TwigTemplate_4b03e17ab00c7e836adff92d9f9012ec4a9c64451b200ddf58e6a0fa5fe
         $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) ? $context["entities"] : $this->getContext($context, "entities")));
         foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
             // line 35
+<<<<<<< HEAD
             echo "             ";
             if (($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "idLigue") == (isset($context["id"]) ? $context["id"] : $this->getContext($context, "id")))) {
                 // line 36
@@ -100,20 +101,65 @@ class __TwigTemplate_4b03e17ab00c7e836adff92d9f9012ec4a9c64451b200ddf58e6a0fa5fe
             }
             // line 44
             echo "        ";
+=======
+            echo "            <tr style=\"height: 20px;\" >
+                <td style=\"width:25%;\">";
+            // line 36
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "libelle"), "html", null, true);
+            echo "</a></td>
+                <td style=\"width:35%;\" >";
+            // line 37
+            if ($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "dateDebut")) {
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "dateDebut"), "Y-m-d"), "html", null, true);
+            }
+            echo "</td>
+                <td style=\"width:35%;\" >";
+            // line 38
+            if ($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "dateFin")) {
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "dateFin"), "Y-m-d"), "html", null, true);
+            }
+            echo "</td>
+                
+               
+            </tr>
+        ";
+>>>>>>> 6b27b8aa53ac30b91722819b2a3b59a209fb9eb6
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
+<<<<<<< HEAD
         // line 45
+=======
+        // line 43
+>>>>>>> 6b27b8aa53ac30b91722819b2a3b59a209fb9eb6
         echo "        </tbody>
     </table>
 
  ";
     }
 
+<<<<<<< HEAD
     // line 54
     public function block_body($context, array $blocks = array())
     {
+=======
+    // line 52
+    public function block_body($context, array $blocks = array())
+    {
+        // line 54
+        echo "<ul>
+        <li>
+            <a href=\"";
+        // line 56
+        echo $this->env->getExtension('routing')->getPath("saison_new");
+        echo "\">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+";
+>>>>>>> 6b27b8aa53ac30b91722819b2a3b59a209fb9eb6
     }
 
     public function getTemplateName()
@@ -128,6 +174,10 @@ class __TwigTemplate_4b03e17ab00c7e836adff92d9f9012ec4a9c64451b200ddf58e6a0fa5fe
 
     public function getDebugInfo()
     {
+<<<<<<< HEAD
         return array (  115 => 54,  108 => 45,  102 => 44,  92 => 39,  86 => 38,  80 => 37,  77 => 36,  74 => 35,  70 => 34,  57 => 23,  54 => 22,  45 => 11,  42 => 10,  39 => 9,  34 => 5,  31 => 4,);
+=======
+        return array (  114 => 56,  110 => 54,  107 => 52,  100 => 43,  87 => 38,  81 => 37,  77 => 36,  74 => 35,  70 => 34,  57 => 23,  54 => 22,  45 => 11,  42 => 10,  39 => 9,  34 => 5,  31 => 4,);
+>>>>>>> 6b27b8aa53ac30b91722819b2a3b59a209fb9eb6
     }
 }

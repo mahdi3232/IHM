@@ -27,7 +27,11 @@
         <tbody>
         {% for entity in entities %}
             <tr style="height: 20px;" >
+<<<<<<< HEAD
                 <td style="width:25%;"><a href="{{ path('matche', { 'equipe': entity.id }) }}">{{ entity.libelle }}</a></td>
+=======
+                <td style="width:25%;"><a href="{{ path('journee_show', { 'id': entity.id }) }}">{{ entity.libelle }}</a></td>
+>>>>>>> 6b27b8aa53ac30b91722819b2a3b59a209fb9eb6
                 <td style="width:35%;" >{% if entity.dateDebut %}{{ entity.dateDebut|date('Y-m-d') }}{% endif %}</td>
                 <td style="width:35%;" >{% if entity.dateFin %}{{ entity.dateFin|date('Y-m-d') }}{% endif %}</td>
                 

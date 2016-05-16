@@ -55,10 +55,15 @@ class __TwigTemplate_dda30db7cba3c7374de05bdca2b39f6151881f94ac3a8cfdfb8bfb9ed3b
         foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
             // line 21
             echo "            <tr style=\"height: 20px;\" >
+<<<<<<< HEAD
                 <td style=\"width:100%;\"><a href=\"";
             // line 22
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("saison", array("ligue" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id"))), "html", null, true);
             echo "\">";
+=======
+                <td style=\"width:100%;\">";
+            // line 22
+>>>>>>> 6b27b8aa53ac30b91722819b2a3b59a209fb9eb6
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "nomLigue"), "html", null, true);
             echo "</a></td>
                 
@@ -79,6 +84,21 @@ class __TwigTemplate_dda30db7cba3c7374de05bdca2b39f6151881f94ac3a8cfdfb8bfb9ed3b
     // line 31
     public function block_body($context, array $blocks = array())
     {
+<<<<<<< HEAD
+=======
+        // line 33
+        echo "<ul>
+        <li>
+            <a href=\"";
+        // line 35
+        echo $this->env->getExtension('routing')->getPath("ligue_new");
+        echo "\">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+";
+>>>>>>> 6b27b8aa53ac30b91722819b2a3b59a209fb9eb6
     }
 
     public function getTemplateName()
@@ -93,6 +113,10 @@ class __TwigTemplate_dda30db7cba3c7374de05bdca2b39f6151881f94ac3a8cfdfb8bfb9ed3b
 
     public function getDebugInfo()
     {
+<<<<<<< HEAD
         return array (  80 => 31,  73 => 27,  60 => 22,  57 => 21,  53 => 20,  41 => 10,  38 => 9,  33 => 3,  30 => 2,);
+=======
+        return array (  85 => 35,  81 => 33,  78 => 31,  71 => 27,  60 => 22,  57 => 21,  53 => 20,  41 => 10,  38 => 9,  33 => 3,  30 => 2,);
+>>>>>>> 6b27b8aa53ac30b91722819b2a3b59a209fb9eb6
     }
 }

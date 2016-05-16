@@ -24,7 +24,11 @@ class __TwigTemplate_a2c340f8dfdc27fd135cbd47d7272af8f7b494afa030274131db9f18d28
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 3
+<<<<<<< HEAD:app/cache/dev/twig/a2/c3/40f8dfdc27fd135cbd47d7272af8f7b494afa030274131db9f18d28ea9e7.php
         $context["__internal_b2522fe5300793775427fe65d7e997c22d00b190ed9760ed7f454dd8be75d11c"] = $this;
+=======
+        $context["__internal_2096112d08b056e1d9330023f7b5bfa927bc2b82ee5e8326012fe044203973e2"] = $this;
+>>>>>>> 6b27b8aa53ac30b91722819b2a3b59a209fb9eb6:app/cache/dev/twig/07/d3/6631ec645698c738bd1fc2b65a09f56eaac3afe19dfd7cc4552647cc43be.php
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
@@ -84,7 +88,11 @@ class __TwigTemplate_a2c340f8dfdc27fd135cbd47d7272af8f7b494afa030274131db9f18d28
             echo "</code></td>
                 <td><code>";
             // line 34
+<<<<<<< HEAD:app/cache/dev/twig/a2/c3/40f8dfdc27fd135cbd47d7272af8f7b494afa030274131db9f18d28ea9e7.php
             echo $context["__internal_b2522fe5300793775427fe65d7e997c22d00b190ed9760ed7f454dd8be75d11c"]->getdisplay_listener((isset($context["listener"]) ? $context["listener"] : $this->getContext($context, "listener")));
+=======
+            echo $context["__internal_2096112d08b056e1d9330023f7b5bfa927bc2b82ee5e8326012fe044203973e2"]->getdisplay_listener((isset($context["listener"]) ? $context["listener"] : $this->getContext($context, "listener")));
+>>>>>>> 6b27b8aa53ac30b91722819b2a3b59a209fb9eb6:app/cache/dev/twig/07/d3/6631ec645698c738bd1fc2b65a09f56eaac3afe19dfd7cc4552647cc43be.php
             echo "</code></td>
             </tr>
         ";
@@ -122,7 +130,11 @@ class __TwigTemplate_a2c340f8dfdc27fd135cbd47d7272af8f7b494afa030274131db9f18d28
                 echo "</code></td>
                     <td><code>";
                 // line 51
+<<<<<<< HEAD:app/cache/dev/twig/a2/c3/40f8dfdc27fd135cbd47d7272af8f7b494afa030274131db9f18d28ea9e7.php
                 echo $context["__internal_b2522fe5300793775427fe65d7e997c22d00b190ed9760ed7f454dd8be75d11c"]->getdisplay_listener($this->getAttribute((isset($context["listeners"]) ? $context["listeners"] : $this->getContext($context, "listeners")), (isset($context["listener"]) ? $context["listener"] : $this->getContext($context, "listener")), array(), "array"));
+=======
+                echo $context["__internal_2096112d08b056e1d9330023f7b5bfa927bc2b82ee5e8326012fe044203973e2"]->getdisplay_listener($this->getAttribute((isset($context["listeners"]) ? $context["listeners"] : $this->getContext($context, "listeners")), (isset($context["listener"]) ? $context["listener"] : $this->getContext($context, "listener")), array(), "array"));
+>>>>>>> 6b27b8aa53ac30b91722819b2a3b59a209fb9eb6:app/cache/dev/twig/07/d3/6631ec645698c738bd1fc2b65a09f56eaac3afe19dfd7cc4552647cc43be.php
                 echo "</code></td>
                 </tr>
             ";

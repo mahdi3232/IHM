@@ -28,12 +28,14 @@ class SaisonController extends Controller {
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('AcmeChampionatBundle:Saison')->findAll();
+
         $entities2 = $em->getRepository('AcmeChampionatBundle:Ligue')->find(1);
-        
+
         $request = Request::createFromGlobals();
         $idJourneeUrl = $request->query->get('ligue');
 
         $id = $em->getRepository('AcmeChampionatBundle:Ligue')->find($idJourneeUrl);
+
 
         return array(
             'entities' => $entities,

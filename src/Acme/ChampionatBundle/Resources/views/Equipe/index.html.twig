@@ -33,7 +33,11 @@
                 
              
                 <td style="height: 20%;width:50px; "> <img src={{asset('bootstrap/fonts/logoEquipeMin/')}}{{ entity.id }}.png> </td>
+
                  <td style="width:50px;" ><br><a href="{{ path('joueur', { 'equipe': entity.id }) }}">{{ entity.nomEquipe }}</a></td>
+
+                 <td style="width:50px;" ><br><a href="{{ path('equipe_show', { 'id': entity.id }) }}">{{ entity.nomEquipe }}</a></td>
+
             </tr>
         {% endfor %}
         </tbody>

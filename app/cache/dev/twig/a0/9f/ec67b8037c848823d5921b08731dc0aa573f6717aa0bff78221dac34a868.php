@@ -76,7 +76,11 @@ class __TwigTemplate_a09fec67b8037c848823d5921b08731dc0aa573f6717aa0bff78221dac3
             echo "            <tr style=\"height: 20px;\" >
                 <td style=\"width:25%;\"><a href=\"";
             // line 30
+<<<<<<< HEAD
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("matche", array("equipe" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id"))), "html", null, true);
+=======
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("journee_show", array("id" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id"))), "html", null, true);
+>>>>>>> 6b27b8aa53ac30b91722819b2a3b59a209fb9eb6
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "libelle"), "html", null, true);
             echo "</a></td>

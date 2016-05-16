@@ -16,8 +16,11 @@ class __TwigTemplate_0aadeb8c8fe0bdc14c85b83136dcb0652f2452a0b5bc73746b5493afc56
             'panelbody' => array($this, 'block_panelbody'),
             'tableau' => array($this, 'block_tableau'),
             'body' => array($this, 'block_body'),
+<<<<<<< HEAD
             'left' => array($this, 'block_left'),
             'right' => array($this, 'block_right'),
+=======
+>>>>>>> 6b27b8aa53ac30b91722819b2a3b59a209fb9eb6
             'javascripts' => array($this, 'block_javascripts'),
         );
     }
@@ -82,7 +85,14 @@ class __TwigTemplate_0aadeb8c8fe0bdc14c85b83136dcb0652f2452a0b5bc73746b5493afc56
                                     <li><a href=\"#\">Action</a></li>
                                     <li><a href=\"#\">Another action</a></li>
                                     <li><a href=\"#\">Something else here</a></li>
+<<<<<<< HEAD
                                   
+=======
+                                    <li role=\"separator\" class=\"divider\"></li>
+                                    <li><a href=\"#\">Separated link</a></li>
+                                    <li role=\"separator\" class=\"divider\"></li>
+                                    <li><a href=\"#\">One more separated link</a></li>
+>>>>>>> 6b27b8aa53ac30b91722819b2a3b59a209fb9eb6
                                 </ul>
                             </li>
                         </ul>
@@ -107,13 +117,20 @@ class __TwigTemplate_0aadeb8c8fe0bdc14c85b83136dcb0652f2452a0b5bc73746b5493afc56
                     <div class=\"panel panel-info\">
                         <div class=\"panel-heading\">
                             ";
+<<<<<<< HEAD
         // line 82
         $this->displayBlock('titre', $context, $blocks);
         // line 84
+=======
+        // line 85
+        $this->displayBlock('titre', $context, $blocks);
+        // line 87
+>>>>>>> 6b27b8aa53ac30b91722819b2a3b59a209fb9eb6
         echo "                            </div>
                         </div>
 
                 ";
+<<<<<<< HEAD
         // line 87
         $this->displayBlock('panelbody', $context, $blocks);
         // line 89
@@ -127,11 +144,27 @@ class __TwigTemplate_0aadeb8c8fe0bdc14c85b83136dcb0652f2452a0b5bc73746b5493afc56
         // line 95
         $this->displayBlock('body', $context, $blocks);
         // line 99
+=======
+        // line 90
+        $this->displayBlock('panelbody', $context, $blocks);
+        // line 92
+        echo "
+                        ";
+        // line 93
+        $this->displayBlock('tableau', $context, $blocks);
+        // line 97
+        echo "
+                     ";
+        // line 98
+        $this->displayBlock('body', $context, $blocks);
+        // line 102
+>>>>>>> 6b27b8aa53ac30b91722819b2a3b59a209fb9eb6
         echo "                    </div>
                 </div>
 
                 <!-- COLONNE GAUCHE --> 
                 <div id=\"left\"> 
+<<<<<<< HEAD
                    
                     ";
         // line 105
@@ -145,6 +178,14 @@ class __TwigTemplate_0aadeb8c8fe0bdc14c85b83136dcb0652f2452a0b5bc73746b5493afc56
         $this->displayBlock('right', $context, $blocks);
         // line 112
         echo "                </div> 
+=======
+                    <h2>left</h2> 
+                </div> 
+                <!-- COLONNE DROITE --> 
+                <div id=\"right\"> 
+                    <h2>right</h2> 
+                </div> 
+>>>>>>> 6b27b8aa53ac30b91722819b2a3b59a209fb9eb6
 
                 <hr class=\"clear\" /> 
 
@@ -161,7 +202,11 @@ class __TwigTemplate_0aadeb8c8fe0bdc14c85b83136dcb0652f2452a0b5bc73746b5493afc56
     ";
         // line 126
         $this->displayBlock('javascripts', $context, $blocks);
+<<<<<<< HEAD
         // line 134
+=======
+        // line 132
+>>>>>>> 6b27b8aa53ac30b91722819b2a3b59a209fb9eb6
         echo "    </body>
 </html>
 ";
@@ -207,6 +252,7 @@ class __TwigTemplate_0aadeb8c8fe0bdc14c85b83136dcb0652f2452a0b5bc73746b5493afc56
         ";
     }
 
+<<<<<<< HEAD
     // line 82
     public function block_titre($context, array $blocks = array())
     {
@@ -215,28 +261,53 @@ class __TwigTemplate_0aadeb8c8fe0bdc14c85b83136dcb0652f2452a0b5bc73746b5493afc56
     }
 
     // line 87
+=======
+    // line 85
+    public function block_titre($context, array $blocks = array())
+    {
+        // line 86
+        echo "                                ";
+    }
+
+    // line 90
+>>>>>>> 6b27b8aa53ac30b91722819b2a3b59a209fb9eb6
     public function block_panelbody($context, array $blocks = array())
     {
     }
 
+<<<<<<< HEAD
     // line 90
     public function block_tableau($context, array $blocks = array())
     {
         // line 91
+=======
+    // line 93
+    public function block_tableau($context, array $blocks = array())
+    {
+        // line 94
+>>>>>>> 6b27b8aa53ac30b91722819b2a3b59a209fb9eb6
         echo "
 
                         ";
     }
 
+<<<<<<< HEAD
     // line 95
     public function block_body($context, array $blocks = array())
     {
         // line 96
+=======
+    // line 98
+    public function block_body($context, array $blocks = array())
+    {
+        // line 99
+>>>>>>> 6b27b8aa53ac30b91722819b2a3b59a209fb9eb6
         echo "
 
                ";
     }
 
+<<<<<<< HEAD
     // line 105
     public function block_left($context, array $blocks = array())
     {
@@ -251,6 +322,8 @@ class __TwigTemplate_0aadeb8c8fe0bdc14c85b83136dcb0652f2452a0b5bc73746b5493afc56
         echo "                     ";
     }
 
+=======
+>>>>>>> 6b27b8aa53ac30b91722819b2a3b59a209fb9eb6
     // line 126
     public function block_javascripts($context, array $blocks = array())
     {
@@ -266,6 +339,7 @@ class __TwigTemplate_0aadeb8c8fe0bdc14c85b83136dcb0652f2452a0b5bc73746b5493afc56
         // line 129
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/js/npm.js"), "html", null, true);
         echo "\"></script>
+<<<<<<< HEAD
 <script src=\"";
         // line 130
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"), "html", null, true);
@@ -275,6 +349,9 @@ class __TwigTemplate_0aadeb8c8fe0bdc14c85b83136dcb0652f2452a0b5bc73746b5493afc56
         // line 132
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
+=======
+
+>>>>>>> 6b27b8aa53ac30b91722819b2a3b59a209fb9eb6
     ";
     }
 
@@ -290,6 +367,10 @@ class __TwigTemplate_0aadeb8c8fe0bdc14c85b83136dcb0652f2452a0b5bc73746b5493afc56
 
     public function getDebugInfo()
     {
+<<<<<<< HEAD
         return array (  276 => 132,  271 => 130,  267 => 129,  263 => 128,  258 => 127,  255 => 126,  251 => 111,  248 => 110,  244 => 106,  241 => 105,  235 => 96,  232 => 95,  226 => 91,  223 => 90,  218 => 87,  214 => 83,  211 => 82,  205 => 16,  201 => 15,  194 => 11,  190 => 10,  185 => 8,  180 => 7,  177 => 6,  171 => 5,  165 => 134,  163 => 126,  147 => 112,  145 => 110,  140 => 107,  138 => 105,  130 => 99,  128 => 95,  125 => 94,  123 => 90,  120 => 89,  118 => 87,  113 => 84,  111 => 82,  57 => 31,  40 => 18,  38 => 6,  34 => 5,  91 => 39,  83 => 33,  71 => 27,  65 => 24,  58 => 20,  52 => 19,  49 => 18,  45 => 17,  31 => 5,  28 => 1,);
+=======
+        return array (  247 => 129,  243 => 128,  238 => 127,  235 => 126,  229 => 99,  226 => 98,  220 => 94,  217 => 93,  212 => 90,  208 => 86,  205 => 85,  199 => 16,  195 => 15,  188 => 11,  184 => 10,  179 => 8,  174 => 7,  171 => 6,  165 => 5,  159 => 132,  157 => 126,  131 => 102,  129 => 98,  126 => 97,  124 => 93,  121 => 92,  119 => 90,  114 => 87,  112 => 85,  55 => 31,  38 => 18,  36 => 6,  32 => 5,  26 => 1,);
+>>>>>>> 6b27b8aa53ac30b91722819b2a3b59a209fb9eb6
     }
 }

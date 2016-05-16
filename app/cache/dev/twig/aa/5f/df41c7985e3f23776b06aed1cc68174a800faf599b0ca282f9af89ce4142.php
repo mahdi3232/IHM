@@ -44,11 +44,17 @@ class __TwigTemplate_aa5fdf41c7985e3f23776b06aed1cc68174a800faf599b0ca282f9af89c
             <th>Nomprenom</th>
             <th>Datenaissance</th>
             <th>Nationalite</th>
+<<<<<<< HEAD
            
+=======
+            <th>Id</th>
+            <th>Actions</th>
+>>>>>>> 6b27b8aa53ac30b91722819b2a3b59a209fb9eb6
         </tr>
     </thead>
     <tbody>
         ";
+<<<<<<< HEAD
         // line 18
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) ? $context["entities"] : $this->getContext($context, "entities")));
@@ -80,19 +86,87 @@ class __TwigTemplate_aa5fdf41c7985e3f23776b06aed1cc68174a800faf599b0ca282f9af89c
             }
             // line 27
             echo "        ";
+=======
+        // line 19
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) ? $context["entities"] : $this->getContext($context, "entities")));
+        foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
+            // line 20
+            echo "            <tr>
+                <td><a href=\"";
+            // line 21
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("joueur_show", array("id" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id"))), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "nomPrenom"), "html", null, true);
+            echo "</a></td>
+                <td>";
+            // line 22
+            if ($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "datenaissance")) {
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "datenaissance"), "Y-m-d H:i:s"), "html", null, true);
+            }
+            echo "</td>
+                <td>";
+            // line 23
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "nationalite"), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 24
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id"), "html", null, true);
+            echo "</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href=\"";
+            // line 28
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("joueur_show", array("id" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id"))), "html", null, true);
+            echo "\">show</a>
+                        </li>
+                        <li>
+                            <a href=\"";
+            // line 31
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("joueur_edit", array("id" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id"))), "html", null, true);
+            echo "\">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        ";
+>>>>>>> 6b27b8aa53ac30b91722819b2a3b59a209fb9eb6
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
+<<<<<<< HEAD
         // line 28
+=======
+        // line 37
+>>>>>>> 6b27b8aa53ac30b91722819b2a3b59a209fb9eb6
         echo "        </tbody>
         </table>
 ";
     }
 
+<<<<<<< HEAD
     // line 31
     public function block_body($context, array $blocks = array())
     {
+=======
+    // line 40
+    public function block_body($context, array $blocks = array())
+    {
+        // line 47
+        echo "<ul>
+        <li>
+            <a href=\"";
+        // line 49
+        echo $this->env->getExtension('routing')->getPath("joueur_new");
+        echo "\">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    ";
+>>>>>>> 6b27b8aa53ac30b91722819b2a3b59a209fb9eb6
     }
 
     public function getTemplateName()
@@ -107,6 +181,10 @@ class __TwigTemplate_aa5fdf41c7985e3f23776b06aed1cc68174a800faf599b0ca282f9af89c
 
     public function getDebugInfo()
     {
+<<<<<<< HEAD
         return array (  94 => 31,  88 => 28,  82 => 27,  75 => 23,  69 => 22,  63 => 21,  60 => 20,  57 => 19,  53 => 18,  41 => 8,  38 => 7,  33 => 3,  30 => 2,);
+=======
+        return array (  115 => 49,  111 => 47,  108 => 40,  102 => 37,  90 => 31,  84 => 28,  77 => 24,  73 => 23,  67 => 22,  61 => 21,  58 => 20,  54 => 19,  41 => 8,  38 => 7,  33 => 3,  30 => 2,);
+>>>>>>> 6b27b8aa53ac30b91722819b2a3b59a209fb9eb6
     }
 }

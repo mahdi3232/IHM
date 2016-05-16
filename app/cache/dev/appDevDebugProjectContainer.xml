@@ -439,8 +439,13 @@
     <parameter key="assetic.read_from">C:/xampp/htdocs/projet_ihm/app/../web</parameter>
     <parameter key="assetic.write_to">C:/xampp/htdocs/projet_ihm/app/../web</parameter>
     <parameter key="assetic.variables" type="collection"/>
+<<<<<<< HEAD
     <parameter key="assetic.java.bin">C:\ProgramData\Oracle\Java\javapath\java.EXE</parameter>
     <parameter key="assetic.node.bin">/usr/bin/node</parameter>
+=======
+    <parameter key="assetic.java.bin">C:\Program Files (x86)\Java\jdk1.8.0_25\bin\java.EXE</parameter>
+    <parameter key="assetic.node.bin">C:\Program Files\nodejs\\node.EXE</parameter>
+>>>>>>> 6b27b8aa53ac30b91722819b2a3b59a209fb9eb6
     <parameter key="assetic.ruby.bin">/usr/bin/ruby</parameter>
     <parameter key="assetic.sass.bin">/usr/bin/sass</parameter>
     <parameter key="assetic.filter.cssrewrite.class">Assetic\Filter\CssRewriteFilter</parameter>

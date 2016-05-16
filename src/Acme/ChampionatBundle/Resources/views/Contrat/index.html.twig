@@ -22,7 +22,9 @@
         </thead>
         <tbody>
         {% for entity in entities %}
+
              {% if (entity.idEquipe == id ) %}
+
             <tr style="height: 20px;" >
                 <td style="width:30%;">{{ entity.idJoueur }}</a></td>
                 <td style="width:30%;">{{ entity.idEquipe }}</a></td>
@@ -39,5 +41,13 @@
  {% endblock %} 
 {% block body -%}
 
-  
+
+        <ul>
+        <li>
+            <a href="{{ path('contrat_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+
 {% endblock %}
