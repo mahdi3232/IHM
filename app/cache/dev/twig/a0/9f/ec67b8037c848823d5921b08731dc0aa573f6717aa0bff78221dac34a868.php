@@ -74,24 +74,29 @@ class __TwigTemplate_a09fec67b8037c848823d5921b08731dc0aa573f6717aa0bff78221dac3
         foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
             // line 29
             echo "            <tr style=\"height: 20px;\" >
+
                 <td style=\"width:25%;\"><a href=\"";
-            // line 30
-<<<<<<< HEAD
+            // line 31
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("matche", array("equipe" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id"))), "html", null, true);
-=======
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("journee_show", array("id" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id"))), "html", null, true);
->>>>>>> 6b27b8aa53ac30b91722819b2a3b59a209fb9eb6
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "libelle"), "html", null, true);
             echo "</a></td>
+
+                <td style=\"width:25%;\"><a href=\"";
+            // line 33
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("journee_show", array("id" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id"))), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "libelle"), "html", null, true);
+            echo "</a></td>
+
                 <td style=\"width:35%;\" >";
-            // line 31
+            // line 35
             if ($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "dateDebut")) {
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "dateDebut"), "Y-m-d"), "html", null, true);
             }
             echo "</td>
                 <td style=\"width:35%;\" >";
-            // line 32
+            // line 36
             if ($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "dateFin")) {
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "dateFin"), "Y-m-d"), "html", null, true);
             }
@@ -104,21 +109,21 @@ class __TwigTemplate_a09fec67b8037c848823d5921b08731dc0aa573f6717aa0bff78221dac3
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 37
+        // line 41
         echo "        </tbody>
     </table>
 
  ";
     }
 
-    // line 41
+    // line 45
     public function block_body($context, array $blocks = array())
     {
-        // line 43
+        // line 47
         echo "<ul>
         <li>
             <a href=\"";
-        // line 45
+        // line 49
         echo $this->env->getExtension('routing')->getPath("journee_new");
         echo "\">
                 Create a new entry
@@ -140,6 +145,6 @@ class __TwigTemplate_a09fec67b8037c848823d5921b08731dc0aa573f6717aa0bff78221dac3
 
     public function getDebugInfo()
     {
-        return array (  118 => 45,  114 => 43,  111 => 41,  104 => 37,  91 => 32,  85 => 31,  79 => 30,  76 => 29,  72 => 28,  59 => 17,  56 => 16,  45 => 10,  42 => 9,  39 => 8,  34 => 5,  31 => 4,);
+        return array (  127 => 49,  123 => 47,  120 => 45,  113 => 41,  100 => 36,  94 => 35,  87 => 33,  80 => 31,  76 => 29,  72 => 28,  59 => 17,  56 => 16,  45 => 10,  42 => 9,  39 => 8,  34 => 5,  31 => 4,);
     }
 }
