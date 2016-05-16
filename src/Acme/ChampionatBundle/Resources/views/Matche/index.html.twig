@@ -47,6 +47,7 @@
 
 
             <th>Equipe 2</th>
+            <th>Détail</th>
 
         </tr>
     </thead>
@@ -58,7 +59,8 @@
 
         {% for listeMj in listeMatcheJournee %}
                   {% if listeMj.id is sameas(entity.id) %}
-        <tr  >
+
+        <tr >
             <td width="40%">         
                 <img src="{{asset('bootstrap/fonts/logoEquipeMinMatche/')}}{{ entity.idEquipe }}.png">{{ entity.idEquipe }}
             </td>
@@ -70,8 +72,9 @@
 
 
             <td width="40%"><img src="{{asset('bootstrap/fonts/logoEquipeMinMatche/')}}{{ entity.idEquipe2 }}.png">{{entity.idEquipe2}}</td>
-
+            <td ><a href="{{ path('butmarque', { 'matche': entity.id }) }}">  <button type="button" class="btn btn-info">Détail</button>                </a></td>
         </tr>
+
                   {% endif %}
                 {% endfor%}
 

@@ -33,19 +33,17 @@
         <tbody>
         {% for entity in entities %}
 
-             {% if (entity.idLigue == id ) %}
+             
             <tr style="height: 20px;" >
                 <td style="width:25%;"><a href="{{ path('journee', { 'saison': entity.id }) }}">{{ entity.libelle }}</a></td>
 
-            <tr style="height: 20px;" >
-                <td style="width:25%;">{{ entity.libelle }}</a></td>
 
                 <td style="width:35%;" >{% if entity.dateDebut %}{{ entity.dateDebut|date('Y-m-d') }}{% endif %}</td>
                 <td style="width:35%;" >{% if entity.dateFin %}{{ entity.dateFin|date('Y-m-d') }}{% endif %}</td>
                 
                
             </tr>
-            {% endif %}
+           
         {% endfor %}
         </tbody>
     </table>
@@ -59,12 +57,5 @@
 {% block body -%}
 
 
-        <ul>
-        <li>
-            <a href="{{ path('saison_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
-
+      
 {% endblock %}

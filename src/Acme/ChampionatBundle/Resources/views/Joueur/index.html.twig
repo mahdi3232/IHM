@@ -12,8 +12,7 @@ Joueur list
             <th>Datenaissance</th>
             <th>Nationalite</th>
 
-            <th>Id</th>
-            <th>Actions</th>
+           
 
         </tr>
     </thead>
@@ -25,17 +24,6 @@ Joueur list
                 <td>{% if entity.datenaissance %}{{ entity.datenaissance|date('Y-m-d ') }}{% endif %}</td>
                 <td>{{ entity.nationalite }}</td>
 
-                <td>{{ entity.id }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('joueur_show', { 'id': entity.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('joueur_edit', { 'id': entity.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
 
             </tr>
             {% endif %}
@@ -49,12 +37,6 @@ Joueur list
 
 
 
-    <ul>
-        <li>
-            <a href="{{ path('joueur_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
+   
 
     {% endblock %}

@@ -62,7 +62,7 @@ class __TwigTemplate_f789ceb89f7a5361c08283a4c83f30c7c06d3cbc9ef3c421282ed1dff48
                 <th>Libelle</th>
                 <th>Datedebut</th>
                 <th>Datefin</th>
-                
+                 <th>Détail</th>
                 
             </tr>
         </thead>
@@ -77,17 +77,12 @@ class __TwigTemplate_f789ceb89f7a5361c08283a4c83f30c7c06d3cbc9ef3c421282ed1dff48
 
                 <td style=\"width:25%;\"><a href=\"";
             // line 31
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("matche", array("equipe" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id"))), "html", null, true);
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("matche", array("journee" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id"))), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "libelle"), "html", null, true);
             echo "</a></td>
 
-                <td style=\"width:25%;\"><a href=\"";
-            // line 33
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("journee_show", array("id" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id"))), "html", null, true);
-            echo "\">";
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "libelle"), "html", null, true);
-            echo "</a></td>
+               
 
                 <td style=\"width:35%;\" >";
             // line 35
@@ -101,7 +96,10 @@ class __TwigTemplate_f789ceb89f7a5361c08283a4c83f30c7c06d3cbc9ef3c421282ed1dff48
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "dateFin"), "Y-m-d"), "html", null, true);
             }
             echo "</td>
-                
+                 <td ><a href=\"";
+            // line 37
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("matche", array("journee" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id"), "saison" => 1)), "html", null, true);
+            echo "\">  <button type=\"button\" class=\"btn btn-info\">Détail</button>                </a></td>
                
             </tr>
         ";
@@ -145,6 +143,6 @@ class __TwigTemplate_f789ceb89f7a5361c08283a4c83f30c7c06d3cbc9ef3c421282ed1dff48
 
     public function getDebugInfo()
     {
-        return array (  127 => 49,  123 => 47,  120 => 45,  113 => 41,  100 => 36,  94 => 35,  87 => 33,  80 => 31,  76 => 29,  72 => 28,  59 => 17,  56 => 16,  45 => 10,  42 => 9,  39 => 8,  34 => 5,  31 => 4,);
+        return array (  125 => 49,  121 => 47,  118 => 45,  111 => 41,  101 => 37,  95 => 36,  89 => 35,  80 => 31,  76 => 29,  72 => 28,  59 => 17,  56 => 16,  45 => 10,  42 => 9,  39 => 8,  34 => 5,  31 => 4,);
     }
 }

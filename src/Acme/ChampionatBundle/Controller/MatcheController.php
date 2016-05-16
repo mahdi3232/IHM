@@ -38,7 +38,12 @@ class MatcheController extends Controller {
         $entityAllEquipe = $em->getRepository('AcmeChampionatBundle:Equipe')->findAll();
         $request = Request::createFromGlobals();
 
-        $entitiesjournee = $em->getRepository('AcmeChampionatBundle:Journee')->findAll($idSaison);
+        if (isset($idSaison)) {
+             $entitiesjournee = $em->getRepository('AcmeChampionatBundle:Journee')->find($idSaison);
+        } else {
+           $entitiesjournee = $em->getRepository('AcmeChampionatBundle:Journee')->findAll();  
+        }
+       
         $entityLigue = $em->getRepository('AcmeChampionatBundle:Ligue')->find(1);
         $entity3 = $em->getRepository('AcmeChampionatBundle:Saison')->find(1);
         $entityAllEquipe = $em->getRepository('AcmeChampionatBundle:Equipe')->findAll();

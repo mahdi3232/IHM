@@ -130,35 +130,37 @@ class __TwigTemplate_a7d13bd80a49cfa95e475eb22b95b6bfa82f3b5cea711ccb1b14e0080a9
 
 
             <th>Equipe 2</th>
+            <th>Détail</th>
 
         </tr>
     </thead>
     <tbody>
 
 ";
-        // line 55
+        // line 56
         if (((isset($context["urlidjournee"]) ? $context["urlidjournee"] : $this->getContext($context, "urlidjournee")) > 0)) {
-            // line 56
+            // line 57
             echo "    ";
             $context['_parent'] = (array) $context;
             $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) ? $context["entities"] : $this->getContext($context, "entities")));
             foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
-                // line 57
+                // line 58
                 echo "
 
         ";
-                // line 59
+                // line 60
                 $context['_parent'] = (array) $context;
                 $context['_seq'] = twig_ensure_traversable((isset($context["listeMatcheJournee"]) ? $context["listeMatcheJournee"] : $this->getContext($context, "listeMatcheJournee")));
                 foreach ($context['_seq'] as $context["_key"] => $context["listeMj"]) {
-                    // line 60
+                    // line 61
                     echo "                  ";
                     if (($this->getAttribute((isset($context["listeMj"]) ? $context["listeMj"] : $this->getContext($context, "listeMj")), "id") === $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id"))) {
-                        // line 61
-                        echo "        <tr  >
+                        // line 62
+                        echo "
+        <tr >
             <td width=\"40%\">         
                 <img src=\"";
-                        // line 63
+                        // line 65
                         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/fonts/logoEquipeMinMatche/"), "html", null, true);
                         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "idEquipe"), "html", null, true);
                         echo ".png\">";
@@ -167,11 +169,11 @@ class __TwigTemplate_a7d13bd80a49cfa95e475eb22b95b6bfa82f3b5cea711ccb1b14e0080a9
             </td>
 
             <td width=\"20%\"> <span class=\"glyphicon glyphicon-calendar\" aria-hidden=\"true\">       ";
-                        // line 66
+                        // line 68
                         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "date"), "Y-m-d"), "html", null, true);
                         echo "</span><br><br>
                 <span class=\"glyphicon glyphicon-time\" aria-hidden=\"true\">     ";
-                        // line 67
+                        // line 69
                         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "date"), "H:i"), "html", null, true);
                         echo "</span> 
             </td>
@@ -179,23 +181,27 @@ class __TwigTemplate_a7d13bd80a49cfa95e475eb22b95b6bfa82f3b5cea711ccb1b14e0080a9
 
 
             <td width=\"40%\"><img src=\"";
-                        // line 72
+                        // line 74
                         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/fonts/logoEquipeMinMatche/"), "html", null, true);
                         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "idEquipe2"), "html", null, true);
                         echo ".png\">";
                         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "idEquipe2"), "html", null, true);
                         echo "</td>
-
+            <td ><a href=\"";
+                        // line 75
+                        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("butmarque", array("matche" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id"))), "html", null, true);
+                        echo "\">  <button type=\"button\" class=\"btn btn-info\">Détail</button>                </a></td>
         </tr>
+
                   ";
                     }
-                    // line 76
+                    // line 79
                     echo "                ";
                 }
                 $_parent = $context['_parent'];
                 unset($context['_seq'], $context['_iterated'], $context['_key'], $context['listeMj'], $context['_parent'], $context['loop']);
                 $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 77
+                // line 80
                 echo "
 
 
@@ -204,16 +210,16 @@ class __TwigTemplate_a7d13bd80a49cfa95e475eb22b95b6bfa82f3b5cea711ccb1b14e0080a9
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 81
+            // line 84
             echo "
 
             ";
         } else {
-            // line 84
+            // line 87
             echo "    <p class=\"bg-danger\" style=\"width: 350px; \">  Choissisez la journée</p>
             ";
         }
-        // line 86
+        // line 89
         echo "</tbody>
 </table>
 
@@ -221,20 +227,20 @@ class __TwigTemplate_a7d13bd80a49cfa95e475eb22b95b6bfa82f3b5cea711ccb1b14e0080a9
     ";
     }
 
-    // line 91
+    // line 94
     public function block_left($context, array $blocks = array())
     {
-        // line 92
+        // line 95
         echo "<img src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/fonts/logoEquipeMin/left.jpg"), "html", null, true);
         echo "\">
                      ";
     }
 
-    // line 95
+    // line 98
     public function block_right($context, array $blocks = array())
     {
-        // line 96
+        // line 99
         echo "<img src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/fonts/logoEquipeMin/right.jpg"), "html", null, true);
         echo "\">
@@ -253,6 +259,6 @@ class __TwigTemplate_a7d13bd80a49cfa95e475eb22b95b6bfa82f3b5cea711ccb1b14e0080a9
 
     public function getDebugInfo()
     {
-        return array (  238 => 96,  235 => 95,  228 => 92,  225 => 91,  217 => 86,  213 => 84,  208 => 81,  199 => 77,  193 => 76,  183 => 72,  175 => 67,  171 => 66,  162 => 63,  158 => 61,  155 => 60,  151 => 59,  147 => 57,  142 => 56,  140 => 55,  125 => 42,  122 => 40,  113 => 31,  105 => 29,  98 => 27,  95 => 26,  87 => 24,  81 => 23,  77 => 21,  64 => 19,  60 => 18,  54 => 15,  50 => 14,  44 => 12,  41 => 9,  35 => 4,  32 => 3,);
+        return array (  244 => 99,  241 => 98,  234 => 95,  231 => 94,  223 => 89,  219 => 87,  214 => 84,  205 => 80,  199 => 79,  192 => 75,  185 => 74,  177 => 69,  173 => 68,  164 => 65,  159 => 62,  156 => 61,  152 => 60,  148 => 58,  143 => 57,  141 => 56,  125 => 42,  122 => 40,  113 => 31,  105 => 29,  98 => 27,  95 => 26,  87 => 24,  81 => 23,  77 => 21,  64 => 19,  60 => 18,  54 => 15,  50 => 14,  44 => 12,  41 => 9,  35 => 4,  32 => 3,);
     }
 }
