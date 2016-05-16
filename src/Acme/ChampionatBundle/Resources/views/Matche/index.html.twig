@@ -1,41 +1,80 @@
 {% extends '::base.html.twig' %}
 
-{% block body -%}
-    <h1>Matche list</h1>
+{% block titre -%}
+<h4>Matche list
+</h4>
+{% endblock %}
 
-    <table class="records_list">
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th>Id</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
+
+{% block panelbody -%}
+
+    
+
+<form method="GET" action="{{ path('matche') }}">
+    <div class="panel-body">
+        <p class="bg-info">Ligue: {{ entityLigue.nomLigue }}<br><br>
+            Saison: {{entity3.libelle}}<br><br>
+            Journeé:
+            <select class="form-control" style="width: 150px;" name="journee">
+            {% for entity in libellejournne %}
+                    <option id={{entity.id}} value = {{entity.id}} >{{entity.libelle}}</option>     
+           {% endfor%}
+                </select>
+                <input class="btn btn-default" type="submit" value="Changer">
+            </p>
+    </form>
+
+
+</div>
+{% endblock %}
+
+
+
+{% block tableau -%}
+
+<table class="table table-hover" >
+    <thead>
+        <tr>
+            <th>Equipe 1</th>
+            <th>Date et Heure</th>
+            
+
+            <th>Equipe 2</th>
+
+        </tr>
+    </thead>
+    <tbody>
+    
         {% for entity in entities %}
-            <tr>
-                <td><a href="{{ path('matche_show', { 'id': entity.id }) }}">{{ entity.date|date('Y-m-d H:i:s') }}</a></td>
-                <td>{{ entity.id }}</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('matche_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('matche_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
+
+
+        {% for listeMj in listeMatcheJournee %}
+                  {% if listeMj.id is sameas(entity.id) %}
+            <tr  >
+                <td width="40%">         
+                    <img src="{{asset('bootstrap/fonts/logoEquipeMinMatche/')}}{{ entity.idEquipe }}.png">{{ entity.idEquipe }}
                 </td>
+
+                <td width="20%"><a href="{{ path('matche_show', { 'id': entity.id }) }}">{{ entity.date|date('Y-m-d') }}</a>            
+                <a href="{{ path('matche_show', { 'id': entity.id }) }}">{{ entity.date|date('H:i') }}</a>
+                </td>
+                
+
+
+                <td width="40%"><img src="{{asset('bootstrap/fonts/logoEquipeMinMatche/')}}{{ entity.idEquipe2 }}.png">{{entity.idEquipe2}}</td>
+
             </tr>
+                  {% endif %}
+                {% endfor%}
+
+
+
         {% endfor %}
         </tbody>
     </table>
-
-        <ul>
-        <li>
-            <a href="{{ path('matche_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
+        
+       
     {% endblock %}
+ {% block left %}
+        <img src="{{asset('bootstrap/fonts/logoEquipeMin/')}}{{ 53 }}.jpg">
+                     {% endblock %}

@@ -1,35 +1,45 @@
 {% extends '::base.html.twig' %}
 
-{% block body -%}
-    <h1>Equipe list</h1>
 
-    <table class="records_list">
+    
+{% block titre -%}
+<h4>Liste des équipes </h4>
+  {% endblock %}
+{% block panelbody -%}
+<div class="panel-body">
+   <h5> <p class="bg-info">Ligue :  {{ entity2.nomLigue }}<br>
+   Saison :  {{ entity3.Libelle }}<br></h5>
+      {{  idligue.id }}
+       </p>
+       
+</div>
+{% endblock %}
+
+{% block tableau -%}
+ <table class="table table-hover" >
         <thead>
             <tr>
-                <th>Nomequipe</th>
-                <th>Id</th>
-                <th>Actions</th>
+                 <th>Nom équipe</th>
+                <th></th>
+               
+               
             </tr>
         </thead>
-        <tbody>
+        <tbody
+            
         {% for entity in entities %}
-            <tr>
-                <td><a href="{{ path('equipe_show', { 'id': entity.id }) }}">{{ entity.nomEquipe }}</a></td>
-                <td>{{ entity.id }}</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('equipe_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('equipe_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
-                </td>
+                <tr style="height: 20px;width:50px;" >
+               
+                
+             
+                <td style="height: 20%;width:50px; "> <img src={{asset('bootstrap/fonts/logoEquipeMin/')}}{{ entity.id }}.png> </td>
+                 <td style="width:50px;" ><br><a href="{{ path('joueur', { 'equipe': entity.id }) }}">{{ entity.nomEquipe }}</a></td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
+{% endblock %}
+{% block body -%}
 
         <ul>
         <li>
@@ -38,4 +48,5 @@
             </a>
         </li>
     </ul>
-    {% endblock %}
+{% endblock %}
+  

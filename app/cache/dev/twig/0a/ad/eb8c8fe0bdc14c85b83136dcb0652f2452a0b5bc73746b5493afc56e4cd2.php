@@ -12,7 +12,12 @@ class __TwigTemplate_0aadeb8c8fe0bdc14c85b83136dcb0652f2452a0b5bc73746b5493afc56
         $this->blocks = array(
             'title' => array($this, 'block_title'),
             'stylesheets' => array($this, 'block_stylesheets'),
+            'titre' => array($this, 'block_titre'),
+            'panelbody' => array($this, 'block_panelbody'),
+            'tableau' => array($this, 'block_tableau'),
             'body' => array($this, 'block_body'),
+            'left' => array($this, 'block_left'),
+            'right' => array($this, 'block_right'),
             'javascripts' => array($this, 'block_javascripts'),
         );
     }
@@ -31,19 +36,132 @@ class __TwigTemplate_0aadeb8c8fe0bdc14c85b83136dcb0652f2452a0b5bc73746b5493afc56
         ";
         // line 6
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 7
+        // line 18
         echo "        <link rel=\"icon\" type=\"image/x-icon\" href=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("favicon.ico"), "html", null, true);
         echo "\" />
+
+
+
+
     </head>
-    <body>
-        ";
-        // line 10
+
+
+    <body> 
+
+        <!-- ENTETE --> 
+
+        <div id=\"header\"> 
+            <img src=\"";
+        // line 31
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/fonts/LOGO.png"), "html", null, true);
+        echo "\">
+            <!-- Single button -->
+
+            <nav class=\"navbar navbar-default\">
+                <div class=\"container-fluid\">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class=\"navbar-header\">
+                        <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\" aria-expanded=\"false\">
+                            <span class=\"sr-only\">Toggle navigation</span>
+                            <span class=\"icon-bar\"></span>
+                            <span class=\"icon-bar\"></span>
+                            <span class=\"icon-bar\"></span>
+                        </button>
+                        <a class=\"navbar-brand\" href=\"#\">Home</a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">
+                       <ul class=\"nav navbar-nav\">
+                            <li class=\"active\"><a href=\"../saison\">Saison<span class=\"sr-only\">(current)</span></a></li>
+                            <li><a href=\"../matche\">Match</a></li>
+                            <li class=\"dropdown\">
+                                <a href=\"../journee\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Journées <span class=\"caret\"></span></a>
+                                <ul class=\"dropdown-menu\">
+                                    <li><a href=\"#\">Action</a></li>
+                                    <li><a href=\"#\">Another action</a></li>
+                                    <li><a href=\"#\">Something else here</a></li>
+                                  
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class=\"navbar-form navbar-left\" role=\"search\">
+                            <div class=\"form-group\">
+                                <input type=\"text\" class=\"form-control\" placeholder=\"Search\">
+                            </div>
+                            <button type=\"submit\" class=\"btn btn-default\">Submit</button>
+                        </form>
+                        <ul class=\"nav navbar-nav navbar-right\">
+
+
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav>
+            <!-- CONTENU --> 
+
+            <div id=\"content_float\"> 
+                <div id=\"content\"> 
+
+                    <div class=\"panel panel-info\">
+                        <div class=\"panel-heading\">
+                            ";
+        // line 82
+        $this->displayBlock('titre', $context, $blocks);
+        // line 84
+        echo "                            </div>
+                        </div>
+
+                ";
+        // line 87
+        $this->displayBlock('panelbody', $context, $blocks);
+        // line 89
+        echo "
+                        ";
+        // line 90
+        $this->displayBlock('tableau', $context, $blocks);
+        // line 94
+        echo "
+                     ";
+        // line 95
         $this->displayBlock('body', $context, $blocks);
-        // line 11
-        echo "        ";
+        // line 99
+        echo "                    </div>
+                </div>
+
+                <!-- COLONNE GAUCHE --> 
+                <div id=\"left\"> 
+                   
+                    ";
+        // line 105
+        $this->displayBlock('left', $context, $blocks);
+        // line 107
+        echo "                </div> 
+                <!-- COLONNE DROITE --> 
+                <div id=\"right\"> 
+                  ";
+        // line 110
+        $this->displayBlock('right', $context, $blocks);
+        // line 112
+        echo "                </div> 
+
+                <hr class=\"clear\" /> 
+
+
+
+                <!-- PIED DE PAGE --> 
+                <div id=\"footer\"> 
+                    <h2>footer</h2> 
+                </div> 
+
+        </body> 
+
+
+    ";
+        // line 126
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 12
+        // line 134
         echo "    </body>
 </html>
 ";
@@ -58,16 +176,106 @@ class __TwigTemplate_0aadeb8c8fe0bdc14c85b83136dcb0652f2452a0b5bc73746b5493afc56
     // line 6
     public function block_stylesheets($context, array $blocks = array())
     {
+        // line 7
+        echo "        <link rel=\"stylesheet\" href=\"";
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/css/bootstrap.css"), "html", null, true);
+        echo "\" />
+    <!--    <link rel=\"stylesheet\" href=\"";
+        // line 8
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/css/bootstrap.min.css"), "html", null, true);
+        echo "\"  /> -->
+
+        <link rel=\"stylesheet\" href=\"";
+        // line 10
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/css/bootstrap-theme.css"), "html", null, true);
+        echo "\"  />
+    <!--    <link rel=\"stylesheet\" href=\"";
+        // line 11
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/css/bootstrap-theme.min.css"), "html", null, true);
+        echo "\"  /> -->
+
+
+        <!--Style que nous allons utiliser-->
+        <link rel=\"stylesheet\" href=\"";
+        // line 15
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/css/colorbox.css"), "html", null, true);
+        echo "\"  />
+        <link rel=\"stylesheet\" href=\"";
+        // line 16
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/css/gabarits.css"), "html", null, true);
+        echo "\"  />
+        ";
     }
 
-    // line 10
+    // line 82
+    public function block_titre($context, array $blocks = array())
+    {
+        // line 83
+        echo "                                ";
+    }
+
+    // line 87
+    public function block_panelbody($context, array $blocks = array())
+    {
+    }
+
+    // line 90
+    public function block_tableau($context, array $blocks = array())
+    {
+        // line 91
+        echo "
+
+                        ";
+    }
+
+    // line 95
     public function block_body($context, array $blocks = array())
     {
+        // line 96
+        echo "
+
+               ";
     }
 
-    // line 11
+    // line 105
+    public function block_left($context, array $blocks = array())
+    {
+        // line 106
+        echo "                     ";
+    }
+
+    // line 110
+    public function block_right($context, array $blocks = array())
+    {
+        // line 111
+        echo "                     ";
+    }
+
+    // line 126
     public function block_javascripts($context, array $blocks = array())
     {
+        // line 127
+        echo "        <script src=\"";
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/js/bootstrap.js"), "html", null, true);
+        echo "\"></script>
+        <script src=\"";
+        // line 128
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/js/bootstrap.min.js"), "html", null, true);
+        echo "\"></script>
+        <script src=\"";
+        // line 129
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/js/npm.js"), "html", null, true);
+        echo "\"></script>
+<script src=\"";
+        // line 130
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"), "html", null, true);
+        echo "\"></script>
+ <!-- Latest compiled and minified JavaScript -->
+ <script src=\"";
+        // line 132
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"), "html", null, true);
+        echo "\"></script>
+    ";
     }
 
     public function getTemplateName()
@@ -82,6 +290,6 @@ class __TwigTemplate_0aadeb8c8fe0bdc14c85b83136dcb0652f2452a0b5bc73746b5493afc56
 
     public function getDebugInfo()
     {
-        return array (  53 => 5,  23 => 1,  480 => 162,  474 => 161,  469 => 158,  461 => 155,  457 => 153,  453 => 151,  444 => 149,  440 => 148,  437 => 147,  435 => 146,  430 => 144,  427 => 143,  423 => 142,  413 => 134,  409 => 132,  407 => 131,  402 => 130,  398 => 129,  393 => 126,  387 => 122,  384 => 121,  381 => 120,  379 => 119,  374 => 116,  368 => 112,  365 => 111,  362 => 110,  360 => 109,  355 => 106,  341 => 105,  337 => 103,  322 => 101,  314 => 99,  312 => 98,  309 => 97,  305 => 95,  298 => 91,  294 => 90,  285 => 89,  283 => 88,  278 => 86,  268 => 85,  264 => 84,  258 => 81,  252 => 80,  247 => 78,  241 => 77,  229 => 73,  220 => 70,  214 => 69,  177 => 65,  169 => 60,  140 => 55,  132 => 51,  128 => 49,  107 => 36,  61 => 13,  273 => 96,  269 => 94,  254 => 92,  243 => 88,  240 => 86,  238 => 85,  235 => 74,  230 => 82,  227 => 81,  224 => 71,  221 => 77,  219 => 76,  217 => 75,  208 => 68,  204 => 72,  179 => 69,  159 => 61,  143 => 56,  135 => 53,  119 => 42,  102 => 32,  71 => 19,  67 => 15,  63 => 15,  59 => 6,  38 => 6,  94 => 28,  89 => 20,  85 => 25,  75 => 17,  68 => 14,  56 => 9,  87 => 25,  21 => 2,  26 => 6,  93 => 28,  88 => 6,  78 => 21,  46 => 7,  27 => 4,  44 => 11,  31 => 4,  28 => 3,  201 => 92,  196 => 90,  183 => 82,  171 => 61,  166 => 71,  163 => 62,  158 => 67,  156 => 66,  151 => 63,  142 => 59,  138 => 54,  136 => 56,  121 => 46,  117 => 44,  105 => 40,  91 => 27,  62 => 23,  49 => 14,  24 => 4,  25 => 3,  19 => 1,  79 => 18,  72 => 16,  69 => 11,  47 => 12,  40 => 8,  37 => 10,  22 => 2,  246 => 90,  157 => 56,  145 => 46,  139 => 45,  131 => 52,  123 => 47,  120 => 40,  115 => 43,  111 => 37,  108 => 36,  101 => 32,  98 => 31,  96 => 31,  83 => 25,  74 => 14,  66 => 15,  55 => 15,  52 => 21,  50 => 10,  43 => 8,  41 => 7,  35 => 7,  32 => 4,  29 => 5,  209 => 82,  203 => 78,  199 => 67,  193 => 73,  189 => 71,  187 => 84,  182 => 66,  176 => 64,  173 => 65,  168 => 72,  164 => 59,  162 => 57,  154 => 58,  149 => 51,  147 => 58,  144 => 49,  141 => 48,  133 => 55,  130 => 41,  125 => 44,  122 => 43,  116 => 41,  112 => 42,  109 => 34,  106 => 36,  103 => 32,  99 => 31,  95 => 28,  92 => 21,  86 => 28,  82 => 22,  80 => 19,  73 => 19,  64 => 10,  60 => 6,  57 => 11,  54 => 10,  51 => 14,  48 => 13,  45 => 17,  42 => 10,  39 => 9,  36 => 5,  33 => 6,  30 => 7,);
+        return array (  276 => 132,  271 => 130,  267 => 129,  263 => 128,  258 => 127,  255 => 126,  251 => 111,  248 => 110,  244 => 106,  241 => 105,  235 => 96,  232 => 95,  226 => 91,  223 => 90,  218 => 87,  214 => 83,  211 => 82,  205 => 16,  201 => 15,  194 => 11,  190 => 10,  185 => 8,  180 => 7,  177 => 6,  171 => 5,  165 => 134,  163 => 126,  147 => 112,  145 => 110,  140 => 107,  138 => 105,  130 => 99,  128 => 95,  125 => 94,  123 => 90,  120 => 89,  118 => 87,  113 => 84,  111 => 82,  57 => 31,  40 => 18,  38 => 6,  34 => 5,  91 => 39,  83 => 33,  71 => 27,  65 => 24,  58 => 20,  52 => 19,  49 => 18,  45 => 17,  31 => 5,  28 => 1,);
     }
 }

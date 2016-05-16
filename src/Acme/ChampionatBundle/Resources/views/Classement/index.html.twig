@@ -1,41 +1,79 @@
 {% extends '::base.html.twig' %}
 
-{% block body -%}
-    <h1>Classement list</h1>
+{% block titre -%}
+<h4>Classement list</h4>
+  {% endblock %}
 
-    <table class="records_list">
-        <thead>
-            <tr>
-                <th>Nbpoints</th>
-                <th>Id</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for entity in entities %}
-            <tr>
-                <td><a href="{{ path('classement_show', { 'id': entity.id }) }}">{{ entity.nbPoints }}</a></td>
-                <td>{{ entity.id }}</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('classement_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('classement_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
-                </td>
-            </tr>
+
+
+ {% block panelbody -%}
+<div class="panel-body">
+    <h5> <p class="bg-info">Ligue :  {{ entity2.nomLigue }}<br>
+            Saison :  {{ entity3.Libelle }}<br></h5>
+
+</p>
+</div>
+{% endblock %}
+{% block tableau -%}
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th style="width: 850px; ">Equipe</th>
+
+            <th >MJ</th>
+            <th>MG</th>
+            <th>MP</th>
+            <th style="width:70px; ">MN</th>
+            <th>BM</th>
+            <th>BC</th>
+            <th style="width:80px ;">DIFF</th>
+            <th >Points</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+
+
+
+    {% set i = 0 %}
+    {% for entity in entities %}
+                      {% set i = i+1 %}
+        <tr>
+            <td >
+
+
+            {% for entityeq in entity4 %}
+                  {% if entityeq.id is sameas(i) %}
+                <img src={{asset('bootstrap/fonts/logoEquipeMin/')}}{{ entityeq.id }}.png>
+
+                  {% endif %}
+
+
+            {% endfor%} {{ entity.idEquipe }}</td>
+            <td >0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>
+                <a href="{{ path('classement_show', { 'id': entity.id }) }}">{{ entity.nbPoints }}</a></td>
+
+
+        </tr>
         {% endfor %}
-        </tbody>
-    </table>
 
-        <ul>
-        <li>
-            <a href="{{ path('classement_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
+    </tbody>
+</table>
+ {% endblock %}
+{% block body -%}
+<ul>
+    <li>
+        <a href="{{ path('classement_new') }}">
+            Create a new entry
+        </a>
+    </li>
+</ul>
     {% endblock %}

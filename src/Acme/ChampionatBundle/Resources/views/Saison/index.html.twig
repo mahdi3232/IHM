@@ -1,45 +1,57 @@
 {% extends '::base.html.twig' %}
 
-{% block body -%}
-    <h1>Saison list</h1>
 
-    <table class="records_list">
+{% block titre -%}
+<h4>Saison list </h4>
+  {% endblock %}
+
+
+{% block panelbody -%}
+<div class="panel-body">
+    <h5> <p class="bg-info">Ligue :  {{ entities2.nomLigue }}</h5>
+       
+       </p>
+</div>
+{% endblock %}
+
+
+    
+
+
+        
+  {% block tableau -%}
+   <table class="table table-hover" >
         <thead>
             <tr>
+                <th>Libelle</th>
                 <th>Datedebut</th>
                 <th>Datefin</th>
-                <th>Libelle</th>
-                <th>Id</th>
-                <th>Actions</th>
+                
+                
             </tr>
         </thead>
         <tbody>
         {% for entity in entities %}
-            <tr>
-                <td><a href="{{ path('saison_show', { 'id': entity.id }) }}">{{ entity.dateDebut|date('Y-m-d H:i:s') }}</a></td>
-                <td>{% if entity.dateFin %}{{ entity.dateFin|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{{ entity.libelle }}</td>
-                <td>{{ entity.id }}</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('saison_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('saison_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
-                </td>
+             {% if (entity.idLigue == id ) %}
+            <tr style="height: 20px;" >
+                <td style="width:25%;"><a href="{{ path('journee', { 'saison': entity.id }) }}">{{ entity.libelle }}</a></td>
+                <td style="width:35%;" >{% if entity.dateDebut %}{{ entity.dateDebut|date('Y-m-d') }}{% endif %}</td>
+                <td style="width:35%;" >{% if entity.dateFin %}{{ entity.dateFin|date('Y-m-d') }}{% endif %}</td>
+                
+               
             </tr>
+            {% endif %}
         {% endfor %}
         </tbody>
     </table>
 
-        <ul>
-        <li>
-            <a href="{{ path('saison_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
-    {% endblock %}
+ {% endblock %}       
+        
+        
+        
+        
+        
+{% block body -%}
+
+       
+{% endblock %}
