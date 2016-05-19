@@ -46,18 +46,19 @@
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                       <ul class="nav navbar-nav">
-                            <li class="active"><a href="{{ path('saison') }}">Saison<span class="sr-only">(current)</span></a></li>
+                        <ul class="nav navbar-nav">
+                            <!--li class="active"><a href="{{ path('saison') }}">Saison<span class="sr-only">(current)</span></a></li!-->
                             <li><a href="{{ path('matche') }}">Match</a></li>
                             <li class="dropdown">
                                 <a href="{{ path('journee') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Journées <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="{{ path('journee') }}">Lister</a></li>
-                                   
-                                  
+
+
                                 </ul>
                             </li>
-                             <li><a href="{{ path('equipe') }}">Equipe</a></li>
+                            <li><a href="{{ path('equipe') }}">Equipe</a></li>
+                            <li><a href="{{ path('classement') }}">Classement</a></li>
                         </ul>
                         <form class="navbar-form navbar-left" role="search">
                             <div class="form-group">
@@ -76,13 +77,16 @@
 
             <div id="content_float"> 
                 <div id="content"> 
-                        
+
                     <div class="panel panel-info">
                         <div class="panel-heading">
                             {% block titre %}
-
-                              <img src="{{asset('bootstrap/fonts/LOGO2.png')}}">  <h4>  Federation Tunisienne de Football</h4>
-
+                                <table>
+                                    <tr>
+                                        <td> <img src="{{asset('bootstrap/fonts/LOGO2.png')}}" ></td>
+                                        <td><h4>  Féderation Tunisienne de Football</h4></td>
+                                    </tr>
+                                </table>
                                 {% endblock %}
                             </div>
                         </div>
@@ -104,7 +108,7 @@
 
                 <!-- COLONNE GAUCHE --> 
                 <div id="left"> 
-                   
+
                     {% block left %}
                     <img src="{{asset('bootstrap/fonts/logoEquipeMin/left.jpg')}}">
                      {% endblock %}
@@ -112,29 +116,29 @@
                 <!-- COLONNE DROITE --> 
                 <div id="right"> 
                   {% block right %}
-                     <img src="{{asset('bootstrap/fonts/logoEquipeMin/right.jpg')}}">   
+                        <img src="{{asset('bootstrap/fonts/logoEquipeMin/right.jpg')}}">   
                      {% endblock %}
-                </div> 
+                    </div> 
 
-                <hr class="clear" /> 
+                    <hr class="clear" /> 
 
 
 
-                <!-- PIED DE PAGE --> 
-                <div id="footer"> 
-                    <h2>footer</h2> 
-                </div> 
+                    <!-- PIED DE PAGE --> 
+                    <div id="footer"> 
+                        <h2>footer</h2> 
+                    </div> 
 
-        </body> 
+            </body> 
 
 
     {% block javascripts %}
-        <script src="{{asset('bootstrap/js/bootstrap.js')}}"></script>
-        <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
-        <script src="{{asset('bootstrap/js/npm.js')}}"></script>
-<script src="{{asset('https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')}}"></script>
- <!-- Latest compiled and minified JavaScript -->
- <script src="{{asset('http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js')}}"></script>
+            <script src="{{asset('bootstrap/js/bootstrap.js')}}"></script>
+            <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
+            <script src="{{asset('bootstrap/js/npm.js')}}"></script>
+            <script src="{{asset('https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')}}"></script>
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="{{asset('http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js')}}"></script>
     {% endblock %}
-    </body>
-</html>
+        </body>
+    </html>

@@ -18,6 +18,7 @@
 <table class="table table-hover">
     <thead>
         <tr>
+            <th >Rang</th>
             <th style="width: 850px; ">Equipe</th>
 
             <th >MJ</th>
@@ -40,6 +41,7 @@
     {% for entity in entities %}
                       {% set i = i+1 %}
         <tr>
+            <td>-</td>
             <td >
 
 
@@ -69,11 +71,5 @@
 </table>
  {% endblock %}
 {% block body -%}
-<ul>
-    <li>
-        <a href="{{ path('classement_new') }}">
-            Create a new entry
-        </a>
-    </li>
-</ul>
+
     {% endblock %}
