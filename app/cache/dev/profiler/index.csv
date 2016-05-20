@@ -13,3 +13,8 @@ ff9eae,::1,GET,http://localhost:777/ProjetIHM/web/app_dev.php/journee/,146366667
 52e0f9,::1,GET,http://localhost:777/ProjetIHM/web/app_dev.php/,1463713090,
 6c0606,::1,GET,http://localhost:777/ProjetIHM/web/app_dev.php/matche/,1463713189,
 9b33b2,::1,GET,http://localhost:777/ProjetIHM/web/app_dev.php/matche/?journee=2,1463713193,
+a63ba9,::1,GET,http://localhost:777/ProjetIHM/web/app_dev.php/,1463778798,
+24b492,::1,GET,http://localhost:777/ProjetIHM/web/app_dev.php/matche/,1463778806,
+35acbf,::1,GET,http://localhost:777/ProjetIHM/web/app_dev.php/matche/?journee=1,1463778812,
+04975f,::1,GET,http://localhost:777/ProjetIHM/web/app_dev.php/butmarque/?matche=1,1463778851,
+64adcd,::1,GET,http://localhost:777/ProjetIHM/web/app_dev.php/matche/,1463779108,

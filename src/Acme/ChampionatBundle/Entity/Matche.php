@@ -58,10 +58,26 @@ class Matche {
      */
     private $idEquipe2;
 
-     /**
+    /**
      * @var string
      */
     private $listeJournee;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="resultat", type="integer", nullable=false)
+     */
+    private $resultat;
+
+    public function getResultat() {
+        return $this->resultat;
+    }
+
+    public function setResultat($resultat) {
+        $this->resultat = $resultat;
+    }
+
     public function getListeJournee() {
         return $this->listeJournee;
     }
@@ -70,8 +86,6 @@ class Matche {
         $this->listeJournee = $listeJournee;
     }
 
-    
-  
     /**
      * Set date
      *
