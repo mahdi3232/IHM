@@ -71,7 +71,7 @@ class __TwigTemplate_13a57126d71d847242cae08ee74ec76f69bb5f444531357e17e9152a5ef
                         <a class=\"navbar-brand\" href=\"";
         // line 44
         echo $this->env->getExtension('routing')->getPath("home");
-        echo "\">Home</a>
+        echo "\">Acceuil</a>
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -173,19 +173,85 @@ class __TwigTemplate_13a57126d71d847242cae08ee74ec76f69bb5f444531357e17e9152a5ef
 
 
                     <!-- PIED DE PAGE --> 
-                    <div id=\"footer\"> 
-                        <h2>footer</h2> 
-                    </div> 
 
-            </body> 
+                    <div id=\"footer\"> 
+
+
+
+
+
+
+                        <nav style=\"padding:0 0 120px 0;background-color: #555;height: 500px;\">
+                            <div class=\"container\">
+                                <div class=\"row\">
+                                    <div class=\"col-sm-4\">
+                                        <h4 id='footer-header'> SITEMAP </h4>
+                                        
+                                        <div class=\"col-sm-4\" style=\"padding: 0 0 0 0px\">
+                                            <a href=\"";
+        // line 143
+        echo $this->env->getExtension('routing')->getPath("home");
+        echo "\">Acceuil</a>
+                                            <a href=\"";
+        // line 144
+        echo $this->env->getExtension('routing')->getPath("matche");
+        echo "\">Match</a>
+                                            <a href=\"";
+        // line 145
+        echo $this->env->getExtension('routing')->getPath("journee");
+        echo "\">Journées</a>
+                                            <a href=\"";
+        // line 146
+        echo $this->env->getExtension('routing')->getPath("equipe");
+        echo "\">Equipe</a>
+                                            <a href=\"";
+        // line 147
+        echo $this->env->getExtension('routing')->getPath("classement");
+        echo "\">Classement</a>
+                                        </div>
+                                        <div class=\"col-sm-4\" style=\"padding: 0 0 0 0px\">
+
+                                        </div>
+                                    </div>
+                                    <div class=\"col-sm-4\">
+                                        <h4 id='footer-header'> Sponsors </h4>
+                                        <img src=\"";
+        // line 155
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/fonts/footer/tel.png"), "html", null, true);
+        echo "\"><br><br>
+                                        <img src=\"";
+        // line 156
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/fonts/footer/Gillette.png"), "html", null, true);
+        echo "\">
+
+                                    </div>
+                                    <div class=\"col-sm-4\">
+                                        <h5 id='footer-header'> &nbsp </h3>
+                                            <img src=\"";
+        // line 161
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/fonts/footer/Nike.png"), "html", null, true);
+        echo "\"><br><br>
+                                            <img src=\"";
+        // line 162
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/fonts/footer/coca.png"), "html", null, true);
+        echo "\">
+                                            </div>
+                                            </div>
+                                            </div>
+                                <br><br>
+                                <center><h4> Copyright : FTF 2015</h4></center>
+                                            </nav>
+                        
+                                            </div> 
+                                            </body> 
 
 
     ";
-        // line 135
+        // line 174
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 143
-        echo "        </body>
-    </html>
+        // line 182
+        echo "                                            </body>
+                                            </html>
 ";
     }
 
@@ -272,9 +338,9 @@ class __TwigTemplate_13a57126d71d847242cae08ee74ec76f69bb5f444531357e17e9152a5ef
     public function block_left($context, array $blocks = array())
     {
         // line 113
-        echo "                    <img src=\"";
+        echo "                    <!--img src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/fonts/logoEquipeMin/left.jpg"), "html", null, true);
-        echo "\">
+        echo "\"-->
                      ";
     }
 
@@ -282,34 +348,34 @@ class __TwigTemplate_13a57126d71d847242cae08ee74ec76f69bb5f444531357e17e9152a5ef
     public function block_right($context, array $blocks = array())
     {
         // line 119
-        echo "                        <img src=\"";
+        echo "                        <!--img src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/fonts/logoEquipeMin/right.jpg"), "html", null, true);
-        echo "\">   
+        echo "\"-->   
                      ";
     }
 
-    // line 135
+    // line 174
     public function block_javascripts($context, array $blocks = array())
     {
-        // line 136
-        echo "            <script src=\"";
+        // line 175
+        echo "                                            <script src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/js/bootstrap.js"), "html", null, true);
         echo "\"></script>
-            <script src=\"";
-        // line 137
+                                            <script src=\"";
+        // line 176
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
-            <script src=\"";
-        // line 138
+                                            <script src=\"";
+        // line 177
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/js/npm.js"), "html", null, true);
         echo "\"></script>
-            <script src=\"";
-        // line 139
+                                            <script src=\"";
+        // line 178
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"), "html", null, true);
         echo "\"></script>
-            <!-- Latest compiled and minified JavaScript -->
-            <script src=\"";
-        // line 141
+                                            <!-- Latest compiled and minified JavaScript -->
+                                            <script src=\"";
+        // line 180
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
     ";
@@ -327,6 +393,6 @@ class __TwigTemplate_13a57126d71d847242cae08ee74ec76f69bb5f444531357e17e9152a5ef
 
     public function getDebugInfo()
     {
-        return array (  313 => 141,  308 => 139,  304 => 138,  300 => 137,  295 => 136,  292 => 135,  285 => 119,  282 => 118,  275 => 113,  272 => 112,  266 => 103,  263 => 102,  257 => 98,  254 => 97,  249 => 94,  240 => 86,  236 => 84,  233 => 83,  227 => 16,  216 => 11,  212 => 10,  207 => 8,  202 => 7,  193 => 5,  187 => 143,  169 => 121,  167 => 118,  162 => 115,  160 => 112,  150 => 102,  147 => 101,  145 => 97,  142 => 96,  140 => 94,  135 => 91,  133 => 83,  108 => 61,  104 => 60,  96 => 55,  91 => 53,  86 => 51,  82 => 50,  73 => 44,  57 => 31,  40 => 18,  38 => 6,  34 => 5,  28 => 1,  244 => 99,  241 => 98,  234 => 95,  231 => 94,  223 => 15,  219 => 87,  214 => 84,  205 => 80,  199 => 6,  192 => 75,  185 => 135,  177 => 69,  173 => 68,  164 => 65,  159 => 62,  156 => 61,  152 => 106,  148 => 58,  143 => 57,  141 => 56,  125 => 42,  122 => 40,  113 => 31,  105 => 29,  98 => 27,  95 => 26,  87 => 24,  81 => 23,  77 => 21,  64 => 19,  60 => 18,  54 => 15,  50 => 14,  44 => 12,  41 => 9,  35 => 4,  32 => 3,);
+        return array (  379 => 180,  374 => 178,  370 => 177,  366 => 176,  361 => 175,  358 => 174,  351 => 119,  348 => 118,  341 => 113,  338 => 112,  332 => 103,  329 => 102,  323 => 98,  320 => 97,  315 => 94,  306 => 86,  302 => 84,  299 => 83,  293 => 16,  289 => 15,  282 => 11,  278 => 10,  273 => 8,  268 => 7,  265 => 6,  259 => 5,  253 => 182,  251 => 174,  236 => 162,  232 => 161,  224 => 156,  220 => 155,  209 => 147,  205 => 146,  201 => 145,  197 => 144,  193 => 143,  169 => 121,  167 => 118,  162 => 115,  160 => 112,  152 => 106,  150 => 102,  147 => 101,  145 => 97,  142 => 96,  140 => 94,  135 => 91,  133 => 83,  108 => 61,  104 => 60,  96 => 55,  91 => 53,  86 => 51,  82 => 50,  73 => 44,  57 => 31,  40 => 18,  38 => 6,  34 => 5,  28 => 1,);
     }
 }

@@ -51,27 +51,59 @@ class Matche extends \Acme\ChampionatBundle\Entity\Matche implements \Doctrine\O
         $this->__cloner__      = $cloner;
     }
 
+    /**
+     * {@inheritDoc}
+     * @param string $name
+     */
+    public function __get($name)
+    {
+        $this->__initializer__ && $this->__initializer__->__invoke($this, '__get', array($name));
 
-
-
-
-
+        return parent::__get($name);
+    }
 
     /**
-     * 
+     * {@inheritDoc}
+     * @param string $name
+     * @param mixed  $value
+     */
+    public function __set($name, $value)
+    {
+        $this->__initializer__ && $this->__initializer__->__invoke($this, '__set', array($name, $value));
+
+        return parent::__set($name, $value);
+    }
+
+    /**
+     * {@inheritDoc}
+     * @param  string $name
+     * @return boolean
+     */
+    public function __isset($name)
+    {
+        $this->__initializer__ && $this->__initializer__->__invoke($this, '__isset', array($name));
+
+        return parent::__isset($name);
+
+    }
+
+    /**
+     * {@inheritDoc}
      * @return array
      */
     public function __sleep()
     {
+        $properties = array_merge(array('__isInitialized__'), parent::__sleep());
+
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', '' . "\0" . 'Acme\\ChampionatBundle\\Entity\\Matche' . "\0" . 'date', '' . "\0" . 'Acme\\ChampionatBundle\\Entity\\Matche' . "\0" . 'id', '' . "\0" . 'Acme\\ChampionatBundle\\Entity\\Matche' . "\0" . 'idJournee', '' . "\0" . 'Acme\\ChampionatBundle\\Entity\\Matche' . "\0" . 'idEquipe', '' . "\0" . 'Acme\\ChampionatBundle\\Entity\\Matche' . "\0" . 'idEquipe2', '' . "\0" . 'Acme\\ChampionatBundle\\Entity\\Matche' . "\0" . 'listeJournee');
+            $properties = array_diff($properties, array_keys($this->__getLazyProperties()));
         }
 
-        return array('__isInitialized__', '' . "\0" . 'Acme\\ChampionatBundle\\Entity\\Matche' . "\0" . 'date', '' . "\0" . 'Acme\\ChampionatBundle\\Entity\\Matche' . "\0" . 'id', '' . "\0" . 'Acme\\ChampionatBundle\\Entity\\Matche' . "\0" . 'idJournee', '' . "\0" . 'Acme\\ChampionatBundle\\Entity\\Matche' . "\0" . 'idEquipe', '' . "\0" . 'Acme\\ChampionatBundle\\Entity\\Matche' . "\0" . 'idEquipe2', '' . "\0" . 'Acme\\ChampionatBundle\\Entity\\Matche' . "\0" . 'listeJournee');
+        return $properties;
     }
 
     /**
-     * 
+     * {@inheritDoc}
      */
     public function __wakeup()
     {
@@ -90,14 +122,17 @@ class Matche extends \Acme\ChampionatBundle\Entity\Matche implements \Doctrine\O
             };
 
         }
+        parent::__wakeup();
     }
 
     /**
-     * 
+     * {@inheritDoc}
      */
     public function __clone()
     {
         $this->__cloner__ && $this->__cloner__->__invoke($this, '__clone', array());
+
+        parent::__clone();
     }
 
     /**
@@ -173,6 +208,28 @@ class Matche extends \Acme\ChampionatBundle\Entity\Matche implements \Doctrine\O
     }
 
     
+    /**
+     * {@inheritDoc}
+     */
+    public function getResultat()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getResultat', array());
+
+        return parent::getResultat();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setResultat($resultat)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setResultat', array($resultat));
+
+        return parent::setResultat($resultat);
+    }
+
     /**
      * {@inheritDoc}
      */
@@ -307,6 +364,50 @@ class Matche extends \Acme\ChampionatBundle\Entity\Matche implements \Doctrine\O
         $this->__initializer__ && $this->__initializer__->__invoke($this, '__toString', array());
 
         return parent::__toString();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function __call($name, $arguments)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, '__call', array($name, $arguments));
+
+        return parent::__call($name, $arguments);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function __destruct()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, '__destruct', array());
+
+        return parent::__destruct();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function __invoke()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, '__invoke', array());
+
+        return parent::__invoke();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function __unset($name)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, '__unset', array($name));
+
+        return parent::__unset($name);
     }
 
 }

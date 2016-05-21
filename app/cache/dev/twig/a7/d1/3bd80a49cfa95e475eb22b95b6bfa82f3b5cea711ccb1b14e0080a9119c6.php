@@ -13,8 +13,6 @@ class __TwigTemplate_a7d13bd80a49cfa95e475eb22b95b6bfa82f3b5cea711ccb1b14e0080a9
             'titre' => array($this, 'block_titre'),
             'panelbody' => array($this, 'block_panelbody'),
             'tableau' => array($this, 'block_tableau'),
-            'left' => array($this, 'block_left'),
-            'right' => array($this, 'block_right'),
         );
     }
 
@@ -227,26 +225,6 @@ class __TwigTemplate_a7d13bd80a49cfa95e475eb22b95b6bfa82f3b5cea711ccb1b14e0080a9
     ";
     }
 
-    // line 94
-    public function block_left($context, array $blocks = array())
-    {
-        // line 95
-        echo "<img src=\"";
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/fonts/logoEquipeMin/left.jpg"), "html", null, true);
-        echo "\">
-                     ";
-    }
-
-    // line 98
-    public function block_right($context, array $blocks = array())
-    {
-        // line 99
-        echo "<img src=\"";
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/fonts/logoEquipeMin/right.jpg"), "html", null, true);
-        echo "\">
-                     ";
-    }
-
     public function getTemplateName()
     {
         return "AcmeChampionatBundle:Matche:index.html.twig";
@@ -259,6 +237,6 @@ class __TwigTemplate_a7d13bd80a49cfa95e475eb22b95b6bfa82f3b5cea711ccb1b14e0080a9
 
     public function getDebugInfo()
     {
-        return array (  244 => 99,  241 => 98,  234 => 95,  231 => 94,  223 => 89,  219 => 87,  214 => 84,  205 => 80,  199 => 79,  192 => 75,  185 => 74,  177 => 69,  173 => 68,  164 => 65,  159 => 62,  156 => 61,  152 => 60,  148 => 58,  143 => 57,  141 => 56,  125 => 42,  122 => 40,  113 => 31,  105 => 29,  98 => 27,  95 => 26,  87 => 24,  81 => 23,  77 => 21,  64 => 19,  60 => 18,  54 => 15,  50 => 14,  44 => 12,  41 => 9,  35 => 4,  32 => 3,);
+        return array (  221 => 89,  217 => 87,  212 => 84,  203 => 80,  197 => 79,  190 => 75,  183 => 74,  175 => 69,  171 => 68,  162 => 65,  157 => 62,  154 => 61,  150 => 60,  146 => 58,  141 => 57,  139 => 56,  123 => 42,  120 => 40,  111 => 31,  103 => 29,  96 => 27,  93 => 26,  85 => 24,  79 => 23,  75 => 21,  62 => 19,  58 => 18,  52 => 15,  48 => 14,  42 => 12,  39 => 9,  33 => 4,  30 => 3,);
     }
 }

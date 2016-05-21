@@ -182,5 +182,56 @@ class Matche {
     public function __toString() {
         return $this->getIdEquipe() . ' vs ' . $this->getIdEquipe2();
     }
+    public function __construct() {
+        
+    }
+
+    public function __call($name, $arguments) {
+        
+    }
+
+    public static function __callStatic($name, $arguments) {
+        
+    }
+
+    public function __clone() {
+        
+    }
+
+    public function __destruct() {
+        
+    }
+
+    public function __get($name) {
+        
+    }
+
+    public function __invoke() {
+        
+    }
+
+    public function __isset($name) {
+        
+    }
+
+    public function __set($name, $value) {
+        
+    }
+
+    public static function __set_state($array) {
+        
+    }
+
+    public function __sleep() {
+        
+    }
+
+    public function __unset($name) {
+        
+    }
+
+    public function __wakeup() {
+        
+    }
 
 }
