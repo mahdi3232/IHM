@@ -60,8 +60,9 @@ html,body {margin:0;padding:0}
 *:first-child+html .clear{margin:-8px 0;} * html .clear{margin:-8px 0;}
 
 #header {
-	background-color:white;
-	background:url(../fonts/rades.jpg);
+	background-color:#B4AF91;
+	#background:url(../fonts/Slide/plan.jpg);
+	
 }
 #center {
 	background-color:#8CC6D7;
@@ -76,30 +77,31 @@ html,body {margin:0;padding:0}
 	width:100%;
 }
 #content {
-	margin:0 300px;
+	background-color:red;
+	margin:0 200px;
 	height:1500px;
 	background-color:white;
 	
 }
 #left {
 	float:left;
-	margin-left:-100%;
-	width:300px;
-	background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0,#81a8cb),color-stop(1, #d9edf7)); /* Safari & Chrome */
+	
+	width:50px;
+	
 	height:1500px;
 }
 #right {
 	float:left;
-	margin-left:-300px;
-	width:300px;
-	height:1500px;
-	background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0,#81a8cb),color-stop(1, #d9edf7)); /* Safari & Chrome */
+	
+	width:100px;
+	height:500px;
+	
 }
 #footer {
 	width:100%;
 	height:200px;
 
-	background-color:#337ab7;
+	background-color:#A7A37E;
 }
 
 #logo {
@@ -109,4 +111,31 @@ html,body {margin:0;padding:0}
 #alignement{
  align:left:
  
+}
+div.scroll {
+    background-color:white;
+    width: 800px;
+    height: 400px;
+    overflow: scroll;
+}
+
+.ex1 a:hover,
+.ex1 a:focus {
+	transform: scale(1.2);
+	
+}
+.ex1 li {
+	display: inline;
+}
+.ex1 li a {
+	display: inline-block;
+	height: 35px;
+	width: 50px;
+	-moz-transition: all 0.3s ease-out;
+	-webkit-transition: all 0.3s ease-out;
+	transition: all 0.1s ease-out;
+}
+
+.suite{
+	margin-left: 840px;
 }

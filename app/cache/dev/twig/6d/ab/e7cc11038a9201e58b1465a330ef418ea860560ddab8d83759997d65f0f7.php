@@ -12,6 +12,7 @@ class __TwigTemplate_6dabe7cc11038a9201e58b1465a330ef418ea860560ddab8d83759997d6
         $this->blocks = array(
             'titre' => array($this, 'block_titre'),
             'panelbody' => array($this, 'block_panelbody'),
+            'equipeactive' => array($this, 'block_equipeactive'),
             'tableau' => array($this, 'block_tableau'),
             'body' => array($this, 'block_body'),
         );
@@ -53,6 +54,12 @@ class __TwigTemplate_6dabe7cc11038a9201e58b1465a330ef418ea860560ddab8d83759997d6
        
 </div>
 ";
+    }
+
+    // line 17
+    public function block_equipeactive($context, array $blocks = array())
+    {
+        echo "class=\"active\"";
     }
 
     // line 18
@@ -136,6 +143,6 @@ class __TwigTemplate_6dabe7cc11038a9201e58b1465a330ef418ea860560ddab8d83759997d6
 
     public function getDebugInfo()
     {
-        return array (  118 => 50,  114 => 48,  111 => 46,  105 => 43,  91 => 37,  85 => 35,  79 => 31,  75 => 30,  62 => 19,  59 => 18,  49 => 11,  45 => 10,  42 => 9,  39 => 8,  34 => 6,  31 => 5,);
+        return array (  125 => 50,  121 => 48,  118 => 46,  112 => 43,  98 => 37,  92 => 35,  86 => 31,  82 => 30,  69 => 19,  66 => 18,  60 => 17,  50 => 11,  46 => 10,  43 => 9,  40 => 8,  35 => 6,  32 => 5,);
     }
 }

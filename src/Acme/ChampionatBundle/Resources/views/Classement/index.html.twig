@@ -4,7 +4,9 @@
 <h4>Classement list</h4>
   {% endblock %}
 
-
+{%block classementactive%}
+class="active"
+{%endblock%}
 
  {% block panelbody -%}
 <div class="panel-body">
@@ -61,7 +63,7 @@
             <td>0</td>
             <td>0</td>
             <td>
-                <a href="{{ path('classement_show', { 'id': entity.id }) }}">{{ entity.nbPoints }}</a></td>
+               {{ entity.nbPoints }}</td>
 
 
         </tr>

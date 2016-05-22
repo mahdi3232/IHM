@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}ftf!{% endblock %}</title>
+        <title>{% block title %}ftf{% endblock %}</title>
         {% block stylesheets %}
         <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.css')}}" />
     <!--    <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}"  /> -->
@@ -23,11 +23,11 @@
     </head>
 
 
-    <body> 
+    <body > 
 
         <!-- ENTETE --> 
 
-        <div id="header"> 
+        <div id="header" > 
             <img src="{{asset('bootstrap/fonts/LOGO.png')}}">
             <!-- Single button -->
 
@@ -35,36 +35,33 @@
                 <div class="container-fluid">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="{{ path('home') }}">Acceuil</a>
+                        <ul class="nav navbar-nav ">
+                            <li {%block accactive%}{%endblock%}><a class="navbar-brand"  href="{{ path('home') }}">Acceuil</a></li>
+                        </ul>
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav">
+                        <ul class="nav navbar-nav ">
                             <!--li class="active"><a href="{{ path('saison') }}">Saison<span class="sr-only">(current)</span></a></li!-->
-                            <li><a href="{{ path('matche') }}">Match</a></li>
-                            <li class="dropdown">
-                                <a href="{{ path('journee') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Journées <span class="caret"></span></a>
+                            <li {%block matcheactive%}{%endblock%}><a href="{{ path('matche') }}">Match</a></li>
+                            <li class="dropdown {%block jounractive%}{%endblock%} ">
+                                <a href="{{ path('journee') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    Journées <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="{{ path('journee') }}">Lister</a></li>
+                                    <li {%block listejounractive%}{%endblock%}><a href="{{ path('journee') }}">Lister</a></li>
 
 
                                 </ul>
                             </li>
-                            <li><a href="{{ path('equipe') }}">Equipe</a></li>
-                            <li><a href="{{ path('classement') }}">Classement</a></li>
+                            <li {%block equipeactive%}{%endblock%} ><a href="{{ path('equipe') }}">Equipe</a></li>
+                            <li {%block classementactive%}{%endblock%}><a href="{{ path('classement') }}">Classement</a></li>
                         </ul>
                         <form class="navbar-form navbar-left" role="search">
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="Search">
                             </div>
-                            <button type="submit" class="btn btn-default">Submit</button>
+                            <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
                         </form>
                         <ul class="nav navbar-nav navbar-right">
 
@@ -107,77 +104,78 @@
                 </div>
 
                 <!-- COLONNE GAUCHE --> 
-                <div id="left"> 
+
 
                     {% block left %}
                     <!--img src="{{asset('bootstrap/fonts/logoEquipeMin/left.jpg')}}"-->
                      {% endblock %}
-                </div> 
+
                 <!-- COLONNE DROITE --> 
-                <div id="right"> 
+
                   {% block right %}
-                        <!--img src="{{asset('bootstrap/fonts/logoEquipeMin/right.jpg')}}"-->   
+         <!--img src="{{asset('bootstrap/fonts/logoEquipeMin/right.jpg')}}"-->   
                      {% endblock %}
-                    </div> 
-
-                    <hr class="clear" /> 
 
 
-
-                    <!-- PIED DE PAGE --> 
-
-                    <div id="footer"> 
+                <hr class="clear" /> 
 
 
 
+                <!-- PIED DE PAGE --> 
+
+         
 
 
 
-                        <nav style="padding:0 0 120px 0;background-color: #555;height: 500px;">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                        <h4 id='footer-header'> SITEMAP </h4>
-                                        
-                                        <div class="col-sm-4" style="padding: 0 0 0 0px">
-                                            <a href="{{ path('home') }}">Acceuil</a>
-                                            <a href="{{ path('matche') }}">Match</a>
-                                            <a href="{{ path('journee') }}">Journées</a>
-                                            <a href="{{ path('equipe') }}">Equipe</a>
-                                            <a href="{{ path('classement') }}">Classement</a>
-                                        </div>
-                                        <div class="col-sm-4" style="padding: 0 0 0 0px">
+                    <nav style="padding:0 0 120px 0;background-color:#CCC6AD;height: 360px;"><hr>
+                        <div class="container">
+                            
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <h4 id='footer-header'> SITEMAP </h4>
 
-                                        </div>
+                                       <div class="col-sm-4" style="padding: 0 0 0 0px">
+                                           <ul>
+                                               <li><a href="{{ path('home') }}">Acceuil</a></li>
+                                        <li><a href="{{ path('matche') }}">Match</a></li>
+                                        <li><a href="{{ path('journee') }}">Journées</a></li>
+                                        <li><a href="{{ path('equipe') }}">Equipe</a></li>
+                                        <li><a href="{{ path('classement') }}">Classement</a></li>
+                                           </ul>
                                     </div>
-                                    <div class="col-sm-4">
-                                        <h4 id='footer-header'> Sponsors </h4>
-                                        <img src="{{asset('bootstrap/fonts/footer/tel.png')}}"><br><br>
-                                        <img src="{{asset('bootstrap/fonts/footer/Gillette.png')}}">
+                                    <div class="col-sm-4" style="padding: 0 0 0 0px">
 
                                     </div>
-                                    <div class="col-sm-4">
-                                        <h5 id='footer-header'> &nbsp </h3>
-                                            <img src="{{asset('bootstrap/fonts/footer/Nike.png')}}"><br><br>
-                                            <img src="{{asset('bootstrap/fonts/footer/coca.png')}}">
-                                            </div>
-                                            </div>
-                                            </div>
-                                <br><br>
-                                <center><h4> Copyright : FTF 2015</h4></center>
-                                            </nav>
-                        
-                                            </div> 
-                                            </body> 
+                                </div>
+                                <div class="col-sm-4">
+                                    <h4 id='footer-header'> Sponsors </h4>
+                                    <img src="{{asset('bootstrap/fonts/footer/tel.png')}}"><br><br>
+                                    <img src="{{asset('bootstrap/fonts/footer/Gillette.png')}}">
+
+                                </div>
+                                <div class="col-sm-4">
+                                    <h5 id='footer-header'> &nbsp </h3>
+                                        <img src="{{asset('bootstrap/fonts/footer/Nike.png')}}"><br><br>
+                                        <img src="{{asset('bootstrap/fonts/footer/coca.png')}}">
+                                        </div>
+                                        </div>
+                                        </div>
+                                        <br><br>
+                                        <center><h4> Copyright : FTF 2015</h4></center>
+                                        </nav>
+
+                              
+                                </body> 
 
 
     {% block javascripts %}
-                                            <script src="{{asset('bootstrap/js/bootstrap.js')}}"></script>
-                                            <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
-                                            <script src="{{asset('bootstrap/js/npm.js')}}"></script>
-                                            <script src="{{asset('https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')}}"></script>
-                                            <!-- Latest compiled and minified JavaScript -->
-                                            <script src="{{asset('http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js')}}"></script>
+                                <script src="{{asset('bootstrap/js/bootstrap.js')}}"></script>
+                                <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
+                                <script src="{{asset('bootstrap/js/npm.js')}}"></script>
+                                <script src="{{asset('https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')}}"></script>
+                                <!-- Latest compiled and minified JavaScript -->
+                                <script src="{{asset('http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js')}}"></script>
     {% endblock %}
-                                            </body>
-                                            </html>
+                                </body>
+
+                                </html>
