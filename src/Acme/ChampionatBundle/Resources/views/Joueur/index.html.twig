@@ -20,7 +20,7 @@ Joueur list
         {% for entity in entities %}
              {% if (entity.idEquipe == id ) %}
             <tr>
-                <td><a href="{{ path('joueur_show', { 'id': entity.id }) }}">{{ entity.nomPrenom }}</a></td>
+                <td>{{ entity.nomPrenom }}</td>
                 <td>{% if entity.datenaissance %}{{ entity.datenaissance|date('Y-m-d ') }}{% endif %}</td>
                 <td>{{ entity.nationalite }}</td>
 

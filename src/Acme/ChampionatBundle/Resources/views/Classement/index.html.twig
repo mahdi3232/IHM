@@ -1,77 +1,155 @@
 {% extends '::base.html.twig' %}
 
 {% block titre -%}
-<h4>Classement list</h4>
-  {% endblock %}
+    <h4>Classement list</h4>
+{% endblock %}
 
-{%block classementactive%}
-class="active"
-{%endblock%}
+{%block classementactive %}
+    class="active"
+{% endblock %}
 
- {% block panelbody -%}
-<div class="panel-body">
-    <h5> <p class="bg-info">Ligue :  {{ entity2.nomLigue }}<br>
-            Saison :  {{ entity3.Libelle }}<br></h5>
+{% block panelbody -%}
+    <div class="panel-body">
+        <h5> <p class="bg-info">Ligue :  {{ entity2.nomLigue }}<br>
+                Saison :  {{ entity3.Libelle }}<br></h5>
 
-</p>
+    </p>
 </div>
 {% endblock %}
 {% block tableau -%}
-<table class="table table-hover">
-    <thead>
-        <tr>
-            <th >Rang</th>
-            <th style="width: 850px; ">Equipe</th>
+ {% set i = 0 %}
+    
+    
+    
+    <table class="table table-hover" id="myTable"   >
+        <thead>
+            <tr>
+                <th>Rang</th>
+                <th style="width: 850px; ">Equipe</th>
 
-            <th >MJ</th>
-            <th>MG</th>
-            <th>MP</th>
-            <th style="width:70px; ">MN</th>
-            <th>BM</th>
-            <th>BC</th>
-            <th style="width:80px ;">DIFF</th>
-            <th >Points</th>
-
-
-        </tr>
-    </thead>
-    <tbody>
-
+                <th >MJ</th>
+                <th>MG</th>
+                <th>MP</th>
+                <th style="width:70px; ">MN</th>
+                <th>BM</th>
+                <th>BC</th>
+                <th style="width:80px ;">DIFF</th>
+                <th >Points</th>
 
 
-    {% set i = 0 %}
-    {% for entity in entities %}
-                      {% set i = i+1 %}
-        <tr>
-            <td>-</td>
-            <td >
+            </tr>
+        </thead>
+        <tbody>
 
+
+            {% set values = [9, 16] %}
+
+            {% set values = values|merge(['apple', 'orange','apple', 'orange'],['apple', 'orange','apple', 'orange']) %}
+            {% set tempArray = {} %}
+            {% set i = 0 %}
 
             {% for entityeq in entity4 %}
-                  {% if entityeq.id is sameas(i) %}
-                <img src={{asset('bootstrap/fonts/logoEquipeMin/')}}{{ entityeq.id }}.png>
+                {% set i = i+1 %}
+                <tr>
 
-                  {% endif %}
+                    <td>{{i}}</td>
+                    <td >
+
+                        {% if entityeq.id is sameas(i) %}
+                            <img src={{asset('bootstrap/fonts/logoEquipeMin/')}}{{ entityeq.id }}.png>
+                            {{ entityeq.nomEquipe }}
+
+                            {% set id = entityeq.id %}
+                            {% set nom= entityeq.nomEquipe %}
+
+                        {% endif %}
+                    </td>
+
+                    {% set mj = 0 %}{% set mg = 0 %}
+                    {% set mp = 0 %}{% set mn = 0 %}{% set bm = 0 %}
+                    {% set bc = 0 %}{% set df = 0 %}{% set p = 0 %}
+                    {% for mat in matche %}
+
+ 
+                            {% set pieces =  mat.resultat |split("-") %}                     
+                        
+                        
+                        {% if entityeq.nomEquipe  == mat.idEquipe %}
+                            {% set mj = mj + 1 %}
+
+                            {% set bm = bm + pieces[0] %}
+                            {% set bc = bc + pieces[1] %}
+                            {% if pieces[0] > pieces[1] %}
+                                {% set p =p+ 3 %}  
+                                {% set mg = mg + 1 %}
+
+                            {% endif%}
+                            {% if pieces[0] == pieces[1] %}
+                                {% set p =p+ 1 %}   
+                                {% set mn = mn + 1 %}
+                            {% endif%}
+                            {% if pieces[0] < pieces[1] %}
+                                {% set mp = mp + 1 %}
+                            {% endif%}
+
+                        {% endif%}
+
+                        {% if entityeq.nomEquipe  ==mat.idEquipe2 %}
+                            {% set mj = mj + 1 %}
 
 
-            {% endfor%} {{ entity.idEquipe }}</td>
-            <td >0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>
-               {{ entity.nbPoints }}</td>
+                            {% set bm = bm + pieces[1] %}
+                            {% set bc = bc + pieces[0] %}
+                            {% if pieces[0] < pieces[1] %}
+                                {% set p =p+ 3 %}  
+                                {% set mg = mg + 1 %}
 
+                            {% endif%}
+                            {% if pieces[0] == pieces[1] %}
+                                {% set p =p+ 1 %}    
+                                {% set mn = mn + 1 %}
+                            {% endif%}
+
+                            {% if pieces[0] > pieces[1] %}
+                                {% set mp = mp + 1 %}
+                            {% endif%}
+
+                        {% endif%}
+                    {% endfor%} 
+                    {% set df = bm - bc %}
+            {% set tempArray = tempArray|merge({(id):(id),(nom):(nom), (mj):(mj),(mp):(mp),(mn):(mn),(bm):(bm),(bc):(bc),(df):(df),(p):(p)})  %}
+
+
+
+            <td>{{mj}}</td>
+            <td>{{mg}}</td>
+            <td>{{mp}}</td>
+            <td>{{mn}}</td>
+            <td>{{bm}}</td>
+            <td>{{bc}}</td>
+
+            <td>{{df}}</td>
+            <td >{{p}}</td>
 
         </tr>
-        {% endfor %}
+    {% endfor%} 
 
-    </tbody>
+
+
+
+
+
+
+</tbody>
 </table>
- {% endblock %}
+              
+
+
+{% endblock %}
 {% block body -%}
 
-    {% endblock %}
+
+{% endblock %}
+
+
+

@@ -36,7 +36,7 @@ class Saison extends \Acme\ChampionatBundle\Entity\Saison implements \Doctrine\O
      *
      * @see \Doctrine\Common\Persistence\Proxy::__getLazyProperties
      */
-    public static $lazyPropertiesDefaults = array();
+    public static $lazyPropertiesDefaults = [];
 
 
 
@@ -64,10 +64,10 @@ class Saison extends \Acme\ChampionatBundle\Entity\Saison implements \Doctrine\O
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', '' . "\0" . 'Acme\\ChampionatBundle\\Entity\\Saison' . "\0" . 'dateDebut', '' . "\0" . 'Acme\\ChampionatBundle\\Entity\\Saison' . "\0" . 'dateFin', '' . "\0" . 'Acme\\ChampionatBundle\\Entity\\Saison' . "\0" . 'libelle', '' . "\0" . 'Acme\\ChampionatBundle\\Entity\\Saison' . "\0" . 'id', '' . "\0" . 'Acme\\ChampionatBundle\\Entity\\Saison' . "\0" . 'idLigue');
+            return ['__isInitialized__', '' . "\0" . 'Acme\\ChampionatBundle\\Entity\\Saison' . "\0" . 'dateDebut', '' . "\0" . 'Acme\\ChampionatBundle\\Entity\\Saison' . "\0" . 'dateFin', '' . "\0" . 'Acme\\ChampionatBundle\\Entity\\Saison' . "\0" . 'libelle', '' . "\0" . 'Acme\\ChampionatBundle\\Entity\\Saison' . "\0" . 'id', '' . "\0" . 'Acme\\ChampionatBundle\\Entity\\Saison' . "\0" . 'idLigue'];
         }
 
-        return array('__isInitialized__', '' . "\0" . 'Acme\\ChampionatBundle\\Entity\\Saison' . "\0" . 'dateDebut', '' . "\0" . 'Acme\\ChampionatBundle\\Entity\\Saison' . "\0" . 'dateFin', '' . "\0" . 'Acme\\ChampionatBundle\\Entity\\Saison' . "\0" . 'libelle', '' . "\0" . 'Acme\\ChampionatBundle\\Entity\\Saison' . "\0" . 'id', '' . "\0" . 'Acme\\ChampionatBundle\\Entity\\Saison' . "\0" . 'idLigue');
+        return ['__isInitialized__', '' . "\0" . 'Acme\\ChampionatBundle\\Entity\\Saison' . "\0" . 'dateDebut', '' . "\0" . 'Acme\\ChampionatBundle\\Entity\\Saison' . "\0" . 'dateFin', '' . "\0" . 'Acme\\ChampionatBundle\\Entity\\Saison' . "\0" . 'libelle', '' . "\0" . 'Acme\\ChampionatBundle\\Entity\\Saison' . "\0" . 'id', '' . "\0" . 'Acme\\ChampionatBundle\\Entity\\Saison' . "\0" . 'idLigue'];
     }
 
     /**
@@ -97,7 +97,7 @@ class Saison extends \Acme\ChampionatBundle\Entity\Saison implements \Doctrine\O
      */
     public function __clone()
     {
-        $this->__cloner__ && $this->__cloner__->__invoke($this, '__clone', array());
+        $this->__cloner__ && $this->__cloner__->__invoke($this, '__clone', []);
     }
 
     /**
@@ -105,7 +105,7 @@ class Saison extends \Acme\ChampionatBundle\Entity\Saison implements \Doctrine\O
      */
     public function __load()
     {
-        $this->__initializer__ && $this->__initializer__->__invoke($this, '__load', array());
+        $this->__initializer__ && $this->__initializer__->__invoke($this, '__load', []);
     }
 
     /**
@@ -179,7 +179,7 @@ class Saison extends \Acme\ChampionatBundle\Entity\Saison implements \Doctrine\O
     public function setDateDebut($dateDebut)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setDateDebut', array($dateDebut));
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setDateDebut', [$dateDebut]);
 
         return parent::setDateDebut($dateDebut);
     }
@@ -190,7 +190,7 @@ class Saison extends \Acme\ChampionatBundle\Entity\Saison implements \Doctrine\O
     public function getDateDebut()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDateDebut', array());
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDateDebut', []);
 
         return parent::getDateDebut();
     }
@@ -201,7 +201,7 @@ class Saison extends \Acme\ChampionatBundle\Entity\Saison implements \Doctrine\O
     public function setDateFin($dateFin)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setDateFin', array($dateFin));
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setDateFin', [$dateFin]);
 
         return parent::setDateFin($dateFin);
     }
@@ -212,7 +212,7 @@ class Saison extends \Acme\ChampionatBundle\Entity\Saison implements \Doctrine\O
     public function getDateFin()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDateFin', array());
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDateFin', []);
 
         return parent::getDateFin();
     }
@@ -223,7 +223,7 @@ class Saison extends \Acme\ChampionatBundle\Entity\Saison implements \Doctrine\O
     public function setLibelle($libelle)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setLibelle', array($libelle));
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setLibelle', [$libelle]);
 
         return parent::setLibelle($libelle);
     }
@@ -234,7 +234,7 @@ class Saison extends \Acme\ChampionatBundle\Entity\Saison implements \Doctrine\O
     public function getLibelle()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getLibelle', array());
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getLibelle', []);
 
         return parent::getLibelle();
     }
@@ -249,7 +249,7 @@ class Saison extends \Acme\ChampionatBundle\Entity\Saison implements \Doctrine\O
         }
 
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getId', array());
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getId', []);
 
         return parent::getId();
     }
@@ -260,7 +260,7 @@ class Saison extends \Acme\ChampionatBundle\Entity\Saison implements \Doctrine\O
     public function setIdLigue(\Acme\ChampionatBundle\Entity\Ligue $idLigue = NULL)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setIdLigue', array($idLigue));
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setIdLigue', [$idLigue]);
 
         return parent::setIdLigue($idLigue);
     }
@@ -271,7 +271,7 @@ class Saison extends \Acme\ChampionatBundle\Entity\Saison implements \Doctrine\O
     public function getIdLigue()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIdLigue', array());
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIdLigue', []);
 
         return parent::getIdLigue();
     }
@@ -282,7 +282,7 @@ class Saison extends \Acme\ChampionatBundle\Entity\Saison implements \Doctrine\O
     public function __toString()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, '__toString', array());
+        $this->__initializer__ && $this->__initializer__->__invoke($this, '__toString', []);
 
         return parent::__toString();
     }

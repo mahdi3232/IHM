@@ -31,11 +31,13 @@ class ClassementController extends Controller {
         $entity2 = $em->getRepository('AcmeChampionatBundle:Ligue')->find(1);
         $entity3 = $em->getRepository('AcmeChampionatBundle:Saison')->find(1);
         $entity4 = $em->getRepository('AcmeChampionatBundle:Equipe')->findAll();
+        $matche = $em->getRepository('AcmeChampionatBundle:Matche')->findAll();
         return array(
             'entities' => $entities,
             'entity2' => $entity2,
             'entity3' => $entity3,
             'entity4' => $entity4,
+            'matche' => $matche,
         );
     }
 

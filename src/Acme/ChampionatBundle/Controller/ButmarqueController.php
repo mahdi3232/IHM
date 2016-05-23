@@ -32,6 +32,8 @@ class ButmarqueController extends Controller
         $entities = $em->getRepository('AcmeChampionatBundle:Butmarque')->findAll();
         $entities2 = $em->getRepository('AcmeChampionatBundle:Ligue')->find(1);
         $entities3 = $em->getRepository('AcmeChampionatBundle:Saison')->find(1);
+        
+         $joueur = $em->getRepository('AcmeChampionatBundle:Joueur')->findAll();
 
          $request = Request::createFromGlobals();
         $idJourneeUrl = $request->query->get('matche');
@@ -55,6 +57,7 @@ class ButmarqueController extends Controller
             'entities' => $entities,
             'entities2' => $entities2,
             'entities3' => $entities3,
+            'joueur'=>$joueur,
           //  'listeButMatch' => $dqlj,
             'id'=>$id,
         );

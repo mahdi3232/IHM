@@ -2,11 +2,11 @@
 {%block accactive%}class="active"{%endblock%}
 {%block body%}
 
-<ul class="exemple ex1">
-{% for   i in 1..16  %}
-        <li><a href="{{ path('joueur', { 'equipe': i }) }}"><img src={{asset('bootstrap/fonts/logoEquipeMin/')}}{{ i }}.png  ></a></li>
+    <ul class="exemple ex1">
+        {% for   i in 1..16  %}
+            <li><a href="{{ path('joueur', { 'equipe': i }) }}"><img src={{asset('bootstrap/fonts/logoEquipeMin/')}}{{ i }}.png  ></a></li>
 
-{%endfor %}
+        {%endfor %}
     </ul>
 
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -57,7 +57,7 @@
 
     <!--div class="scroll"-->
     <p class="bg-info">Classement</p>   
-    <table class="table table-hover" style="height: 200px; alignment-adjust:left">
+    <table class="table table-hover" style="height: 200px; alignment-adjust:left" id="myTable">
         <thead>
             <tr>
                 <th >Rang</th>
@@ -67,110 +67,166 @@
                 <th>MG</th>
                 <th>MP</th>
                 <th >MN</th>
-
+                <th>BM</th>
+                <th>BC</th>
                 <th >DIFF</th>
                 <th >Points</th>
 
 
             </tr>
+
         </thead>
         <tbody>
 
- {% set i = 0 %}
-    {% for entity in entities %}
-
-                      {% set i = i+1 %}
-                    {% if i <5 %}
-            <tr>
-                <td>-</td>
-                <td >
-
-
+            {% set i = 0 %}
             {% for entityeq in entity4 %}
-                  {% if entityeq.id is sameas(i) %}
-                    <img src={{asset('bootstrap/fonts/logoEquipeMin/')}}{{ entityeq.id }}.png>
 
-                  {% endif %}
+                {% set i = i+1 %}
+                {% if i <5 %}
+                    <tr>
+
+                        <td>{{i}}</td>
+                        <td >
+
+                            {% if entityeq.id is sameas(i) %}
+                                <img src={{asset('bootstrap/fonts/logoEquipeMin/')}}{{ entityeq.id }}.png>
+                                {{ entityeq.nomEquipe }}
+
+                                {% set id = entityeq.id %}
+                                {% set nom= entityeq.nomEquipe %}
+
+                            {% endif %}
+                        </td>
+
+                        {% set mj = 0 %}{% set mg = 0 %}
+                        {% set mp = 0 %}{% set mn = 0 %}{% set bm = 0 %}
+                        {% set bc = 0 %}{% set df = 0 %}{% set p = 0 %}
+                        
+                        {% for mat in matche %}
+
+                            {% if entityeq.nomEquipe  ==mat.idEquipe %}
+                                {% set mj = mj + 1 %}
+
+                                {% set pieces =  mat.resultat|split("-") %}
+                                {% set bm = bm + pieces[0] %}{% set bc = bc + pieces[1] %}
+                                {% if pieces[0] > pieces[1] %}
+                                    {% set p =p+ 3 %}  
+                                    {% set mg = mg + 1 %}
+
+                                {% endif%}
+                                {% if pieces[0] == pieces[1] %}
+                                    {% set p =p+ 1 %}   
+                                    {% set mn = mn + 1 %}
+                                {% endif%}
+                                {% if pieces[0] < pieces[1] %}
+                                    {% set mp = mp + 1 %}
+                                {% endif%}
+
+                            {% endif%}
+
+                            {% if entityeq.nomEquipe  ==mat.idEquipe2 %}
+                                {% set mj = mj + 1 %}
+
+                                {% set pieces =  mat.resultat|split("-") %}
+                                {% set bm = bm + pieces[1] %}
+                                {% set bc = bc + pieces[0] %}
+                                {% if pieces[0] < pieces[1] %}
+                                    {% set p =p+ 3 %}  
+                                    {% set mg = mg + 1 %}
+
+                                {% endif%}
+                                {% if pieces[0] == pieces[1] %}
+                                    {% set p =p+ 1 %}    
+                                    {% set mn = mn + 1 %}
+                                {% endif%}
+
+                                {% if pieces[0] > pieces[1] %}
+                                    {% set mp = mp + 1 %}
+                                {% endif%}
+
+                            {% endif%}
+                        {% endfor%} 
+                        {% set df = bm - bc %}
+               
 
 
-            {% endfor%} {{ entity.idEquipe }}</td>
-                <td >0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
+                <td>{{mj}}</td>
+                <td>{{mg}}</td>
+                <td>{{mp}}</td>
+                <td>{{mn}}</td>
+                <td>{{bm}}</td>
+                <td>{{bc}}</td>
 
-                <td>0</td>
-                <td>
-                   {{ entity.nbPoints }}</td>
+                <td>{{df}}</td>
+                <td >{{p}}</td>
+
+            </tr>
+        {% endif %}
+    {% endfor %}
+
+</tbody>
+</table>
+<div class="suite">
+    <a href="{{ path('classement')}}" ><button type="button" class="btn btn-info">La suite...</button></a>
+</div>
+<p class="bg-info">Liste des derniers matches</p>   
 
 
-                </tr>
+
+
+
+
+
+
+
+
+<table class="table table-hover" >
+    <thead>
+        <tr>
+            <th>Equipe 1</th>
+            <th>Date et Heure</th>
+
+
+            <th>Equipe 2</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        {% set i = 0 %}  
+        {% for entity in matche %}
+
+            {% set i = i+1 %}
+            {% if i <4 %}
+                {% for listeMj in listeMatcheJournee %}
+                    {% if listeMj.id is sameas(entity.id) %}
+
+                        <tr >
+                            <td width="40%">         
+                                <img src="{{asset('bootstrap/fonts/logoEquipeMinMatche/')}}{{ entity.idEquipe }}.png">{{ entity.idEquipe }}
+                            </td>
+
+                            <td width="20%"> <span class="glyphicon glyphicon-calendar" aria-hidden="true">       {{ entity.date|date('Y-m-d') }}</span><br><br>
+                                <span class="glyphicon glyphicon-time" aria-hidden="true">     {{ entity.date|date('H:i') }}</span> 
+                            </td>
+
+
+
+                            <td width="40%"><img src="{{asset('bootstrap/fonts/logoEquipeMinMatche/')}}{{ entity.idEquipe2 }}.png">{{entity.idEquipe2}}</td>
+
+                        </tr>
+
                     {% endif %}
-        {% endfor %}
-
-            </tbody>
-        </table>
-        <div class="suite">
-            <a href="{{ path('classement')}}" ><button type="button" class="btn btn-info">La suite...</button></a>
-        </div>
-        <p class="bg-info">Liste des derniers matches</p>   
-
-
-
-
-
-
-
-
-
-
-        <table class="table table-hover" >
-            <thead>
-                <tr>
-                    <th>Equipe 1</th>
-                    <th>Date et Heure</th>
-
-
-                    <th>Equipe 2</th>
-                   
-
-                </tr>
-            </thead>
-            <tbody>
- {% set i = 0 %}  
-  {% for entity in matche %}
-
- {% set i = i+1 %}
-                    {% if i <4 %}
-        {% for listeMj in listeMatcheJournee %}
-                  {% if listeMj.id is sameas(entity.id) %}
-
-                    <tr >
-                        <td width="40%">         
-                            <img src="{{asset('bootstrap/fonts/logoEquipeMinMatche/')}}{{ entity.idEquipe }}.png">{{ entity.idEquipe }}
-                        </td>
-
-                        <td width="20%"> <span class="glyphicon glyphicon-calendar" aria-hidden="true">       {{ entity.date|date('Y-m-d') }}</span><br><br>
-                            <span class="glyphicon glyphicon-time" aria-hidden="true">     {{ entity.date|date('H:i') }}</span> 
-                        </td>
-
-
-
-                        <td width="40%"><img src="{{asset('bootstrap/fonts/logoEquipeMinMatche/')}}{{ entity.idEquipe2 }}.png">{{entity.idEquipe2}}</td>
-                       
-                    </tr>
-
-                  {% endif %}
                 {% endfor%}
-{% endif %}
+            {% endif %}
 
 
         {% endfor %}
-                </tbody>
-            </table>
-         <div class="suite">
-             
-            <a href="{{ path('matche', { 'journee': 2 })}}" ><button type="button" class="btn btn-info">La suite...</button></a>
-        </div>
+    </tbody>
+</table>
+<div class="suite">
+
+    <a href="{{ path('matche', { 'journee': 2 })}}" ><button type="button" class="btn btn-info">La suite...</button></a>
+</div>
 {%endblock%}
 

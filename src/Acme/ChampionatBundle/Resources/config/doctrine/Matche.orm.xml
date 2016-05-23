@@ -25,5 +25,6 @@
         <join-column name="id_equipe2" referenced-column-name="id"/>
       </join-columns>
     </many-to-one>
+     <field name="resultat" type="string" column="resultat" length="50" nullable="false"/>
   </entity>
 </doctrine-mapping>

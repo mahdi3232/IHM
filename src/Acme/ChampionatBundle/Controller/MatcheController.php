@@ -32,6 +32,11 @@ class MatcheController extends Controller {
         $idSaison = $request->query->get('saison');
         $entities = $em->getRepository('AcmeChampionatBundle:Matche')->findAll();
 
+        $entities2 = $em->getRepository('AcmeChampionatBundle:Contrat')->findAll();
+        $entities1 = $em->getRepository('AcmeChampionatBundle:Butmarque')->findAll();
+
+
+
         $entitiesjournee = $em->getRepository('AcmeChampionatBundle:Journee')->findAll();
         $entityLigue = $em->getRepository('AcmeChampionatBundle:Ligue')->find(1);
         $entity3 = $em->getRepository('AcmeChampionatBundle:Saison')->find(1);
@@ -39,11 +44,11 @@ class MatcheController extends Controller {
         $request = Request::createFromGlobals();
 
         if (isset($idSaison)) {
-             $entitiesjournee = $em->getRepository('AcmeChampionatBundle:Journee')->find($idSaison);
+            $entitiesjournee = $em->getRepository('AcmeChampionatBundle:Journee')->find($idSaison);
         } else {
-           $entitiesjournee = $em->getRepository('AcmeChampionatBundle:Journee')->findAll();  
+            $entitiesjournee = $em->getRepository('AcmeChampionatBundle:Journee')->findAll();
         }
-       
+
         $entityLigue = $em->getRepository('AcmeChampionatBundle:Ligue')->find(1);
         $entity3 = $em->getRepository('AcmeChampionatBundle:Saison')->find(1);
         $entityAllEquipe = $em->getRepository('AcmeChampionatBundle:Equipe')->findAll();
@@ -83,7 +88,27 @@ class MatcheController extends Controller {
                 ->andWhere('journee1.id=match1.idJournee')
                 ->getQuery()
                 ->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY);
+       
 
+    /*    $nombre = $result->select('COUNT(equ.id)')
+                ->from('AcmeChampionatBundle:Matche', 'mat')
+                ->from('AcmeChampionatBundle:Butmarque', 'but')
+                ->from('AcmeChampionatBundle:Joueur', 'jou')
+                ->from('AcmeChampionatBundle:Equipe', 'equ')
+          //      ->setParameter('Match', $idm)
+            //    ->where('mat.id=:Match')
+                ->Where('mat.id=but.idMatch')
+                ->andWhere('but.idJoueur=jou.id')
+                ->andWhere('jou.idEquipe=equ.id')
+                ->groupBy('equ.id')
+                ->getQuery()
+                ->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY);
+
+        */
+
+
+       // \Doctrine\Common\Util\Debug::dump($resultat);
+     
         return array(
             'entities' => $entities,
             'entityLigue' => $entityLigue,
@@ -94,6 +119,9 @@ class MatcheController extends Controller {
             'urlidjournee' => $idJourneeUrl,
             'dateDebJournee' => $dateDebJournee,
             'dateFinJournee' => $dateFinJournee,
+            'entities1' => $entities1,
+            'entities2' => $entities2,
+         //   'resultat' => $nombre,
         );
     }
 
