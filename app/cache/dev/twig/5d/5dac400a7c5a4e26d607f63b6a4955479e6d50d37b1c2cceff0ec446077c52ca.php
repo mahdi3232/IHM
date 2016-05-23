@@ -67,16 +67,57 @@ class __TwigTemplate_bb1409a6a91f65d8818525dcad8547952d102fc9081116cf4ac95f45de8
     public function block_tableau($context, array $blocks = array())
     {
         // line 20
+        echo "<div style=\"display:inline-block;
+  vertical-align:top;\">
+    <table class=\"table table-hover\"  border=0    >
+        <thead>  <tr>
+            <th>Rang</th>
+        </tr>
+        </thead>
+        <tbody>
+ ";
+        // line 28
         $context["i"] = 0;
-        // line 21
-        echo "    
-    
-    
-    <table class=\"table table-hover\" id=\"myTable\"   >
+        // line 29
+        echo "   ";
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["entity4"]) ? $context["entity4"] : $this->getContext($context, "entity4")));
+        foreach ($context['_seq'] as $context["_key"] => $context["entityeq"]) {
+            echo "  
+      
+        <tr style=\"height:48px\">
+            
+            <td style=\"height:48px\">
+               
+                ";
+            // line 35
+            $context["i"] = ((isset($context["i"]) ? $context["i"] : $this->getContext($context, "i")) + 1);
+            // line 36
+            echo "                ";
+            echo twig_escape_filter($this->env, (isset($context["i"]) ? $context["i"] : $this->getContext($context, "i")), "html", null, true);
+            echo " <br>
+            </td>
+  </tr>
+  
+   
+     
+ 
+ ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entityeq'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 44
+        echo "        </tbody>
+    </table>
+    </div>
+        <div style=\"display:inline-block;
+  vertical-align:top;\">
+ <table class=\"table table-hover\" id=\"myTable\" style= \" max-width: 90%;margin-left: 48px;margin-top: -825px;\" >
         <thead>
             <tr>
-                <th>Rang</th>
-                <th style=\"width: 850px; \">Equipe</th>
+                
+                <th style=\"width: 650px; \">Equipe</th>
 
                 <th >MJ</th>
                 <th>MG</th>
@@ -94,206 +135,203 @@ class __TwigTemplate_bb1409a6a91f65d8818525dcad8547952d102fc9081116cf4ac95f45de8
 
 
             ";
-        // line 45
+        // line 70
         $context["values"] = array(0 => 9, 1 => 16);
-        // line 46
+        // line 71
         echo "
             ";
-        // line 47
+        // line 72
         $context["values"] = twig_array_merge((isset($context["values"]) ? $context["values"] : $this->getContext($context, "values")), array(0 => "apple", 1 => "orange", 2 => "apple", 3 => "orange"), array(0 => "apple", 1 => "orange", 2 => "apple", 3 => "orange"));
-        // line 48
+        // line 73
         echo "            ";
         $context["tempArray"] = array();
-        // line 49
+        // line 74
         echo "            ";
         $context["i"] = 0;
-        // line 50
+        // line 75
         echo "
             ";
-        // line 51
+        // line 76
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["entity4"]) ? $context["entity4"] : $this->getContext($context, "entity4")));
         foreach ($context['_seq'] as $context["_key"] => $context["entityeq"]) {
-            // line 52
+            // line 77
             echo "                ";
             $context["i"] = ((isset($context["i"]) ? $context["i"] : $this->getContext($context, "i")) + 1);
-            // line 53
-            echo "                <tr>
+            // line 78
+            echo "                <tr style=\"height:48px\">
 
-                    <td>";
-            // line 55
-            echo twig_escape_filter($this->env, (isset($context["i"]) ? $context["i"] : $this->getContext($context, "i")), "html", null, true);
-            echo "</td>
-                    <td >
+                   
+                    <td style=\"height:48px\">
 
                         ";
-            // line 58
+            // line 83
             if (($this->getAttribute($context["entityeq"], "id", array()) === (isset($context["i"]) ? $context["i"] : $this->getContext($context, "i")))) {
-                // line 59
+                // line 84
                 echo "                            <img src=";
                 echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/fonts/logoEquipeMin/"), "html", null, true);
                 echo twig_escape_filter($this->env, $this->getAttribute($context["entityeq"], "id", array()), "html", null, true);
                 echo ".png>
                             ";
-                // line 60
+                // line 85
                 echo twig_escape_filter($this->env, $this->getAttribute($context["entityeq"], "nomEquipe", array()), "html", null, true);
                 echo "
 
                             ";
-                // line 62
+                // line 87
                 $context["id"] = $this->getAttribute($context["entityeq"], "id", array());
-                // line 63
+                // line 88
                 echo "                            ";
                 $context["nom"] = $this->getAttribute($context["entityeq"], "nomEquipe", array());
-                // line 64
+                // line 89
                 echo "
                         ";
             }
-            // line 66
+            // line 91
             echo "                    </td>
 
                     ";
-            // line 68
+            // line 93
             $context["mj"] = 0;
             $context["mg"] = 0;
-            // line 69
+            // line 94
             echo "                    ";
             $context["mp"] = 0;
             $context["mn"] = 0;
             $context["bm"] = 0;
-            // line 70
+            // line 95
             echo "                    ";
             $context["bc"] = 0;
             $context["df"] = 0;
             $context["p"] = 0;
-            // line 71
+            // line 96
             echo "                    ";
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable((isset($context["matche"]) ? $context["matche"] : $this->getContext($context, "matche")));
             foreach ($context['_seq'] as $context["_key"] => $context["mat"]) {
-                // line 72
+                // line 97
                 echo "
  
                             ";
-                // line 74
+                // line 99
                 $context["pieces"] = twig_split_filter($this->env, $this->getAttribute($context["mat"], "resultat", array()), "-");
                 echo "                     
                         
                         
                         ";
-                // line 77
+                // line 102
                 if (($this->getAttribute($context["entityeq"], "nomEquipe", array()) == $this->getAttribute($context["mat"], "idEquipe", array()))) {
-                    // line 78
+                    // line 103
                     echo "                            ";
                     $context["mj"] = ((isset($context["mj"]) ? $context["mj"] : $this->getContext($context, "mj")) + 1);
-                    // line 79
+                    // line 104
                     echo "
                             ";
-                    // line 80
+                    // line 105
                     $context["bm"] = ((isset($context["bm"]) ? $context["bm"] : $this->getContext($context, "bm")) + $this->getAttribute((isset($context["pieces"]) ? $context["pieces"] : $this->getContext($context, "pieces")), 0, array(), "array"));
-                    // line 81
+                    // line 106
                     echo "                            ";
                     $context["bc"] = ((isset($context["bc"]) ? $context["bc"] : $this->getContext($context, "bc")) + $this->getAttribute((isset($context["pieces"]) ? $context["pieces"] : $this->getContext($context, "pieces")), 1, array(), "array"));
-                    // line 82
+                    // line 107
                     echo "                            ";
                     if (($this->getAttribute((isset($context["pieces"]) ? $context["pieces"] : $this->getContext($context, "pieces")), 0, array(), "array") > $this->getAttribute((isset($context["pieces"]) ? $context["pieces"] : $this->getContext($context, "pieces")), 1, array(), "array"))) {
-                        // line 83
+                        // line 108
                         echo "                                ";
                         $context["p"] = ((isset($context["p"]) ? $context["p"] : $this->getContext($context, "p")) + 3);
                         echo "  
                                 ";
-                        // line 84
+                        // line 109
                         $context["mg"] = ((isset($context["mg"]) ? $context["mg"] : $this->getContext($context, "mg")) + 1);
-                        // line 85
+                        // line 110
                         echo "
                             ";
                     }
-                    // line 87
+                    // line 112
                     echo "                            ";
                     if (($this->getAttribute((isset($context["pieces"]) ? $context["pieces"] : $this->getContext($context, "pieces")), 0, array(), "array") == $this->getAttribute((isset($context["pieces"]) ? $context["pieces"] : $this->getContext($context, "pieces")), 1, array(), "array"))) {
-                        // line 88
+                        // line 113
                         echo "                                ";
                         $context["p"] = ((isset($context["p"]) ? $context["p"] : $this->getContext($context, "p")) + 1);
                         echo "   
                                 ";
-                        // line 89
-                        $context["mn"] = ((isset($context["mn"]) ? $context["mn"] : $this->getContext($context, "mn")) + 1);
-                        // line 90
-                        echo "                            ";
-                    }
-                    // line 91
-                    echo "                            ";
-                    if (($this->getAttribute((isset($context["pieces"]) ? $context["pieces"] : $this->getContext($context, "pieces")), 0, array(), "array") < $this->getAttribute((isset($context["pieces"]) ? $context["pieces"] : $this->getContext($context, "pieces")), 1, array(), "array"))) {
-                        // line 92
-                        echo "                                ";
-                        $context["mp"] = ((isset($context["mp"]) ? $context["mp"] : $this->getContext($context, "mp")) + 1);
-                        // line 93
-                        echo "                            ";
-                    }
-                    // line 94
-                    echo "
-                        ";
-                }
-                // line 96
-                echo "
-                        ";
-                // line 97
-                if (($this->getAttribute($context["entityeq"], "nomEquipe", array()) == $this->getAttribute($context["mat"], "idEquipe2", array()))) {
-                    // line 98
-                    echo "                            ";
-                    $context["mj"] = ((isset($context["mj"]) ? $context["mj"] : $this->getContext($context, "mj")) + 1);
-                    // line 99
-                    echo "
-
-                            ";
-                    // line 101
-                    $context["bm"] = ((isset($context["bm"]) ? $context["bm"] : $this->getContext($context, "bm")) + $this->getAttribute((isset($context["pieces"]) ? $context["pieces"] : $this->getContext($context, "pieces")), 1, array(), "array"));
-                    // line 102
-                    echo "                            ";
-                    $context["bc"] = ((isset($context["bc"]) ? $context["bc"] : $this->getContext($context, "bc")) + $this->getAttribute((isset($context["pieces"]) ? $context["pieces"] : $this->getContext($context, "pieces")), 0, array(), "array"));
-                    // line 103
-                    echo "                            ";
-                    if (($this->getAttribute((isset($context["pieces"]) ? $context["pieces"] : $this->getContext($context, "pieces")), 0, array(), "array") < $this->getAttribute((isset($context["pieces"]) ? $context["pieces"] : $this->getContext($context, "pieces")), 1, array(), "array"))) {
-                        // line 104
-                        echo "                                ";
-                        $context["p"] = ((isset($context["p"]) ? $context["p"] : $this->getContext($context, "p")) + 3);
-                        echo "  
-                                ";
-                        // line 105
-                        $context["mg"] = ((isset($context["mg"]) ? $context["mg"] : $this->getContext($context, "mg")) + 1);
-                        // line 106
-                        echo "
-                            ";
-                    }
-                    // line 108
-                    echo "                            ";
-                    if (($this->getAttribute((isset($context["pieces"]) ? $context["pieces"] : $this->getContext($context, "pieces")), 0, array(), "array") == $this->getAttribute((isset($context["pieces"]) ? $context["pieces"] : $this->getContext($context, "pieces")), 1, array(), "array"))) {
-                        // line 109
-                        echo "                                ";
-                        $context["p"] = ((isset($context["p"]) ? $context["p"] : $this->getContext($context, "p")) + 1);
-                        echo "    
-                                ";
-                        // line 110
-                        $context["mn"] = ((isset($context["mn"]) ? $context["mn"] : $this->getContext($context, "mn")) + 1);
-                        // line 111
-                        echo "                            ";
-                    }
-                    // line 112
-                    echo "
-                            ";
-                    // line 113
-                    if (($this->getAttribute((isset($context["pieces"]) ? $context["pieces"] : $this->getContext($context, "pieces")), 0, array(), "array") > $this->getAttribute((isset($context["pieces"]) ? $context["pieces"] : $this->getContext($context, "pieces")), 1, array(), "array"))) {
                         // line 114
-                        echo "                                ";
-                        $context["mp"] = ((isset($context["mp"]) ? $context["mp"] : $this->getContext($context, "mp")) + 1);
+                        $context["mn"] = ((isset($context["mn"]) ? $context["mn"] : $this->getContext($context, "mn")) + 1);
                         // line 115
                         echo "                            ";
                     }
                     // line 116
+                    echo "                            ";
+                    if (($this->getAttribute((isset($context["pieces"]) ? $context["pieces"] : $this->getContext($context, "pieces")), 0, array(), "array") < $this->getAttribute((isset($context["pieces"]) ? $context["pieces"] : $this->getContext($context, "pieces")), 1, array(), "array"))) {
+                        // line 117
+                        echo "                                ";
+                        $context["mp"] = ((isset($context["mp"]) ? $context["mp"] : $this->getContext($context, "mp")) + 1);
+                        // line 118
+                        echo "                            ";
+                    }
+                    // line 119
                     echo "
                         ";
                 }
-                // line 118
+                // line 121
+                echo "
+                        ";
+                // line 122
+                if (($this->getAttribute($context["entityeq"], "nomEquipe", array()) == $this->getAttribute($context["mat"], "idEquipe2", array()))) {
+                    // line 123
+                    echo "                            ";
+                    $context["mj"] = ((isset($context["mj"]) ? $context["mj"] : $this->getContext($context, "mj")) + 1);
+                    // line 124
+                    echo "
+
+                            ";
+                    // line 126
+                    $context["bm"] = ((isset($context["bm"]) ? $context["bm"] : $this->getContext($context, "bm")) + $this->getAttribute((isset($context["pieces"]) ? $context["pieces"] : $this->getContext($context, "pieces")), 1, array(), "array"));
+                    // line 127
+                    echo "                            ";
+                    $context["bc"] = ((isset($context["bc"]) ? $context["bc"] : $this->getContext($context, "bc")) + $this->getAttribute((isset($context["pieces"]) ? $context["pieces"] : $this->getContext($context, "pieces")), 0, array(), "array"));
+                    // line 128
+                    echo "                            ";
+                    if (($this->getAttribute((isset($context["pieces"]) ? $context["pieces"] : $this->getContext($context, "pieces")), 0, array(), "array") < $this->getAttribute((isset($context["pieces"]) ? $context["pieces"] : $this->getContext($context, "pieces")), 1, array(), "array"))) {
+                        // line 129
+                        echo "                                ";
+                        $context["p"] = ((isset($context["p"]) ? $context["p"] : $this->getContext($context, "p")) + 3);
+                        echo "  
+                                ";
+                        // line 130
+                        $context["mg"] = ((isset($context["mg"]) ? $context["mg"] : $this->getContext($context, "mg")) + 1);
+                        // line 131
+                        echo "
+                            ";
+                    }
+                    // line 133
+                    echo "                            ";
+                    if (($this->getAttribute((isset($context["pieces"]) ? $context["pieces"] : $this->getContext($context, "pieces")), 0, array(), "array") == $this->getAttribute((isset($context["pieces"]) ? $context["pieces"] : $this->getContext($context, "pieces")), 1, array(), "array"))) {
+                        // line 134
+                        echo "                                ";
+                        $context["p"] = ((isset($context["p"]) ? $context["p"] : $this->getContext($context, "p")) + 1);
+                        echo "    
+                                ";
+                        // line 135
+                        $context["mn"] = ((isset($context["mn"]) ? $context["mn"] : $this->getContext($context, "mn")) + 1);
+                        // line 136
+                        echo "                            ";
+                    }
+                    // line 137
+                    echo "
+                            ";
+                    // line 138
+                    if (($this->getAttribute((isset($context["pieces"]) ? $context["pieces"] : $this->getContext($context, "pieces")), 0, array(), "array") > $this->getAttribute((isset($context["pieces"]) ? $context["pieces"] : $this->getContext($context, "pieces")), 1, array(), "array"))) {
+                        // line 139
+                        echo "                                ";
+                        $context["mp"] = ((isset($context["mp"]) ? $context["mp"] : $this->getContext($context, "mp")) + 1);
+                        // line 140
+                        echo "                            ";
+                    }
+                    // line 141
+                    echo "
+                        ";
+                }
+                // line 143
                 echo "                    ";
             }
             $_parent = $context['_parent'];
@@ -301,46 +339,46 @@ class __TwigTemplate_bb1409a6a91f65d8818525dcad8547952d102fc9081116cf4ac95f45de8
             $context = array_intersect_key($context, $_parent) + $_parent;
             echo " 
                     ";
-            // line 119
+            // line 144
             $context["df"] = ((isset($context["bm"]) ? $context["bm"] : $this->getContext($context, "bm")) - (isset($context["bc"]) ? $context["bc"] : $this->getContext($context, "bc")));
-            // line 120
+            // line 145
             echo "            ";
             $context["tempArray"] = twig_array_merge((isset($context["tempArray"]) ? $context["tempArray"] : $this->getContext($context, "tempArray")), array((isset($context["id"]) ? $context["id"] : $this->getContext($context, "id")) => (isset($context["id"]) ? $context["id"] : $this->getContext($context, "id")), (isset($context["nom"]) ? $context["nom"] : $this->getContext($context, "nom")) => (isset($context["nom"]) ? $context["nom"] : $this->getContext($context, "nom")), (isset($context["mj"]) ? $context["mj"] : $this->getContext($context, "mj")) => (isset($context["mj"]) ? $context["mj"] : $this->getContext($context, "mj")), (isset($context["mp"]) ? $context["mp"] : $this->getContext($context, "mp")) => (isset($context["mp"]) ? $context["mp"] : $this->getContext($context, "mp")), (isset($context["mn"]) ? $context["mn"] : $this->getContext($context, "mn")) => (isset($context["mn"]) ? $context["mn"] : $this->getContext($context, "mn")), (isset($context["bm"]) ? $context["bm"] : $this->getContext($context, "bm")) => (isset($context["bm"]) ? $context["bm"] : $this->getContext($context, "bm")), (isset($context["bc"]) ? $context["bc"] : $this->getContext($context, "bc")) => (isset($context["bc"]) ? $context["bc"] : $this->getContext($context, "bc")), (isset($context["df"]) ? $context["df"] : $this->getContext($context, "df")) => (isset($context["df"]) ? $context["df"] : $this->getContext($context, "df")), (isset($context["p"]) ? $context["p"] : $this->getContext($context, "p")) => (isset($context["p"]) ? $context["p"] : $this->getContext($context, "p"))));
-            // line 121
+            // line 146
             echo "
 
 
-            <td>";
-            // line 124
+            <td style=\"height:48px\"> ";
+            // line 149
             echo twig_escape_filter($this->env, (isset($context["mj"]) ? $context["mj"] : $this->getContext($context, "mj")), "html", null, true);
             echo "</td>
-            <td>";
-            // line 125
+            <td style=\"height:48px\">";
+            // line 150
             echo twig_escape_filter($this->env, (isset($context["mg"]) ? $context["mg"] : $this->getContext($context, "mg")), "html", null, true);
             echo "</td>
-            <td>";
-            // line 126
+            <td style=\"height:48px\">";
+            // line 151
             echo twig_escape_filter($this->env, (isset($context["mp"]) ? $context["mp"] : $this->getContext($context, "mp")), "html", null, true);
             echo "</td>
-            <td>";
-            // line 127
+            <td style=\"height:48px\">";
+            // line 152
             echo twig_escape_filter($this->env, (isset($context["mn"]) ? $context["mn"] : $this->getContext($context, "mn")), "html", null, true);
             echo "</td>
-            <td>";
-            // line 128
+            <td style=\"height:48px\">";
+            // line 153
             echo twig_escape_filter($this->env, (isset($context["bm"]) ? $context["bm"] : $this->getContext($context, "bm")), "html", null, true);
             echo "</td>
-            <td>";
-            // line 129
+            <td style=\"height:48px\">";
+            // line 154
             echo twig_escape_filter($this->env, (isset($context["bc"]) ? $context["bc"] : $this->getContext($context, "bc")), "html", null, true);
             echo "</td>
 
-            <td>";
-            // line 131
+            <td style=\"height:48px\">";
+            // line 156
             echo twig_escape_filter($this->env, (isset($context["df"]) ? $context["df"] : $this->getContext($context, "df")), "html", null, true);
             echo "</td>
-            <td >";
-            // line 132
+            <td style=\"height:48px\">";
+            // line 157
             echo twig_escape_filter($this->env, (isset($context["p"]) ? $context["p"] : $this->getContext($context, "p")), "html", null, true);
             echo "</td>
 
@@ -350,7 +388,7 @@ class __TwigTemplate_bb1409a6a91f65d8818525dcad8547952d102fc9081116cf4ac95f45de8
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entityeq'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 135
+        // line 160
         echo " 
 
 
@@ -362,12 +400,12 @@ class __TwigTemplate_bb1409a6a91f65d8818525dcad8547952d102fc9081116cf4ac95f45de8
 </tbody>
 </table>
               
-
+        </div>
 
 ";
     }
 
-    // line 149
+    // line 174
     public function block_body($context, array $blocks = array())
     {
     }
@@ -384,7 +422,7 @@ class __TwigTemplate_bb1409a6a91f65d8818525dcad8547952d102fc9081116cf4ac95f45de8
 
     public function getDebugInfo()
     {
-        return array (  371 => 149,  354 => 135,  344 => 132,  340 => 131,  335 => 129,  331 => 128,  327 => 127,  323 => 126,  319 => 125,  315 => 124,  310 => 121,  307 => 120,  305 => 119,  297 => 118,  293 => 116,  290 => 115,  287 => 114,  285 => 113,  282 => 112,  279 => 111,  277 => 110,  272 => 109,  269 => 108,  265 => 106,  263 => 105,  258 => 104,  255 => 103,  252 => 102,  250 => 101,  246 => 99,  243 => 98,  241 => 97,  238 => 96,  234 => 94,  231 => 93,  228 => 92,  225 => 91,  222 => 90,  220 => 89,  215 => 88,  212 => 87,  208 => 85,  206 => 84,  201 => 83,  198 => 82,  195 => 81,  193 => 80,  190 => 79,  187 => 78,  185 => 77,  179 => 74,  175 => 72,  170 => 71,  165 => 70,  160 => 69,  157 => 68,  153 => 66,  149 => 64,  146 => 63,  144 => 62,  139 => 60,  133 => 59,  131 => 58,  125 => 55,  121 => 53,  118 => 52,  114 => 51,  111 => 50,  108 => 49,  105 => 48,  103 => 47,  100 => 46,  98 => 45,  72 => 21,  70 => 20,  67 => 19,  58 => 14,  54 => 13,  51 => 12,  48 => 11,  43 => 8,  40 => 7,  35 => 4,  32 => 3,  11 => 1,);
+        return array (  409 => 174,  392 => 160,  382 => 157,  378 => 156,  373 => 154,  369 => 153,  365 => 152,  361 => 151,  357 => 150,  353 => 149,  348 => 146,  345 => 145,  343 => 144,  335 => 143,  331 => 141,  328 => 140,  325 => 139,  323 => 138,  320 => 137,  317 => 136,  315 => 135,  310 => 134,  307 => 133,  303 => 131,  301 => 130,  296 => 129,  293 => 128,  290 => 127,  288 => 126,  284 => 124,  281 => 123,  279 => 122,  276 => 121,  272 => 119,  269 => 118,  266 => 117,  263 => 116,  260 => 115,  258 => 114,  253 => 113,  250 => 112,  246 => 110,  244 => 109,  239 => 108,  236 => 107,  233 => 106,  231 => 105,  228 => 104,  225 => 103,  223 => 102,  217 => 99,  213 => 97,  208 => 96,  203 => 95,  198 => 94,  195 => 93,  191 => 91,  187 => 89,  184 => 88,  182 => 87,  177 => 85,  171 => 84,  169 => 83,  162 => 78,  159 => 77,  155 => 76,  152 => 75,  149 => 74,  146 => 73,  144 => 72,  141 => 71,  139 => 70,  111 => 44,  96 => 36,  94 => 35,  82 => 29,  80 => 28,  70 => 20,  67 => 19,  58 => 14,  54 => 13,  51 => 12,  48 => 11,  43 => 8,  40 => 7,  35 => 4,  32 => 3,  11 => 1,);
     }
 }
 /* {% extends '::base.html.twig' %}*/
@@ -406,15 +444,40 @@ class __TwigTemplate_bb1409a6a91f65d8818525dcad8547952d102fc9081116cf4ac95f45de8
 /* </div>*/
 /* {% endblock %}*/
 /* {% block tableau -%}*/
+/*     <div style="display:inline-block;*/
+/*   vertical-align:top;">*/
+/*     <table class="table table-hover"  border=0    >*/
+/*         <thead>  <tr>*/
+/*             <th>Rang</th>*/
+/*         </tr>*/
+/*         </thead>*/
+/*         <tbody>*/
 /*  {% set i = 0 %}*/
-/*     */
-/*     */
-/*     */
-/*     <table class="table table-hover" id="myTable"   >*/
+/*    {% for entityeq in entity4 %}  */
+/*       */
+/*         <tr style="height:48px">*/
+/*             */
+/*             <td style="height:48px">*/
+/*                */
+/*                 {% set i = i+1 %}*/
+/*                 {{i}} <br>*/
+/*             </td>*/
+/*   </tr>*/
+/*   */
+/*    */
+/*      */
+/*  */
+/*  {% endfor %}*/
+/*         </tbody>*/
+/*     </table>*/
+/*     </div>*/
+/*         <div style="display:inline-block;*/
+/*   vertical-align:top;">*/
+/*  <table class="table table-hover" id="myTable" style= " max-width: 90%;margin-left: 48px;margin-top: -825px;" >*/
 /*         <thead>*/
 /*             <tr>*/
-/*                 <th>Rang</th>*/
-/*                 <th style="width: 850px; ">Equipe</th>*/
+/*                 */
+/*                 <th style="width: 650px; ">Equipe</th>*/
 /* */
 /*                 <th >MJ</th>*/
 /*                 <th>MG</th>*/
@@ -439,10 +502,10 @@ class __TwigTemplate_bb1409a6a91f65d8818525dcad8547952d102fc9081116cf4ac95f45de8
 /* */
 /*             {% for entityeq in entity4 %}*/
 /*                 {% set i = i+1 %}*/
-/*                 <tr>*/
+/*                 <tr style="height:48px">*/
 /* */
-/*                     <td>{{i}}</td>*/
-/*                     <td >*/
+/*                    */
+/*                     <td style="height:48px">*/
 /* */
 /*                         {% if entityeq.id is sameas(i) %}*/
 /*                             <img src={{asset('bootstrap/fonts/logoEquipeMin/')}}{{ entityeq.id }}.png>*/
@@ -510,15 +573,15 @@ class __TwigTemplate_bb1409a6a91f65d8818525dcad8547952d102fc9081116cf4ac95f45de8
 /* */
 /* */
 /* */
-/*             <td>{{mj}}</td>*/
-/*             <td>{{mg}}</td>*/
-/*             <td>{{mp}}</td>*/
-/*             <td>{{mn}}</td>*/
-/*             <td>{{bm}}</td>*/
-/*             <td>{{bc}}</td>*/
+/*             <td style="height:48px"> {{mj}}</td>*/
+/*             <td style="height:48px">{{mg}}</td>*/
+/*             <td style="height:48px">{{mp}}</td>*/
+/*             <td style="height:48px">{{mn}}</td>*/
+/*             <td style="height:48px">{{bm}}</td>*/
+/*             <td style="height:48px">{{bc}}</td>*/
 /* */
-/*             <td>{{df}}</td>*/
-/*             <td >{{p}}</td>*/
+/*             <td style="height:48px">{{df}}</td>*/
+/*             <td style="height:48px">{{p}}</td>*/
 /* */
 /*         </tr>*/
 /*     {% endfor%} */
@@ -532,7 +595,7 @@ class __TwigTemplate_bb1409a6a91f65d8818525dcad8547952d102fc9081116cf4ac95f45de8
 /* </tbody>*/
 /* </table>*/
 /*               */
-/* */
+/*         </div>*/
 /* */
 /* {% endblock %}*/
 /* {% block body -%}*/

@@ -17,15 +17,40 @@
 </div>
 {% endblock %}
 {% block tableau -%}
+    <div style="display:inline-block;
+  vertical-align:top;">
+    <table class="table table-hover"  border=0    >
+        <thead>  <tr>
+            <th>Rang</th>
+        </tr>
+        </thead>
+        <tbody>
  {% set i = 0 %}
-    
-    
-    
-    <table class="table table-hover" id="myTable"   >
+   {% for entityeq in entity4 %}  
+      
+        <tr style="height:48px">
+            
+            <td style="height:48px">
+               
+                {% set i = i+1 %}
+                {{i}} <br>
+            </td>
+  </tr>
+  
+   
+     
+ 
+ {% endfor %}
+        </tbody>
+    </table>
+    </div>
+        <div style="display:inline-block;
+  vertical-align:top;">
+ <table class="table table-hover" id="myTable" style= " max-width: 90%;margin-left: 48px;margin-top: -825px;" >
         <thead>
             <tr>
-                <th>Rang</th>
-                <th style="width: 850px; ">Equipe</th>
+                
+                <th style="width: 650px; ">Equipe</th>
 
                 <th >MJ</th>
                 <th>MG</th>
@@ -50,10 +75,10 @@
 
             {% for entityeq in entity4 %}
                 {% set i = i+1 %}
-                <tr>
+                <tr style="height:48px">
 
-                    <td>{{i}}</td>
-                    <td >
+                   
+                    <td style="height:48px">
 
                         {% if entityeq.id is sameas(i) %}
                             <img src={{asset('bootstrap/fonts/logoEquipeMin/')}}{{ entityeq.id }}.png>
@@ -121,15 +146,15 @@
 
 
 
-            <td>{{mj}}</td>
-            <td>{{mg}}</td>
-            <td>{{mp}}</td>
-            <td>{{mn}}</td>
-            <td>{{bm}}</td>
-            <td>{{bc}}</td>
+            <td style="height:48px"> {{mj}}</td>
+            <td style="height:48px">{{mg}}</td>
+            <td style="height:48px">{{mp}}</td>
+            <td style="height:48px">{{mn}}</td>
+            <td style="height:48px">{{bm}}</td>
+            <td style="height:48px">{{bc}}</td>
 
-            <td>{{df}}</td>
-            <td >{{p}}</td>
+            <td style="height:48px">{{df}}</td>
+            <td style="height:48px">{{p}}</td>
 
         </tr>
     {% endfor%} 
@@ -143,7 +168,7 @@
 </tbody>
 </table>
               
-
+        </div>
 
 {% endblock %}
 {% block body -%}
